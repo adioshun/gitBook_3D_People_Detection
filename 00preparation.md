@@ -34,3 +34,5 @@ fil.filter().to_file("inliers.pcd")
 
 [3D Robot Perception and Object Classification](https://www.haidynmcleod.com/3d-robot-perception)
 
+
+[ParaView/PCL Plugin](https://www.paraview.org/Wiki/ParaView/PCL_Plugin)
