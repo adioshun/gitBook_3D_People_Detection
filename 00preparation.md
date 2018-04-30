@@ -1,6 +1,6 @@
 PCL 설치 : https://adioshun.gitbooks.io/system_setup/content/08a-pcl-setup.html
 
-
+Sample PCD : [table_scene_lms400.pcd](https://github.com/PointCloudLibrary/data/blob/master/tutorials/table_scene_lms400.pcd)
 
 ## PCD 읽기
 
