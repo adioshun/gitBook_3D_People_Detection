@@ -36,3 +36,6 @@ fil.filter().to_file("inliers.pcd")
 
 
 [ParaView/PCL Plugin](https://www.paraview.org/Wiki/ParaView/PCL_Plugin)
+
+
+[point cloud visualization with jupyter/pcl-python/and potree](https://www.youtube.com/watch?v=s2IvpYvB7Ew)
