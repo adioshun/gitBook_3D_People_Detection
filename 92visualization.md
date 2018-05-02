@@ -24,20 +24,15 @@
 
 ### 1.3 Mayavi 이용 
 
-- [Mayavi 홈페이지](http://docs.enthought.com/mayavi/mayavi/)
+[Mayavi 홈페이지](http://docs.enthought.com/mayavi/mayavi/)
 
 
-#### A. 설치 
-
+설치 
 - 설치 스크립트 : [Install Mayavi on Ubuntu](https://gist.github.com/ronrest/d778ee5d49c026ccee1dbec6bd5b3988)
+- 패키지 설치 : 
+    - python2 : `conda install -c anaconda mayavi`
+    - python3 : `- conda install -c clinicalgraphics vtk=7.1.0; pip install mayavi`
 
-
-- 패키지 설치 
-##### python2
-- conda install -c anaconda mayavi
-
-###### python3
-- conda install -c clinicalgraphics vtk=7.1.0; pip install mayavi
 
 > ImportError: Could not import backend for traits 
 > - conda install -c conda-forge pyside=1.2.4 
@@ -46,7 +41,7 @@
 
 
 
-```
+```bash
 sudo apt-get install vtk6 python-vtk
 python -c "import vtk"
 # cp -r /usr/lib/python2.7/dist-packages/vtk /opt/anaconda3/envs/python2_gpu/lib/python2.7/site-packages/
@@ -54,10 +49,7 @@ pip install mayavi
 import mayavi.mlab as mlab
 ```
 
-
-
-
-#### B. 실행 코드 
+실행 코드 
 
 ```python
 # ==============================================================================
@@ -128,11 +120,10 @@ wget https://raw.github.com/PointCloudLibrary/data/master/tutorials/table_scene_
 
 
 
-- 설치가 쉽지만, 느리고 3D를 충분히 표현하지 못한다. 
+- 설치가 쉽지만, 느리고 3D를 충분히 표현하지 못한다. [[KITTI Data Demo]](https://github.com/hunjung-lim/awesome-vehicle-datasets/blob/master/vehicle/kitti/KITTI%2BDataset%2BExploration.ipynb)
 
-> https://github.com/hunjung-lim/awesome-vehicle-datasets/blob/master/vehicle/kitti/KITTI%2BDataset%2BExploration.ipynb
 
-```
+```python
 from mpl_toolkits.mplot3d import Axes3D
 
 f2 = plt.figure()
@@ -188,22 +179,6 @@ plt.show()
 
 
 
-
----
-
-## 2. 활용
-
-예제
-
-```python
-import pcl
-import numpy as np
-p = pcl.PointCloud(np.array([[1, 2, 3], [3, 4, 5]], dtype=np.float32))
-seg = p.make_segmenter()
-seg.set_model_type(pcl.SACMODEL_PLANE)
-seg.set_method_type(pcl.SAC_RANSAC)
-indices, model = seg.segment()
-```
 
 
 
