@@ -8,6 +8,8 @@
 
 > PCL API Documentation [Html](http://docs.pointclouds.org/trunk/), [pdf](http://www.pointclouds.org/assets/pdf/pcl_icra2011.pdf)
 
+## 1. Modules (Library)
+
 Module common : common data structures, computing distances/norms, means and covariances, angular conversions, geometric transformations
 
 [Module filters](http://docs.pointclouds.org/trunk/group__filters.html): outlier and noise removal mechanisms (eg. PassThrough, voxel grid)
@@ -50,8 +52,14 @@ Module common : common data structures, computing distances/norms, means and cov
 
 Module Range Image : depth map
 
-
 Module common : common data structures, computing distances/norms, means and covariances, angular conversions, geometric transformations
+
+Module search : methods for searching for nearest neighbors using different data structures
+
+
+## 2. Tools
+
+
 
 ---
 ## PCD 읽기
