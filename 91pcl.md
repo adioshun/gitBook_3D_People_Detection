@@ -1,8 +1,18 @@
-PCL 설치 : https://adioshun.gitbooks.io/system_setup/content/08a-pcl-setup.html
+
+
+# PCL
+
+[Community](http://www.pcl-users.org/)
+
+PCL API Documentation [Html](http://docs.pointclouds.org/trunk/), [pdf](http://www.pointclouds.org/assets/pdf/pcl_icra2011.pdf)
+
+[설치(gitbook)](https://adioshun.gitbooks.io/system_setup/content/08a-pcl-setup.html)
 
 Sample PCD : [table_scene_lms400.pcd](https://github.com/PointCloudLibrary/data/blob/master/tutorials/table_scene_lms400.pcd)
 
 ## PCD 읽기
+
+
 
 ```python
 import pcl
@@ -35,8 +45,4 @@ fil.filter().to_file("inliers.pcd")
 [3D Robot Perception and Object Classification](https://www.haidynmcleod.com/3d-robot-perception)
 
 
-[ParaView/PCL Plugin](https://www.paraview.org/Wiki/ParaView/PCL_Plugin)
-- apt-get install paraview
 
-
-[point cloud visualization with jupyter/pcl-python/and potree](https://www.youtube.com/watch?v=s2IvpYvB7Ew)
