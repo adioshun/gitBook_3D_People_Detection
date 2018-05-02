@@ -4,11 +4,11 @@
 
 
 
-![image](https://user-images.githubusercontent.com/17797922/39509583-ca422d70-4db4-11e8-873a-85416a549b74.png)
+![image](https://user-images.githubusercontent.com/17797922/39513568-cc50661e-4dc2-11e8-8e9e-0e9e1e5747ad.png)
+
 > PCL API Documentation [Html](http://docs.pointclouds.org/trunk/), [pdf](http://www.pointclouds.org/assets/pdf/pcl_icra2011.pdf)
 
-
-
+Module common : common data structures, computing distances/norms, means and covariances, angular conversions, geometric transformations
 
 [Module filters](http://docs.pointclouds.org/trunk/group__filters.html): outlier and noise removal mechanisms (eg. PassThrough, voxel grid)
 - [How 3D Features work in PCL](http://pointclouds.org/documentation/tutorials/how_features_work.php)
@@ -47,6 +47,11 @@
 
 [Module visualization](http://docs.pointclouds.org/trunk/group__visualization.html): visualize the results
 
+
+Module Range Image : depth map
+
+
+Module common : common data structures, computing distances/norms, means and covariances, angular conversions, geometric transformations
 
 ---
 ## PCD 읽기
