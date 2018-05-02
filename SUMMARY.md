@@ -8,6 +8,6 @@
 * 30\_Upsampling
 * 40\_Classification
 * 90\_References
-  * [91\_PCL](91pcl.md)
+  * [91\_PCL\_PCD](91pcl.md)
   * [92\_Visualization](92visualization.md)
 
