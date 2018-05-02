@@ -2,20 +2,13 @@
 
 ## 1. PCD
 
-[샘플 PCD Download](https://raw.github.com/PointCloudLibrary/data/master/tutorials/table_scene_lms400.pcd), [PCD File Format](http://www.jeffdelmerico.com/wp-content/uploads/2014/03/pcl_tutorial.pdf): slide 12
-
-
-
-
-
-
-
-
+[샘플 PCD Download](https://github.com/PointCloudLibrary/data/blob/master/tutorials/table_scene_lms400.pcd), [PCD File Format](http://www.jeffdelmerico.com/wp-content/uploads/2014/03/pcl_tutorial.pdf): slide 12
 
 ### 1.1 PCL viewer
 
 `/usr/bin/pcl_viewer/{  }.pcd`
 
+> [PCL Visualization overview](http://pointclouds.org/documentation/overview/visualization.php)
 
 ### 1.2 Jupyter
 

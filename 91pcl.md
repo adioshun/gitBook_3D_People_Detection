@@ -1,16 +1,53 @@
-
-
 # PCL
 
-[Community](http://www.pcl-users.org/)
+[Community](http://www.pcl-users.org/), [설치(gitbook)](https://adioshun.gitbooks.io/system_setup/content/08a-pcl-setup.html)
 
-PCL API Documentation [Html](http://docs.pointclouds.org/trunk/), [pdf](http://www.pointclouds.org/assets/pdf/pcl_icra2011.pdf)
 
-[설치(gitbook)](https://adioshun.gitbooks.io/system_setup/content/08a-pcl-setup.html)
 
-Sample PCD : [table_scene_lms400.pcd](https://github.com/PointCloudLibrary/data/blob/master/tutorials/table_scene_lms400.pcd)
+![image](https://user-images.githubusercontent.com/17797922/39509583-ca422d70-4db4-11e8-873a-85416a549b74.png)
+> PCL API Documentation [Html](http://docs.pointclouds.org/trunk/), [pdf](http://www.pointclouds.org/assets/pdf/pcl_icra2011.pdf)
 
+
+
+
+[Module filters](http://docs.pointclouds.org/trunk/group__filters.html): outlier and noise removal mechanisms (eg. PassThrough, voxel grid)
+
+[Module features](http://docs.pointclouds.org/trunk/group__features.html): data structures and mechanisms for 3D feature estimation from point cloud data
+
+[Module keypoints](http://docs.pointclouds.org/trunk/group__keypoints.html): keypoint detection algorithms 
+
+[Module registration](http://docs.pointclouds.org/trunk/group__registration.html):  Combining several datasets into a global consistent model is usually performed using a technique called **registration**
+
+[Module kdtree](http://docs.pointclouds.org/trunk/group__kdtree.html): kd-tree data-structure, Allows for fast nearest neighbor searches. 
+
+[Module octree](http://docs.pointclouds.org/trunk/group__octree.html): efficient methods for creating a hierarchical tree data structure from point cloud data
+- The `pcl_octree` implementation provides efficient nearest neighbor search routines, such as 
+    - "Neighbors within Voxel Search”, 
+    - “K Nearest Neighbor Search” 
+    - “Neighbors within Radius Search”. 
+
+[Module segmentation](http://docs.pointclouds.org/trunk/group__segmentation.html):  algorithms for segmenting a point cloud into distinct clusters
+
+[Module sample_consensus](http://docs.pointclouds.org/trunk/group__sample__consensus.html): SAmple Consensus (SAC) methods like `RANSAC` / models like `planes` and `cylinders`
+
+
+[Module surface](http://docs.pointclouds.org/trunk/group__surface.html): deals with reconstructing the original surfaces from 3D scans(eg. hull, a mesh representation or a smoothed/resampled)
+
+[Module recognition](http://docs.pointclouds.org/trunk/group__recognition.html): algorithms used for Object Recognition 
+
+[Module io](http://docs.pointclouds.org/trunk/group__io.html): reading and writing point cloud data (PCD) files
+- The PCD (Point Cloud Data) file format
+- Reading PointCloud data from PCD files
+- Writing PointCloud data to PCD files
+- The OpenNI Grabber Framework in PCL
+- Grabbing point clouds from Ensenso cameras
+
+[Module visualization](http://docs.pointclouds.org/trunk/group__visualization.html): visualize the results
+
+
+---
 ## PCD 읽기
+
 
 
 
