@@ -91,6 +91,8 @@ Module search : methods for searching for nearest neighbors using different data
 
 - [Detecting people and their poses using PointCloud Library](http://pointclouds.org/documentation/tutorials/gpu_people.php#gpu-people): RGB-D??
 
+- [RoboND-Perception-Exercises](https://github.com/udacity/RoboND-Perception-Exercises): Udacity Nanodegree program, python
+
 ---
 ## PCD 읽기
 
