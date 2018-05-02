@@ -2,11 +2,19 @@
 
 ## 1. PCD
 
-[샘플 PCD파일](https://raw.github.com/PointCloudLibrary/data/master/tutorials/table_scene_lms400.pcd)
+[샘플 PCD Download](https://raw.github.com/PointCloudLibrary/data/master/tutorials/table_scene_lms400.pcd), [PCD File Format](http://www.jeffdelmerico.com/wp-content/uploads/2014/03/pcl_tutorial.pdf): slide 12
+
+
+
+
+
+
 
 
 
 ### 1.1 PCL viewer
+
+`/usr/bin/pcl_viewer/{  }.pcd`
 
 
 ### 1.2 Jupyter
@@ -44,6 +52,33 @@ wget https://raw.github.com/PointCloudLibrary/data/master/tutorials/table_scene_
 
 ```
 
+> Simple Version : [Cloud Viewer](http://pointclouds.org/documentation/tutorials/cloud_viewer.php#cloud-viewer)
+
+
+
+### 1.6 Plot
+> https://github.com/hunjung-lim/awesome-vehicle-datasets/blob/master/vehicle/kitti/KITTI%2BDataset%2BExploration.ipynb
+
+```
+from mpl_toolkits.mplot3d import Axes3D
+
+f2 = plt.figure()
+ax2 = f2.add_subplot(111, projection='3d')
+# Plot every 100th point so things don't get too bogged down
+velo_range = range(0, third_velo.shape[0], 100)
+ax2.scatter(third_velo[velo_range, 0],
+            third_velo[velo_range, 1],
+            third_velo[velo_range, 2],
+            c=third_velo[velo_range, 3],
+            cmap='gray')
+ax2.set_title('Third Velodyne scan (subsampled)')
+
+plt.show()
+```
+
+
+
+
 ---
 
 ## 2. 활용
@@ -60,19 +95,12 @@ seg.set_method_type(pcl.SAC_RANSAC)
 indices, model = seg.segment()
 ```
 
-# 시각화 툴
-
-## PCD 시각화 \(Jupyter + Potree\)
-
-* [point cloud visualization with jupyter/pcl-python/and potree](https://www.youtube.com/watch?v=s2IvpYvB7Ew) : Youtube
-
-[PCD File Format](http://www.jeffdelmerico.com/wp-content/uploads/2014/03/pcl_tutorial.pdf): slide 12
-
-[ROS/pcl/Tutorials](http://wiki.ros.org/pcl/Tutorials)
 
 
 
-# PCD Viewer
 
-`/usr/bin/pcl_viewer/{  }.pcd`
+
+
+
+
 
