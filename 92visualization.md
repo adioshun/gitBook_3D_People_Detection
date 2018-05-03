@@ -8,7 +8,9 @@
 
 `/usr/bin/pcl_viewer/{  }.pcd`
 
-> [PCL Visualization overview](http://pointclouds.org/documentation/overview/visualization.php)
+> [PCL Visualization overview](http://pointclouds.org/documentation/overview/visualization.php), [Youtube](https://www.youtube.com/watch?v=BZBQXcBvHW0)
+
+
 
 ### 1.2 Jupyter
 
