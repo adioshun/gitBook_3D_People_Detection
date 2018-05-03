@@ -14,9 +14,11 @@
 
 ### 1.1 Camisatx
 
-[Udacity Robotics Nanodegree](https://github.com/camisatx/RoboticsND)
-- [install the Anaconda environment](https://github.com/camisatx/RoboticsND/blob/master/doc/configure_via_anaconda.md)
-- [RANSAC.py](https://github.com/camisatx/RoboticsND/blob/master/projects/perception/Exercise-1/RANSAC.py)
+[3D Perception Project](https://github.com/camisatx/RoboticsND/blob/master/projects/perception/README.md): PR2 simulation robot \w RGB-D camera, filtering the point cloud - clustering relevant objects - recognizing objects
+
+
+
+[RANSAC.py](https://github.com/camisatx/RoboticsND/blob/master/projects/perception/Exercise-1/RANSAC.py)
 
 
 ## 1.2 Fouliex
