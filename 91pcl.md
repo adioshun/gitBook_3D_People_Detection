@@ -120,25 +120,6 @@ fil.filter().to_file("inliers.pcd")
 ```
 
 
----
-
-[Python_PCL API](http://strawlab.github.io/python-pcl/)
-
-
-[ [RoboND_Sensors] brief course notes #robotics ](https://gist.github.com/kor01/84b4c1c590583533811781a9209f243e): By `kor01`
-
-
-[Udacity Robotics Nanodegree](https://github.com/camisatx/RoboticsND)
-- [install the Anaconda environment](https://github.com/camisatx/RoboticsND/blob/master/doc/configure_via_anaconda.md)
-- [RANSAC.py](https://github.com/camisatx/RoboticsND/blob/master/projects/perception/Exercise-1/RANSAC.py)
-- [voxel_grid_downsampling.py](https://github.com/fouliex/RoboND-Perception-Exercises/blob/master/Exercise-1/voxel_grid_downsampling.py): [Addiotional Code /w Sample](https://github.com/fouliex/RoboticPerception), [sample code](https://gist.github.com/kor01/84b4c1c590583533811781a9209f243e#file-009_voxel_grid_downsampling-py)
-
-
-[Project: Perception Pick & Place](https://github.com/tony7126/perception_project)
-: `Pipeline in depth` includes most of algorithms
-
-[3D Robot Perception and Object Classification](https://www.haidynmcleod.com/3d-robot-perception), [github](https://github.com/Heych88/udacity-robond-Perception)
-
 
 
 ---
