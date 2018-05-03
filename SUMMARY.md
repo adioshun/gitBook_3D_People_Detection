@@ -4,7 +4,9 @@
 * [00\_Preparation](00preparation.md)
 * [10\_Downsampling](10downsampling.md)
   * [11\_Voxelization](10downsampling/11voxelization.md)
-* 20\_Clustering
+  * 12\_RANSAC-Plane-Segmentation
+* [20\_Clustering](20clustering.md)
+  * 21\_EuclideanClustering
 * 30\_Upsampling
 * 40\_Classification
 * 90\_References
