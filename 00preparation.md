@@ -9,7 +9,7 @@
 
 ### 1.0 Udacidy 
 
-1. [RoboND-Perception-Exercises](https://github.com/udacity/RoboND-Perception-Exercises)
+1. ~~[RoboND-Perception-Exercises](https://github.com/udacity/RoboND-Perception-Exercises)~~
 2. [3D Perception](https://github.com/udacity/RoboND-Perception-Project)
 
 ### 1.1 Camisatx
@@ -55,4 +55,8 @@
 [3D Robot Perception and Object Classification](https://www.haidynmcleod.com/3d-robot-perception), [github](https://github.com/Heych88/udacity-robond-Perception)
 
 
+---
 
+[Nick Hortovanyi's blog](https://hortovanyi.wordpress.com/tag/robond/)
+
+[Yuchao's blogspot ](http://www.yuchao.us/2017/09/robot-nd-a3-perception.html)
