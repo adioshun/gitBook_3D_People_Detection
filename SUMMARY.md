@@ -8,7 +8,7 @@
 * [20\_Clustering](20clustering.md)
   * 21\_EuclideanClustering
 * 30\_Upsampling
-* 40\_Classification
+* [40\_Classification](40classification.md)
 * 90\_References
   * [91\_PCL\_PCD](91pcl.md)
   * [92\_Visualization](92visualization.md)
