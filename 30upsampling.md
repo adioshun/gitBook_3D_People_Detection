@@ -13,13 +13,17 @@ There appears to be relatively little work in using co-registered intensity imag
 ```
 
 초창기 연구 중 하나는 MRF를 이용한 방법이다. `One of the first attempts reported was basedon Markov Random Fields (MRFs) [1, 2, 3, 4]. `
+
 - 가정사항 : 색이나 밝기 변화로 깊이 단절이 종종 발생한다. 문제는 깊이 단절은 색 채널에서는 보이지 않는다. `A common assumption here is that depth discontinuities in a scene often co-occur with color or brightness changes within the associated camera images. The problem occurs when a depth discontinuity is not visible in the color channel.`
 
+
 ```
+
 [1] Luz A. Torres-Méndez and Gregory Dudek. RangeSynthesis for 3D Environment Modeling In 2002 IEEEWorkshop on Applications of Computer Vision, pp. 231--236, Orlando, FL, USA
 [2] Luz Abril Torres-Méndez and Gregory Dudek.Reconstruction of 3D models from intensity images andpartial depth. Proceeding American Association forArtificial Intelligence (AAAI), 2004, pp. 476-481.
 [3] J. Diebel and S. Thrun. An application of markov randomfields to range sensing. In Proceedings of Conference onNeural Information Processing Systems (NIPS),Cambridge, MA, 2005. MIT Press.
 [4] Zhaoyin Jia, Yao-Jen Chang, Tzung-Han Lin, and TsuhanChen, "Dense 3D-Point Estimation Based on SurfaceFitting and Color Information," 2009 Western New YorkImage Processing Workshop, Henrietta, NY, USA, Sept.25, 2009.
+
 ```
 
 
