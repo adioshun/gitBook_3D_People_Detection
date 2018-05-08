@@ -50,6 +50,10 @@
 - [Semantically Guided Depth Upsampling](https://arxiv.org/abs/1608.00753), Nick Schneider, 2016
     - 이지미 정보 활용, Lidar 업샘플링 기법 upsampling of sparse depth(Lidar) data, guided by high-resolution **imagery**.
 
+
+- DenseLidarNet : 카메라 + Lidar, [[깃허브]](https://github.com/345ishaan/DenseLidarNet)
+
+
 ### 2.4 Classification 
 
 - Deep Semantic Classification for 3D LiDAR Data, Ayush Dewan
