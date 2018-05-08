@@ -32,6 +32,11 @@
 
 ### 2.2 Clustering
 
+
+- [OBPCA(Object-Based Point Cloud Analysis)](https://www.tandfonline.com/doi/abs/10.1080/2150704X.2016.1278310?journalCode=trsl20): 엄준호교수, 2017, 필터링, 세그먼트 추출
+기법
+
+
 ### 2.3 Upsampling
 
 

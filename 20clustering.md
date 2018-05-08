@@ -8,9 +8,31 @@ K-means clustering algorithm is able to group data points into n groups based on
 
 > I have no idea about the **N**, So not suitable for usual case
 
-## 2. Euclidean clustering (=DBSCAN)
+## 2. DBSCAN(Density-based spatial cluster of applications with noise)
 
-Density-based spatial cluster of applications with noise
+> Euclidean clustering 의 한 종류?
+
+```
+[3] M. Ester, H.-P. Kriegel, J. Sander, X. Xu, and others. A density-based algorithm for discovering clusters in large spatial databases with noise. In Kdd, volume 96, pages 226–231, 1996.
+```
+
+It is a density-based algorithm designed on the concepts of density reachability and density-connection:
+1. density-reachable: a point p is density reachable from a point q if there is a chain of points p1, ..., pn, p1 = p, pn = q such that pi+1 is directly density-reachable from pi. A
+point p is directly density-reachable if the point p is included
+in the area defined by a circle centered on q of radius
+EPS.
+2. density-connected: a point p is density connected to a point q if there is a point o such that both, p and q are density-reachable from o.
+
+The algorithm visits all points once and for each p aggregates all density-reachable points according to the parameters EPS and MinPts. 
+
+MinPts defines the minimum number of points that a cluster should contain, otherwise the group is considered as noise. 
+
+EPS is a parameter that defines the maximum allowed distance between two density-reachable points. 
+
+By projecting the clusters into the image space, we generate the candidates for detection (see Figure 3a).
+
+
+
 
 ### 2.1 Definition 
 
@@ -31,20 +53,9 @@ creates clusters by grouping data points that are within some threshold **distan
 
 This process generates a list of points for each detected object.
 
----
-
-## 3. Clustering
-
-비 지면 포인트들을 그룹화
-
-> 상황에 따라 지표면에서의 높이가 2m 이하인 것들만 Clustering 대상으로 삼기도 한다. (사람은 일반적으로 2m 이하 )
-
-### 3.1 A range search algorithm based on the euclidean distance
-
-가정 :  dense points represents the same object
 
 
-### 3.2 CCL(Connected Component Labeling)
+## 3 CCL(Connected Component Labeling)
 
 CCL 알고리즘은 이미지를 일정한 구역들로 나누고 인접한 구역들끼리의 유사성을 판단하여 같은 label로 묶음
 - OpenCV에 구현되어 있음??
@@ -58,3 +69,13 @@ CCL 알고리즘은 이미지를 일정한 구역들로 나누고 인접한 구�
 ```
 [8] H. Himmelsbach, Felix v. Hundelshausen and H.-J. Wuensche, “Fast Segmentation of 3D Point Clouds for Ground Vehicles,” Intelligent Vehicles Symposium, San Diego, CA, USA, June 2010.
 ```
+---
+
+## 9. etc
+
+비 지면 포인트들을 그룹화 
+
+> 상황에 따라 지표면에서의 높이가 2m 이하인 것들만 Clustering 대상으로 삼기도 한다. (사람은 일반적으로 2m 이하 )
+
+
+
