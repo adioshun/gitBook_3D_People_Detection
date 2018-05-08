@@ -73,6 +73,3 @@
 
 ## 8. Research Group / Conference 
 
-
-
-- A Survey of Human-Sensing: Methods for Detecting Presence, Count, Location, Track, and Identity, THIAGO TEIXEIRA, Yale University,2010
