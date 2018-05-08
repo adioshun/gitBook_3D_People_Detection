@@ -27,12 +27,28 @@ Yang et al. [5] proposed an **iterative bilateral filtering method** for enhanci
 
 - The authors also compared their approach with MRF, showing that this method allows for sub-pixel accuracy. 
 
+```
+[5] Q. Yang, R. Yang, J. Davis, and D. Nist´er. Spatial-depth super resolution for range images. In CVPR, 2007.
+```
+
 Andreasson et al. [6] compared **five different interpolation schemes** with the MRF method [3] and summarized four different metrics for confidence measures of interpolated range data. (5개의 일반적 방식이 뭔지 참고 필요)
 - 가정사항 : The assumption in their approach is similar to that of the MRF method which uses color similarity as an indication of depth similarity. 
 
+```
+[6] H. Andreasson, R. Triebel, and A. J. Lilienthal. Noniterative Vision-based Interpolation of 3D Laser Scans, volume 76 of Studies in Computational Intelligence, pages 83–90. Springer, Germany, Aug 14 2007.
+```
+
 In [8] points are projected onto segmented color images, and bilinear interpolation is used to compute the depth value of the grid samples that belong to the same region. 
 
+```
+[8] V. Garro, C. Dal Mutto, P. Zanuttigh, and G. M. Cortelazzo. A novel interpolation scheme for range data with side information. In Proc. of CVMP Conf., London, UK, November
+```
+
 [7] addresses the problem of upsampling range data in dynamic environments based on a Gaussian framework.
+
+```
+[7] Dolson, J.; Jongmin Baek; Plagemann, C.; Thrun, S.Upsampling range data in dynamic environments. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2010.
+```
 
 
 슈퍼 리솔루션 방법 이요 `There is some work that does super resolution from depth data only. `
