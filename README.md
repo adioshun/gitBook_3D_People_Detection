@@ -26,10 +26,12 @@
 
 - A New Upsampling Method for Mobile LiDAR Data, Ruisheng Wang, Jeff Bach, Jane Macfarlane, NAVTEQ Corporation
 - Upsampling Range Data in Dynamic Environments, Jennifer Dolson
-
-
+- LidarBoost: Depth Superresolution for ToF 3D Shape Scanning, Sebastian Schuon(스탠포드)
+- [Semantically Guided Depth Upsampling](https://arxiv.org/abs/1608.00753), Nick Schneider, 2016
 
 ### 2.4 Classification 
+
+- Deep Semantic Classification for 3D LiDAR Data, Ayush Dewan
 
 
 ## 3. Article (Post, blog, etc.)
@@ -48,10 +50,9 @@
 
 
 
-- Interpolation of Lidar Point Clouds 
+- [Interpolation of Lidar Point Clouds - Accuracy Assessment for Diverse Grid Sizes](https://www.gim-international.com/content/article/interpolation-of-lidar-point-clouds): Gabriele Gernero, University of Turin, Italy, 2014 
 
-Accuracy Assessment for Diverse Grid Sizes
-Gabriele Gernero, University of Turin, Italy 
+
 
 
 
