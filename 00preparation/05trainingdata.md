@@ -1,3 +1,80 @@
+# Open Data
+## 1. Lidar
+
+### 1.1 L-CAS 3D Point Cloud People Dataset
+
+- [Lincoln Centre for Autonomous Systems](https://lcas.lincoln.ac.uk/wp/research/data-sets-software/l-cas-3d-point-cloud-people-dataset/)
+- 센서 :  Velodyne VLP-16
+- 수집 데이터 : 영국 링컨 대학교에서 49분간, 28,002 Velodyne scan frames, [[다운로드]](https://lcas.lincoln.ac.uk/owncloud/index.php/s/wu2NILXZ7mzjovS)
+
+- 제공 데이터
+  - Robot Operating System (ROS) rosbag files recording ground truth from the 3D LiDAR, robot odometry, ROS transform tree, as well as a panoramic camera.
+  - Point Cloud Data (PCD) files corresponding to each scan frame, which is the official file format supported by the Point Cloud Library (PCL).
+  - Annotation files in text format, including single-person (pedestrian) labels and human-group (group) labels.
+  - A Qt-based GUI tool for data annotation, providing a semi-automatic labelling function, released as open-source.
+
+> [Annotation tool](https://github.com/lcas/cloud_annotation_tool) 제공
+
+
+## 2. image
+
+[Indoor Multi-Camera Pedestrian Datasets](https://www.tugraz.at/institute/icg/research/team-bischof/lrs/downloads/MultiCam/)
+
+---
+
+
+# 툴 활용 방안
+
+## 1. 3D ANNOTATION TOOL
+
+- annotate objects in a point cloud scene
+- 원래는 it was developed with the aim to annotate the objects of a table
+
+### 1.1 L-CAS Annotation tool
+
+- [깃허브](https://github.com/lcas/cloud_annotation_tool)
+- 개발 환경 : VTK5, Qt4, and PCL1.7 under Ubuntu 14.04.
+- qt4 docker : `docker pull msoares/qt4-dev`
+
+- Prerequisites
+```
+sudo apt-get install libqt4-dev qt4-qmake
+sudo apt-get install libvtk5-dev python-vtk
+sudo apt-get install libpcl-1.7-all-dev # add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl
+```
+
+- Build script
+```
+git clone https://github.com/LCAS/cloud_annotation_tool.git
+cd cloud_annotation_tools
+mkdir build
+cd build
+cmake .. # apt-get install cmake
+make
+```
+
+에러 #1 : libGL error: failed to load driver: swrast -> [nvidia 드라이버 재설치](https://github.com/adioshun/System_Setup/wiki/4_CUDA_CuDNN-Setup#%EC%B0%B8%EA%B3%A0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98)
+
+에러 #2 : Xlib: extension "NV-GLX" missing on display "localhost:10.0".-> remove the nouveau module `sudo apt-get --purge remove xserver-xorg-video-nouveau`
+
+
+## 2. 시뮬레이터 툴
+
+### 2.1 Velodyne Simulator
+
+- [Velodyne Simulator](https://github.com/LCAS/velodyne_simulator)
+
+
+## 9. IDEA
+
+- [People font](https://flowingdata.com/2018/02/09/people-font/)를 학습용 데이터로 사용하는것은 어떨까?
+
+
+---
+
+# 업체 
+
+
 ![image](https://user-images.githubusercontent.com/17797922/39740494-c7ecef8a-52d0-11e8-9c18-7de1aae07b69.png)
 
 
@@ -48,38 +125,3 @@
 - 강남삼성사옥 건너편 강남역 2번출구 메리츠타워 16층입니다
 
 
-
-
-# 툴 활용 방안
-
-### 3D ANNOTATION TOOL
-
-- annotate objects in a point cloud scene
-- 원래는 it was developed with the aim to annotate the objects of a table
-
-### L-CAS Annotation tool
-
-- [깃허브](https://github.com/lcas/cloud_annotation_tool)
-- 개발 환경 :  VTK5, Qt4, and PCL1.7 under Ubuntu 14.04.
-  - qt4 docker : `docker pull msoares/qt4-dev`
-
-- Prerequisites
-```
-sudo apt-get install libqt4-dev qt4-qmake
-sudo apt-get install libvtk5-dev python-vtk
-sudo apt-get install libpcl-1.7-all-dev # add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl
-```
-
-- Build script
-```
-git clone https://github.com/LCAS/cloud_annotation_tool.git
-cd cloud_annotation_tools
-mkdir build
-cd build
-cmake .. # apt-get install cmake
-make
-```
-
-에러 #1 : libGL error: failed to load driver: swrast -> [nvidia 드라이버 재설치](https://github.com/adioshun/System_Setup/wiki/4_CUDA_CuDNN-Setup#%EC%B0%B8%EA%B3%A0-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98)
-
-에러 #2 : Xlib:  extension "NV-GLX" missing on display "localhost:10.0".-> remove the nouveau module `sudo apt-get --purge remove xserver-xorg-video-nouveau`
