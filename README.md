@@ -24,11 +24,14 @@
 
 ### 2.3 Upsampling
 
-- A New Upsampling Method for Mobile LiDAR Data, Ruisheng Wang, Jeff Bach, Jane Macfarlane, NAVTEQ Corporation
+
+- ~~A New Upsampling Method for Mobile LiDAR Data~~, Ruisheng Wang, Jeff Bach, Jane Macfarlane, NAVTEQ Corporation
     - 카메라 + Lidar연계, upsample mobile LiDAR data using panoramic images
+
 
 - Upsampling Range Data in Dynamic Environments, Jennifer Dolson
     - 카메라 + Lidar 연계 
+
 
 - LidarBoost: Depth Superresolution for ToF 3D Shape Scanning, Sebastian Schuon(스탠포드)
     - 스트레오 카메라활용 combines several low resolution noisy depth images of a static scene from slightly displaced viewpoints, and merges them into a high-resolution depth image
