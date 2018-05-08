@@ -25,9 +25,17 @@
 ### 2.3 Upsampling
 
 - A New Upsampling Method for Mobile LiDAR Data, Ruisheng Wang, Jeff Bach, Jane Macfarlane, NAVTEQ Corporation
+    - 카메라 + Lidar연계, upsample mobile LiDAR data using panoramic images
+
 - Upsampling Range Data in Dynamic Environments, Jennifer Dolson
+    - 카메라 + Lidar 연계 
+
 - LidarBoost: Depth Superresolution for ToF 3D Shape Scanning, Sebastian Schuon(스탠포드)
+    - 스트레오 카메라활용 combines several low resolution noisy depth images of a static scene from slightly displaced viewpoints, and merges them into a high-resolution depth image
+
+
 - [Semantically Guided Depth Upsampling](https://arxiv.org/abs/1608.00753), Nick Schneider, 2016
+    - 이지미 정보 활용, Lidar 업샘플링 기법 upsampling of sparse depth(Lidar) data, guided by high-resolution **imagery**.
 
 ### 2.4 Classification 
 
@@ -48,9 +56,6 @@
 
 ### 2.3 Upsampling
 
-
-
-- [Interpolation of Lidar Point Clouds - Accuracy Assessment for Diverse Grid Sizes](https://www.gim-international.com/content/article/interpolation-of-lidar-point-clouds): Gabriele Gernero, University of Turin, Italy, 2014 
 
 
 
