@@ -9,6 +9,7 @@
 * [20\_Clustering](20clustering.md)
   * 21\_EuclideanClustering
 * [30\_Upsampling](30upsampling.md)
+  * [31\_Tracking](30upsampling/31tracking.md)
 * [40\_Classification](40classification.md)
 * [80\_Paper](80paper.md)
 * [90\_References](90references.md)
