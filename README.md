@@ -1,5 +1,10 @@
 # 3D People Detection 
 
+
+![](https://i.imgur.com/rZiLqLR.png)
+> 출처 : [Object detection in 3D point clouds](https://www.mi.fu-berlin.de/inf/groups/ag-ki/Theses/Completed-theses/Master_Diploma-theses/2016/Damm/Master-Damm.pdf)
+
+
 ## 1. List
 
 ### 1.0 General 
@@ -53,6 +58,7 @@
 
 - [LiDAR 센서 정보를 활용한 데이터 마이닝 기법 기반의 수상함정 표적 식별기법 제안](http://www.dbpia.co.kr/Journal/ArticleDetail/NODE07207161): 2017, 엄준호
 
+[A General Purpose Feature Extractor for Light Detection and Ranging Data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3230992/): 2010
 
 ### 2.5 eXtension (SLAM)
 
