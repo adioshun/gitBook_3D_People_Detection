@@ -6,6 +6,8 @@
 ### 1.1 Downsampling
 ### 1.2 Clustering
 ### 1.3 Upsampling
+### 1.4 Classification 
+
 
 
 
@@ -77,6 +79,17 @@
 
 
 ## 7. Implementation (Project)
+
+
+### 7.0 General 
+### 7.1 Downsampling
+### 7.2 Clustering
+### 7.3 Upsampling
+### 7.4 Classification 
+
+- ROS **obstacle detection** for 3D point clouds using a height map algorithm
+    - [ROS velodyne_height_map](http://wiki.ros.org/velodyne_height_map)
+    - [깃허브](https://github.com/jack-oquin/velodyne_height_map)
 
 
 ## 8. Research Group / Conference 
