@@ -16,6 +16,13 @@
 > [Annotation tool](https://github.com/lcas/cloud_annotation_tool) 제공
 
 
+### 1.2 Stanford Track Collection
+
+- about 1.3 million labeled point clouds in about 14,000 tracks recorded from an autonomous vehicle 
+
+
+
+
 ## 2. image
 
 [Indoor Multi-Camera Pedestrian Datasets](https://www.tugraz.at/institute/icg/research/team-bischof/lrs/downloads/MultiCam/)
