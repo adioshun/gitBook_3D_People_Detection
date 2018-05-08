@@ -19,6 +19,9 @@
 
 - A Survey of Human-Sensing: Methods for Detecting Presence, Count, Location, Track, and Identity, THIAGO TEIXEIRA, Yale University,2010
 
+- [Ten Years of Pedestrian Detection,What Have We Learned?](https://arxiv.org/pdf/1411.4304.pdf): arXiv2014, Camera기반 탐지 기법 서베이 논문
+
+
 ### 2.1 Downsampling
 
 
@@ -45,6 +48,24 @@
 ### 2.4 Classification 
 
 - Deep Semantic Classification for 3D LiDAR Data, Ayush Dewan
+
+- [3D Object Recognition based on Correspondence Grouping](http://www.pointclouds.org/documentation/tutorials/correspondence_grouping.php#correspondence-grouping): This tutorial aims at explaining how to perform 3D Object Recognition based on the pcl_recognition module.
+
+- [LiDAR 센서 정보를 활용한 데이터 마이닝 기법 기반의 수상함정 표적 식별기법 제안](http://www.dbpia.co.kr/Journal/ArticleDetail/NODE07207161): 2017, 엄준호
+
+
+### 2.5 eXtension (SLAM)
+
+- [loam_velodyne](https://github.com/laboshinl/loam_velodyne):  ROS Indigo and Velodyne VLP16
+
+- Multi-view point cloud fusion for LiDAR based cooperative environment detection: B. Jaehn, P. Lindner, and G. Wanielik, 2015
+
+- 다중 저채널 라이다와 카메라의 센서 융합에 의한 차량 객체 검출 알고리즘
+
+- 무인주행차량을 위한 다수 라이다 칼리브레이션 기술
+
+- 자율주행차량을 위한 두 대의 3D LIDAR 캘리브레이션 방법
+
 
 
 ## 3. Article (Post, blog, etc.)

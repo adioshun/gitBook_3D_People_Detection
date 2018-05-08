@@ -10,6 +10,7 @@
   * 21\_EuclideanClustering
 * [30\_Upsampling](30upsampling.md)
 * [40\_Classification](40classification.md)
+* [80\_Paper](80paper.md)
 * [90\_References](90references.md)
   * [91\_PCL\_PCD](91pcl.md)
   * [92\_Visualization](92visualization.md)
