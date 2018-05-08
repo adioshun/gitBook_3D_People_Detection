@@ -71,7 +71,11 @@
 [Lidar Based Object Detection Near Vehicle](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7973852): 2017
 
 
+[Self-supervised online learning of appearance for 3D tracking](https://ieeexplore.ieee.org/abstract/document/8206373/): 2017
+
 [3D Lidar-based Static and Moving Obstacle Detection in Driving Environments:an approach based on voxels and multi-region ground planes](http://home.isr.uc.pt/~cpremebida/files_cp/3D%20Lidar-based%20static%20and%20moving%20obstacle%20detection%20in%20driving%20environments_Preprint.pdf): 2016
+
+[A real-time LIDAR and vision based pedestrian detection system for unmanned ground vehicles](https://ieeexplore.ieee.org/abstract/document/7486580/): 2015
 
 [Object detection in 3D point clouds](https://www.mi.fu-berlin.de/inf/groups/ag-ki/Theses/Completed-theses/Master_Diploma-theses/2016/Damm/Master-Damm.pdf): 2016,
 - 3장 참고
@@ -79,6 +83,8 @@
   - ground Segmentation
   - Clustering
   - Tracking / Kalman filter
+  
+- [Object Classification using CNN-Based Fusion of Vision and LIDAR in Autonomous Vehicle Environment](https://ieeexplore.ieee.org/document/8331162/#full-text-section): 2018
 
 [Laser-Based Detection and Tracking of Dynamic Objects](http://www.robots.ox.ac.uk/~mobile/Theses/WangThesis.pdf): 2014, 옥스포드, 183p
 
