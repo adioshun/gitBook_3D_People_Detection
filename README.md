@@ -39,6 +39,7 @@
 
 ### 2.3 Upsampling
 
+- [LiDAR Based Real Time Multiple Vehicle Detection and Tracking](https://waset.org/publications/10004678/lidar-based-real-time-multiple-vehicle-detection-and-tracking): 3.D Data Association and Tracking
 
 - ~~A New Upsampling Method for Mobile LiDAR Data~~, Ruisheng Wang, Jeff Bach, Jane Macfarlane, NAVTEQ Corporation
     - 카메라 + Lidar연계, upsample mobile LiDAR data using panoramic images
