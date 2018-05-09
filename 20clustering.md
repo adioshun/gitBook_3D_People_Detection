@@ -78,4 +78,39 @@ CCL 알고리즘은 이미지를 일정한 구역들로 나누고 인접한 구�
 > 상황에 따라 지표면에서의 높이가 2m 이하인 것들만 Clustering 대상으로 삼기도 한다. (사람은 일반적으로 2m 이하 )
 
 
+---
 
+# Clustering 
+
+## 1. List
+
+
+
+## 2. Paper
+
+- [OBPCA(Object-Based Point Cloud Analysis)](https://www.tandfonline.com/doi/abs/10.1080/2150704X.2016.1278310?journalCode=trsl20): 엄준호교수, 2017, 필터링, 세그먼트 추출
+기법
+
+
+
+
+## 3. Article (Post, blog, etc.)
+
+
+
+## 3. Tutorial (Series, )
+
+
+
+## 4. Youtube
+
+
+
+## 6. Material (Pdf, ppt)
+
+
+
+## 7. Implementation (Project)
+
+
+## 8. Research Group / Conference 

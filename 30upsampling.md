@@ -57,3 +57,58 @@ In [8] points are projected onto segmented color images, and bilinear interpolat
 
 슈퍼 리솔루션 방법 이요 `There is some work that does super resolution from depth data only. `
 - 기본적이르 이 방식은 다른 뷰 포인트를 가지는 스트레오 카메라의 depth map을 이용한다. `Basically the goal is to enhance the resolution by using depth maps of a static scene that were acquired from slightly displaced viewpoints [12, 13].`
+
+
+--- 
+
+# Upsampling
+
+## 1. List
+
+
+
+## 2. Paper
+
+- [LiDAR Based Real Time Multiple Vehicle Detection and Tracking](https://waset.org/publications/10004678/lidar-based-real-time-multiple-vehicle-detection-and-tracking): 3.D Data Association and Tracking
+
+- ~~A New Upsampling Method for Mobile LiDAR Data~~, Ruisheng Wang, Jeff Bach, Jane Macfarlane, NAVTEQ Corporation
+    - 카메라 + Lidar연계, upsample mobile LiDAR data using panoramic images
+
+
+- Upsampling Range Data in Dynamic Environments, Jennifer Dolson
+    - 카메라 + Lidar 연계 
+
+
+- LidarBoost: Depth Superresolution for ToF 3D Shape Scanning, Sebastian Schuon(스탠포드)
+    - 스트레오 카메라활용 combines several low resolution noisy depth images of a static scene from slightly displaced viewpoints, and merges them into a high-resolution depth image
+
+
+- [Semantically Guided Depth Upsampling](https://arxiv.org/abs/1608.00753), Nick Schneider, 2016
+    - 이지미 정보 활용, Lidar 업샘플링 기법 upsampling of sparse depth(Lidar) data, guided by high-resolution **imagery**.
+
+
+- DenseLidarNet : 카메라 + Lidar, [[깃허브]](https://github.com/345ishaan/DenseLidarNet)
+
+
+
+
+## 3. Article (Post, blog, etc.)
+
+
+
+## 3. Tutorial (Series, )
+
+
+
+## 4. Youtube
+
+
+
+## 6. Material (Pdf, ppt)
+
+
+
+## 7. Implementation (Project)
+
+
+## 8. Research Group / Conference 

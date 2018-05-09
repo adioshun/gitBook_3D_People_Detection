@@ -160,7 +160,7 @@ pcl.save(extracted_outliers, filename)
 ```
 
 
-# 
+# Downsampling
 
 ## 1. List
 
