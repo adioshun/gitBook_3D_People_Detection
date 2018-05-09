@@ -9,6 +9,7 @@
   * [13\_움직이는 물체 탐지](10downsampling/13c6c0-c9c1-c774-b294-bb3c-ccb4-d0d0-c9c0.md)
 * [20\_Clustering](20clustering.md)
   * [21\_EuclideanClustering](20clustering/21euclideanclustering.md)
+  * 22\_CCL
 * [30\_Upsampling](30upsampling.md)
   * [31\_Tracking](30upsampling/31tracking.md)
 * [40\_Classification](40classification.md)

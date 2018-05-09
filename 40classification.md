@@ -93,7 +93,9 @@ RBF (Radial Basis Function) 커널을 사용한 SVM (Support Vector Machine)
 
 - [깊이 영상 기반의 보행자 검증을 적용한 보행자 검출 성능 분석](http://www.dbpia.co.kr/Journal/ArticleDetail/NODE02432113): 2014, DGIST 임영철, 강민
 
-~~[GM-PHD 필터를 이용한 보행자 탐지 성능 향상 방법](http://www.dbpia.co.kr/Journal/ArticleDetail/NODE06594856)~~: 2015, 서울대 서승,
+- ~~[GM-PHD 필터를 이용한 보행자 탐지 성능 향상 방법](http://www.dbpia.co.kr/Journal/ArticleDetail/NODE06594856)~~: 2015, 서울대 서승우
+  - 기반 논문 : [Towards 3D Object Recognition via Classification of Arbitrary Object Tracks](https://cs.stanford.edu/people/teichman/papers/icra2011.pdf): 추천,Alex Teichman 2011
+  - Alex Teichman 박사 학위 논문 : [USER-TRAINABLE OBJECT RECOGNITION SYSTEMS VIA GROUP INDUCTION](http://www.alexteichman.com/files/dissertation.pdf)
 
 ```
 [3] D. Prokhorov, “A Convolutional Learning System for Object Classification in 3-D Lidar Data,” IEEE Trans. Neural Networks, Vol. 21, No. 5, pp. 858-863, May 2010.
