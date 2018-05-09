@@ -50,10 +50,3 @@ http://pointclouds.org/
 Python 에서는 Mayavi를 사용 하시면 Visualization을 조금 더 쉽게 쓸 수 있습니다.
 
 http://docs.enthought.com/mayavi/mayavi/
-
- 
-
-감사합니다.
-
-정우진 드림.
-
