@@ -71,6 +71,10 @@ make
 
 - [Velodyne Simulator](https://github.com/LCAS/velodyne_simulator)
 
+### 2.2 Google 3D Warehouse
+
+[Object Recognition in 3D Point Clouds Using Web Data and Domain Adaptation](https://pdfs.semanticscholar.org/ecc2/ea05877d720b725fb89bc3b0586a51cabdc7.pdf): Lai, K, 2011
+
 
 ## 9. IDEA
 
