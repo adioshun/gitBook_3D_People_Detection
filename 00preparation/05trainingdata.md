@@ -20,6 +20,7 @@
 
 - about 1.3 million labeled point clouds in about 14,000 tracks recorded from an autonomous vehicle 
 
+- The TorontoCity benchmark [12] collects LIDAR data and images including stereo and panoramas from both drones and moving vehicles.
 
 
 ## 2. image
