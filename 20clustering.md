@@ -92,7 +92,7 @@ CCL 알고리즘은 이미지를 일정한 구역들로 나누고 인접한 구�
 기법
 
 
-
+- [Fast Segmentation of 3D Point Clouds for Ground Vehicles](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5548059): Himmelsbach2010,[깃허브_ROS](https://github.com/lorenwel/linefit_ground_segmentation)
 
 ## 3. Article (Post, blog, etc.)
 
