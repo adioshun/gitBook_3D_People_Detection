@@ -79,6 +79,12 @@ CCL 알고리즘은 이미지를 일정한 구역들로 나누고 인접한 구�
 Wang D.Z., Posner I., Newman P., 2012, "What could move? Finding cars, pedestrians and bicyclists in 3D laser data." Robotics and Automation (ICRA), IEEE International Conference.
 ```
 
+## 5. RNNN(Redially Bounded nearest neighbor)
+
+
+```
+Lidar based real time multiple vehicle detection and tracking, Zhongzhen Luo, 2016
+```
 
 ---
 
