@@ -9,6 +9,8 @@
 
 - [Ten Years of Pedestrian Detection,What Have We Learned?](https://arxiv.org/pdf/1411.4304.pdf): arXiv2014, Camera기반 탐지 기법 서베이 논문
 
+$$\sum$$
+
 
 
 ---
