@@ -172,7 +172,7 @@ pcl.save(extracted_outliers, filename)
 
 ## 3. Article (Post, blog, etc.)
 
-
+- [CNN for Very Fast Ground Segmentation in Velodyne LiDAR Data](https://arxiv.org/abs/1709.02128): ICRA 2018
 
 ## 3. Tutorial (Series, )
 

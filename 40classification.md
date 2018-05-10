@@ -43,6 +43,10 @@ RBF (Radial Basis Function) 커널을 사용한 SVM (Support Vector Machine)
 
 ## 2. Paper
 
+- [추천] SqueezeSeg demo: CNN for LiDAR point cloud segmentation : [Youtube](https://www.youtube.com/watch?v=Xyn5Zd3lm6s), [[깃허브]](https://github.com/BichenWuUCB/SqueezeSeg)
+
+- [DepthCN: Vehicle Detection Using 3D-LIDAR and ConvNet](http://home.isr.uc.pt/~cpremebida/files_cp/DepthCN_preprint.pdf)
+
 - Deep Semantic Classification for 3D LiDAR Data, Ayush Dewan
 
 - [3D Object Recognition based on Correspondence Grouping](http://www.pointclouds.org/documentation/tutorials/correspondence_grouping.php#correspondence-grouping): This tutorial aims at explaining how to perform 3D Object Recognition based on the pcl_recognition module.

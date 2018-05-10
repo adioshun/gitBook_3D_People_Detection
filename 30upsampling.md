@@ -89,7 +89,7 @@ In [8] points are projected onto segmented color images, and bilinear interpolat
 
 - DenseLidarNet : 카메라 + Lidar, [[깃허브]](https://github.com/345ishaan/DenseLidarNet)
 
-
+- [Extended Object Tracking: Introduction, Overview and Applications](https://arxiv.org/abs/1604.00970): arXiv2017
 
 
 ## 3. Article (Post, blog, etc.)
