@@ -69,6 +69,17 @@ CCL 알고리즘은 이미지를 일정한 구역들로 나누고 인접한 구�
 ```
 [8] H. Himmelsbach, Felix v. Hundelshausen and H.-J. Wuensche, “Fast Segmentation of 3D Point Clouds for Ground Vehicles,” Intelligent Vehicles Symposium, San Diego, CA, USA, June 2010.
 ```
+
+
+## 4. EMST(Euclidean Minimum Spanning Tree) 
+
+> 레이저스캐너 기반 도심 도로 환경 차량 인지/추적 알고리즘 개발, 김선욱, 서울대, 2017
+
+```
+Wang D.Z., Posner I., Newman P., 2012, "What could move? Finding cars, pedestrians and bicyclists in 3D laser data." Robotics and Automation (ICRA), IEEE International Conference.
+```
+
+
 ---
 
 ## 9. etc
@@ -93,6 +104,8 @@ CCL 알고리즘은 이미지를 일정한 구역들로 나누고 인접한 구�
 
 
 - [Fast Segmentation of 3D Point Clouds for Ground Vehicles](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5548059): Himmelsbach2010,[깃허브_ROS](https://github.com/lorenwel/linefit_ground_segmentation)
+
+- 레이저스캐너 기반 도심 도로 환경 차량 인지/추적 알고리즘 개발: 서울대 김선욱 2017, seonwook2017surrounding
 
 ## 3. Article (Post, blog, etc.)
 
