@@ -91,6 +91,7 @@ In [8] points are projected onto segmented color images, and bilinear interpolat
 
 - [Extended Object Tracking: Introduction, Overview and Applications](https://arxiv.org/abs/1604.00970): arXiv2017
 
+- [3D-LIDAR Multi Object Tracking for Autonomous Driving](https://repository.tudelft.nl/islandora/object/uuid%3Af536b829-42ae-41d5-968d-13bbaa4ec736): 석사 학위 2017
 
 ## 3. Article (Post, blog, etc.)
 
