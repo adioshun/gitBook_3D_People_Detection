@@ -93,6 +93,8 @@ In [8] points are projected onto segmented color images, and bilinear interpolat
 
 - [3D-LIDAR Multi Object Tracking for Autonomous Driving](https://repository.tudelft.nl/islandora/object/uuid%3Af536b829-42ae-41d5-968d-13bbaa4ec736): 석사 학위 2017
 
+- [Robust Real-Time Tracking Combining 3D Shape, Color, and Motion](http://davheld.github.io/DavidHeld_files/ijrr_tracking.pdf): 2015, 28page
+
 ## 3. Article (Post, blog, etc.)
 
 
