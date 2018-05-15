@@ -95,6 +95,7 @@ In [8] points are projected onto segmented color images, and bilinear interpolat
 
 - [Robust Real-Time Tracking Combining 3D Shape, Color, and Motion](http://davheld.github.io/DavidHeld_files/ijrr_tracking.pdf): 2015, 28page
 
+- [Simultaneous Localization, Mapping and Moving Object Tracking](https://pdfs.semanticscholar.org/1c8e/ab35f14011e8394a6f92c7fad1b4cedd764d.pdf): 박사 학위 2004 [47p](http://repository.cmu.edu/cgi/viewcontent.cgi?article=1062&context=robotics)
 
 
 ## 3. Article (Post, blog, etc.)
