@@ -95,7 +95,7 @@ In [8] points are projected onto segmented color images, and bilinear interpolat
 
 - [Robust Real-Time Tracking Combining 3D Shape, Color, and Motion](http://davheld.github.io/DavidHeld_files/ijrr_tracking.pdf): 2015, 28page
 
-- [Moving Object Tracking of Vehicle Detection”: A Concise Review](http://docplayer.net/16497156-Moving-object-tracking-of-vehicle-detection-a-concise-review.html)
+
 
 ## 3. Article (Post, blog, etc.)
 
@@ -129,3 +129,14 @@ In [8] points are projected onto segmented color images, and bilinear interpolat
 - [A Survey on Object Detection and Tracking Methods](https://pdfs.semanticscholar.org/25a6/c5dff9a7019475daa81cd5a7f1f2dcdb5cf1.pdf): 20147
 
 - [A Review of Object Detection and Tracking Methods](http://www.ijaerd.com/papers/finished_papers/A%20Review%20of%20Object%20Detection%20and%20Tracking%20Methods-IJAERDV04I1045913.pdf):2017
+
+- [Moving Object Tracking of Vehicle Detection”: A Concise Review](http://docplayer.net/16497156-Moving-object-tracking-of-vehicle-detection-a-concise-review.html): 2015
+    - Tracking Methods
+        - Region-based tracking methods
+        - contour tracking methods
+        - 3D Model based tracking methods
+        - Feature based tracking methods
+        - Color and Pattern based tracking methods
+    
+
+
