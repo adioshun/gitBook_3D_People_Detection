@@ -119,3 +119,13 @@ In [8] points are projected onto segmented color images, and bilinear interpolat
 
 
 ## 8. Research Group / Conference 
+
+--- 
+
+이미지 기반 트래킹 
+
+- [A Review on Object Detection and Tracking Methods](https://ijrest.net/downloads/volume-2/issue-1/pid-21201506.pdf): 2015
+
+- [A Survey on Object Detection and Tracking Methods](https://pdfs.semanticscholar.org/25a6/c5dff9a7019475daa81cd5a7f1f2dcdb5cf1.pdf): 20147
+
+- [A Review of Object Detection and Tracking Methods](http://www.ijaerd.com/papers/finished_papers/A%20Review%20of%20Object%20Detection%20and%20Tracking%20Methods-IJAERDV04I1045913.pdf):2017
