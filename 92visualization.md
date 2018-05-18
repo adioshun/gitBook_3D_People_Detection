@@ -22,18 +22,16 @@
 [Mayavi 홈페이지](http://docs.enthought.com/mayavi/mayavi/)
 
 
-설치 
-- 설치 스크립트 : [Install Mayavi on Ubuntu](https://gist.github.com/ronrest/d778ee5d49c026ccee1dbec6bd5b3988)
-- 패키지 설치 : 
+####### Conda 설치  
     - python2 : `conda install -c anaconda mayavi`
-    - python3 : `- conda install -c clinicalgraphics vtk=7.1.0; pip install mayavi`
+    - python3 : `conda install -c clinicalgraphics vtk=7.1.0; pip install mayavi`
 
 
 > ImportError: Could not import backend for traits 
 > - conda install -c conda-forge pyside=1.2.4 
 > - {OR} conda install pyqt=4
 
-
+###### Pip 설치 
 
 
 ```bash
@@ -42,6 +40,14 @@ python -c "import vtk"
 # cp -r /usr/lib/python2.7/dist-packages/vtk /opt/anaconda3/envs/python2_gpu/lib/python2.7/site-packages/
 pip install mayavi
 import mayavi.mlab as mlab
+
+
+# echo "INSTALLING GUI BACKEND FOR MAYAVI"
+# pip install mayavi[TraitsBackendQt]
+sudo apt-get install build-essential git cmake libqt4-dev libphonon-dev python2.7-dev libxml2-dev libxslt1-dev qtmobility-dev libqtwebkit-dev
+pip install pyside
+
+sudo apt-get install python-pyqt4 for pyqt4
 ```
 
 실행 코드 
