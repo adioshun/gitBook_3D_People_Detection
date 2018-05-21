@@ -51,6 +51,14 @@ pip install pyside
 sudo apt-get install python-pyqt4 for pyqt4
 ```
 
+Test code
+```python
+from mayavi import mlab
+mlab.init_notebook()
+s = mlab.test_plot3d()
+s
+```
+
 실행 코드 
 
 ```python
