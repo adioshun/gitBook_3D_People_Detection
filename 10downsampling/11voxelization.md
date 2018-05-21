@@ -1,4 +1,5 @@
 ![](https://i.imgur.com/giosTpW.png)
+
 ```
 Figure 3.2: Example of a voxel filter.
 Black dots are the centroids of each voxel.
