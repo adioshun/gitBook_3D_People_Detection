@@ -4,11 +4,62 @@
 배경을 제거 하기 위한 작업 (Downsampling의 한 분류??)
 
 ### 2.1 random sample consensus algorithm (RANSAC)
-제거를 위해서 바닥은 평평(`even plane`)하거나, 약간의 경사가 있다고 가정 한다. (`small elevations like curbside`)
+
 ```
-1981 by Martin A. Fischler and Robert C. Bolles [FB81].
+"Random Sample Consensus: A Paradigm for Model Fitting with Application to Image Analysis and Automated Cartography", 1981 by Martin A. Fischler and Robert C. Bolles 
 ```
+
+
+
+|![image](https://user-images.githubusercontent.com/17797922/40406317-353f30fe-5e9b-11e8-827b-9aca87c0ab2c.png)|![image](https://user-images.githubusercontent.com/17797922/40406328-3cb3edac-5e9b-11e8-99f5-742d3df6b718.png)|![image](https://user-images.githubusercontent.com/17797922/40406328-3cb3edac-5e9b-11e8-99f5-742d3df6b718.png)|
+|-|-|-|
+|노이즈 데이터|최소 자승법|RANSAC|
+|![image](https://user-images.githubusercontent.com/17797922/40406340-42ca8232-5e9b-11e8-95c0-1f2e7a85d0f2.png)|![image](https://user-images.githubusercontent.com/17797922/40406348-497adca8-5e9b-11e8-8550-366a32676f33.png)|![image](https://user-images.githubusercontent.com/17797922/40406351-502b341c-5e9b-11e8-96b3-f251ed4a9345.png)|
+|아웃라이어 데이터|최소 자습법(해결 못함)|RANCAS(해결)|
+
+
+
+
+
+
 Modifications of RANSAC : MLESAC algorithm, local optimized RANSAC (LO-RANSAC), randomized RANSAC algorithm (RRANSAC)
+
+
+
+
+
+
+#### A. 기본 동작과정 
+
+1. 최대값이 없도록 c_max = 0으로 초기화작업을 한다.
+2. 무작위로 2점을 뽑는다. (p1, p2) (만약 2차함수면 포물선이기 때문에 3개를 뽑아야 한다.)
+3. 두 점을 지나는 직선 f(x)를 구한다.
+4. 임계값 T를 설정한다.
+5. 구해진 f(x)와 데이터들간의 거리를 구한다. 거리는 $$ r_i = \mid y_i - f(x_i) \mid $$ 같다. 이 거리가 T를 넘지 않는다면 개수를 Counting 하라.
+6. 개수인 C가 c_max와 비교해 더 크다면 현재 f(x)를 저장하고 그렇지 않으면 버린다.
+7. 2~6을 N번 반복한 후 최종 저장된 f(x)를 반환한다.
+8. (선택사항) 최종 f(x)를 지지하는 데이터들에 대해 최소자승법을 적용하여 결과를 refine한다.
+
+
+
+#### B. 파라미터 
+
+- 임계값 T
+
+- 반복수 N 
+
+#### C. 문제점 
+
+- 매번 결과가 달가 질수 있음 
+- 
+
+
+#### D. RANSAC을 이용한 바닥 인식 
+
+
+
+제거를 위해서 바닥은 평평(`even plane`)하거나, 약간의 경사가 있다고 가정 한다. (`small elevations like curbside`)
+
 
 
 > 상세한 내용은 [Object detection in 3D point clouds](https://www.mi.fu-berlin.de/inf/groups/ag-ki/Theses/Completed-theses/Master_Diploma-theses/2016/Damm/Master-Damm.pdf)의 20page참고
@@ -27,3 +78,7 @@ Modifications of RANSAC : MLESAC algorithm, local optimized RANSAC (LO-RANSAC), 
 문에 처리 속도가 빠르지 못한다. 따라서 실시간에는 적합하지 않지만 본논문은 전방에 대해서만 객체 검출을 진행 했고, 또한 근거리는 제외 대상 이고 일반적으로 객체는 높은 곳에 있지 않기 때문에 많은 양의 포인트 클라우드를 제외시킬 수 있어 실시간으로 사용 가능하다.
 
 > 다중 저채널 라이다와 카메라의 센서 융합에 의한 차량 객체 검출 알고리즘
+
+
+### 2.3 IPP
+
