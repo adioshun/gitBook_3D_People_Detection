@@ -14,6 +14,8 @@
 #### A. 정의 
 
 - 무작위로 샘플 데이터들을 뽑은 다음에 최대로 컨센서스가 형성된 녀석을 선택
+- Robust Estimation의 대표적인 알고리즘​
+
 
 #### B. 최소 자승법 Vs. RACSAC
 - 최소자승법(least square method)은 데이터들과의 ∑residual2을 최소화하도록 모델을 찾지만, 
@@ -54,23 +56,28 @@
 
 #### F. 파라미터 
 
-- 임계값 T : inlier와 outlier의 경계
+- 임계값 T : inlier(참인정보)와 outlier(거짓정보)의 경계
 
 - 반복수 N : 샘플링 과정을 몇 번 (N) 반복
 
 #### G. 문제점 
 
 - 매번 결과가 달가 질수 있음 
-- 
+
 
 
 #### H. RANSAC을 이용한 바닥 인식 
 
+- 센서에서 측정한 데이터로부터 벽면과 같은 직선을 특징으로 뽑아내기 위해 RANSAC을 용용
 
+- 지면을 제거하게 되면 각각의 오브젝트 들이 서로 연결되지 않고 떨어지기때문에 segmentation이 쉬워집
 
-제거를 위해서 바닥은 평평(`even plane`)하거나, 약간의 경사가 있다고 가정 한다. (`small elevations like curbside`)
+- 제거를 위해서 바닥은 평평(`even plane`)하거나, 약간의 경사가 있다고 가정 한다. (`small elevations like curbside`)
 
-
+```
+RANSAC 알고리즘을 이용한 지상 라이다 포인트 클라우드의 세그먼테이션, 2009, 정성수 (파라미터 T 구하는법 기술) 
+```
+> [cpp 코드 ](http://blog.daum.net/pg365/242)
 
 > 상세한 내용은 [Object detection in 3D point clouds](https://www.mi.fu-berlin.de/inf/groups/ag-ki/Theses/Completed-theses/Master_Diploma-theses/2016/Damm/Master-Damm.pdf)의 20page참고
 
