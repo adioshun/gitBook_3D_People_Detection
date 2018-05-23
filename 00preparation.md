@@ -9,16 +9,20 @@
 
 ### 1.0 Udacidy 
 
-1. ~~[RoboND-Perception-Exercises](https://github.com/udacity/RoboND-Perception-Exercises)~~
-2. [3D Perception](https://github.com/udacity/RoboND-Perception-Project)
-
-### 1.1 Camisatx
-
-[3D Perception Project](https://github.com/camisatx/RoboticsND/blob/master/projects/perception/README.md): PR2 simulation robot \w RGB-D camera, filtering the point cloud - clustering relevant objects - recognizing objects
+1. ~~[RoboND-Perception-Exercises](https://github.com/udacity/RoboND-Perception-Exercises)~~ : udacity 프로젝트 설명 페이지 
+2. [3D Perception](https://github.com/udacity/RoboND-Perception-Project): udacity 프로젝트 설명 페이지, `pcl_helper.py` 제공
 
 
+### 1.1 [추천] Camisatx 
 
-[RANSAC.py](https://github.com/camisatx/RoboticsND/blob/master/projects/perception/Exercise-1/RANSAC.py)
+[3D Perception Project](https://github.com/camisatx/RoboticsND/blob/master/projects/perception/README.md): PR2 simulation robot \w RGB-D camera, 솔루션 제공 
+- filtering the point cloud : [RANSAC.py](https://github.com/camisatx/RoboticsND/blob/master/projects/perception/Exercise-1/RANSAC.py)
+- clustering relevant objects 
+- recognizing objects
+
+
+
+
 
 
 ## 1.2 Fouliex

@@ -1,78 +1,52 @@
 ## 2. Ground Segmentation
 
 지면 포인트들을 그룹화
-배경을 제거 하기 위한 작업 (Downsampling의 한 분류??)
-
-### 2.1 random sample consensus algorithm (RANSAC)
-
-> 출처 : [RANSAC의 이해와 영상처리 활용(다크 프로그래머)](http://darkpgmr.tistory.com/61)
-
-```
-"Random Sample Consensus: A Paradigm for Model Fitting with Application to Image Analysis and Automated Cartography", 1981 by Martin A. Fischler and Robert C. Bolles 
-```
-
-#### A. 정의 
-
-- 무작위로 샘플 데이터들을 뽑은 다음에 최대로 컨센서스가 형성된 녀석을 선택
-- Robust Estimation의 대표적인 알고리즘​
+배경을 제거 하기 위한 작업 
 
 
-#### B. 최소 자승법 Vs. RACSAC
-- 최소자승법(least square method)은 데이터들과의 ∑residual2을 최소화하도록 모델을 찾지만, 
-- RANSAC은 컨센서스가 최대인, 즉 가장 많은 수의 데이터들로부터 지지를 받는 모델을 선택
-
-|![image](https://user-images.githubusercontent.com/17797922/40406317-353f30fe-5e9b-11e8-827b-9aca87c0ab2c.png)|![image](https://user-images.githubusercontent.com/17797922/40406328-3cb3edac-5e9b-11e8-99f5-742d3df6b718.png)|![image](https://user-images.githubusercontent.com/17797922/40406328-3cb3edac-5e9b-11e8-99f5-742d3df6b718.png)|
-|-|-|-|
-|노이즈 데이터|최소 자승법|RANSAC|
-|![image](https://user-images.githubusercontent.com/17797922/40406340-42ca8232-5e9b-11e8-95c0-1f2e7a85d0f2.png)|![image](https://user-images.githubusercontent.com/17797922/40406348-497adca8-5e9b-11e8-8550-366a32676f33.png)|![image](https://user-images.githubusercontent.com/17797922/40406351-502b341c-5e9b-11e8-96b3-f251ed4a9345.png)|
-|아웃라이어 데이터|최소 자습법(해결 못함)|RANCAS(해결)|
-
-#### C. RANSAC 개선버젼 들 
-
-- MLESAC algorithm
-- Local optimized RANSAC (LO-RANSAC), 
-- randomized RANSAC algorithm (RRANSAC)
-
-####  D. RANSAC의 활용예
-- local feature matching을 이용하여 영상에서 특정 물체를 찾을 때
-- Visual Odometry (인접한 영상프레임에서 카메라 모션을 추정할 때)
-- 위치인식을 위해 scene matching을 수행할 때
-- 물체 추적을 위해 인접한 영상프레임에서 이동체의 모션을 추정할 때
-
-
-
-#### E. 기본 동작과정 
-
-1. 최대값이 없도록 c_max = 0으로 초기화작업을 한다.
-2. 무작위로 2점을 뽑는다. (p1, p2) (만약 2차함수면 포물선이기 때문에 3개를 뽑아야 한다.)
-3. 두 점을 지나는 직선 f(x)를 구한다.
-4. 임계값 T를 설정한다.
-5. 구해진 f(x)와 데이터들간의 거리를 구한다. 거리는 $$ r_i = \mid y_i - f(x_i) \mid $$ 같다. 이 거리가 T를 넘지 않는다면 개수를 Counting 하라.
-6. 개수인 C가 c_max와 비교해 더 크다면 현재 f(x)를 저장하고 그렇지 않으면 버린다.
-7. 2~6을 N번 반복한 후 최종 저장된 f(x)를 반환한다.
-8. (선택사항) 최종 f(x)를 지지하는 데이터들에 대해 최소자승법을 적용하여 결과를 refine한다.
-
-
-
-#### F. 파라미터 
-
-- 임계값 T : inlier(참인정보)와 outlier(거짓정보)의 경계
-
-- 반복수 N : 샘플링 과정을 몇 번 (N) 반복
-
-#### G. 문제점 
-
-- 매번 결과가 달가 질수 있음 
-
-
-
-#### H. RANSAC을 이용한 바닥 인식 
+### 2.1 RANSAC plane filtering
 
 - 센서에서 측정한 데이터로부터 벽면과 같은 직선을 특징으로 뽑아내기 위해 RANSAC을 용용
 
 - 지면을 제거하게 되면 각각의 오브젝트 들이 서로 연결되지 않고 떨어지기때문에 segmentation이 쉬워집
 
 - 제거를 위해서 바닥은 평평(`even plane`)하거나, 약간의 경사가 있다고 가정 한다. (`small elevations like curbside`)
+
+
+The algorithm assumes that all of the data in a dataset is composed of both **inliers** and **outliers**.
+- Inliers can be defined by a particular model with a specific set of parameters.
+- Outliers if that model does not fit then it gets discarded.
+
+By modeling the table as a plane, we can remove it from the point cloud.
+
+
+```python 
+# RANSAC Plane Filtering Code
+def do_ransac_plane_segmentation(pcl_data,pcl_sac_model_plane,pcl_sac_ransac,max_distance):
+    '''
+    Create the segmentation object
+    :param pcl_data: point could data subscriber
+    :param pcl_sac_model_plane: use to determine plane models
+    :param pcl_sac_ransac: RANdom SAmple Consensus
+    :param max_distance: Max distance for apoint to be considered fitting the model
+    :return: segmentation object
+    '''
+    seg = pcl_data.make_segmenter()
+    seg.set_model_type(pcl_sac_model_plane)
+    seg.set_method_type(pcl_sac_ransac)
+    seg.set_distance_threshold(max_distance)
+    return seg
+# Convert ROS msg to PCL data
+cloud = ros_to_pcl(pcl_msg)
+    
+# RANSAC Plane Segmentation
+ransac_segmentation = do_ransac_plane_segmentation(cloud,pcl.SACMODEL_PLANE,pcl.SAC_RANSAC,0.01)
+
+# Extract inliers and outliers
+cloud_table,cloud_objects= extract_cloud_objects_and_cloud_table(cloud,ransac_segmentation )
+```
+
+
 
 ```
 RANSAC 알고리즘을 이용한 지상 라이다 포인트 클라우드의 세그먼테이션, 2009, 정성수 (파라미터 T 구하는법 기술) 
