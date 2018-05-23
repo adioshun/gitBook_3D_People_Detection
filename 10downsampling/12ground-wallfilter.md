@@ -5,11 +5,19 @@
 
 ### 2.1 random sample consensus algorithm (RANSAC)
 
+> 출처 : [RANSAC의 이해와 영상처리 활용(다크 프로그래머)](http://darkpgmr.tistory.com/61)
+
 ```
 "Random Sample Consensus: A Paradigm for Model Fitting with Application to Image Analysis and Automated Cartography", 1981 by Martin A. Fischler and Robert C. Bolles 
 ```
 
+#### A. 정의 
 
+- 무작위로 샘플 데이터들을 뽑은 다음에 최대로 컨센서스가 형성된 녀석을 선택
+
+#### B. 최소 자승법 Vs. RACSAC
+- 최소자승법(least square method)은 데이터들과의 ∑residual2을 최소화하도록 모델을 찾지만, 
+- RANSAC은 컨센서스가 최대인, 즉 가장 많은 수의 데이터들로부터 지지를 받는 모델을 선택
 
 |![image](https://user-images.githubusercontent.com/17797922/40406317-353f30fe-5e9b-11e8-827b-9aca87c0ab2c.png)|![image](https://user-images.githubusercontent.com/17797922/40406328-3cb3edac-5e9b-11e8-99f5-742d3df6b718.png)|![image](https://user-images.githubusercontent.com/17797922/40406328-3cb3edac-5e9b-11e8-99f5-742d3df6b718.png)|
 |-|-|-|
@@ -17,19 +25,21 @@
 |![image](https://user-images.githubusercontent.com/17797922/40406340-42ca8232-5e9b-11e8-95c0-1f2e7a85d0f2.png)|![image](https://user-images.githubusercontent.com/17797922/40406348-497adca8-5e9b-11e8-8550-366a32676f33.png)|![image](https://user-images.githubusercontent.com/17797922/40406351-502b341c-5e9b-11e8-96b3-f251ed4a9345.png)|
 |아웃라이어 데이터|최소 자습법(해결 못함)|RANCAS(해결)|
 
+#### C. RANSAC 개선버젼 들 
+
+- MLESAC algorithm
+- Local optimized RANSAC (LO-RANSAC), 
+- randomized RANSAC algorithm (RRANSAC)
+
+####  D. RANSAC의 활용예
+- local feature matching을 이용하여 영상에서 특정 물체를 찾을 때
+- Visual Odometry (인접한 영상프레임에서 카메라 모션을 추정할 때)
+- 위치인식을 위해 scene matching을 수행할 때
+- 물체 추적을 위해 인접한 영상프레임에서 이동체의 모션을 추정할 때
 
 
 
-
-
-Modifications of RANSAC : MLESAC algorithm, local optimized RANSAC (LO-RANSAC), randomized RANSAC algorithm (RRANSAC)
-
-
-
-
-
-
-#### A. 기본 동작과정 
+#### E. 기본 동작과정 
 
 1. 최대값이 없도록 c_max = 0으로 초기화작업을 한다.
 2. 무작위로 2점을 뽑는다. (p1, p2) (만약 2차함수면 포물선이기 때문에 3개를 뽑아야 한다.)
@@ -42,19 +52,19 @@ Modifications of RANSAC : MLESAC algorithm, local optimized RANSAC (LO-RANSAC), 
 
 
 
-#### B. 파라미터 
+#### F. 파라미터 
 
-- 임계값 T
+- 임계값 T : inlier와 outlier의 경계
 
-- 반복수 N 
+- 반복수 N : 샘플링 과정을 몇 번 (N) 반복
 
-#### C. 문제점 
+#### G. 문제점 
 
 - 매번 결과가 달가 질수 있음 
 - 
 
 
-#### D. RANSAC을 이용한 바닥 인식 
+#### H. RANSAC을 이용한 바닥 인식 
 
 
 
