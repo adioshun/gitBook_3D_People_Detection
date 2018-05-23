@@ -70,8 +70,5 @@ pcl.save(cloud_filtered, filename)
 cloud_filtered = vox.filter()
 filename = 'voxel_downsampled.pcd'
 pcl.save(cloud_filtered, filename)
-
-
-
 ```
 
