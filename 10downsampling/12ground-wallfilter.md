@@ -1,3 +1,5 @@
+# Downsampling
+
 ## 2. Ground Segmentation
 
 지면 포인트들을 그룹화

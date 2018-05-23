@@ -36,3 +36,23 @@ axis_min = 0.33
 axis_max = 1.0
 cloud = do_passthrough(cloud, filter_axis, axis_min, axis_max)    
 ```
+
+
+Mithi 작성 코드 
+
+```python 
+# Returns only the point cloud information at a specific range of a specific axis
+def do_passthrough_filter(point_cloud, name_axis = 'z', min_axis = 0.6, max_axis = 1.1):
+  pass_filter = point_cloud.make_passthrough_filter()
+  pass_filter.set_filter_field_name(name_axis);
+  pass_filter.set_filter_limits(min_axis, max_axis)
+  return pass_filter.filter()
+
+# Load the point cloud in memory
+cloud = pcl.load_XYZRGB('point_clouds/tabletop.pcd')
+
+# Get only information in our region of interest, as we don't care about the other parts
+filtered_cloud = do_passthrough_filter(point_cloud = cloud, 
+                                    name_axis = 'z', min_axis = 0.6, max_axis = 1.1)
+```
+
