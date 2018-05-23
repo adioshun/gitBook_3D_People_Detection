@@ -65,6 +65,7 @@
 ## 1.6 [Nick Hortovanyi's blog](https://hortovanyi.wordpress.com/tag/robond/)
 
 ## 1.6 [Yuchao's blogspot ](http://www.yuchao.us/2017/09/robot-nd-a3-perception.html)
+- [ransac.py](https://github.com/jychstar/NanoDegreeProject/blob/master/RoboND/p3_perception/RANSAC.py)
 
 ## 1.6 [point-cloud-filter](https://github.com/mithi/point-cloud-filter): mithi
 
