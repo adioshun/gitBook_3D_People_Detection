@@ -5,6 +5,15 @@
 
 ### 6.1 Pass Through Filter
 
+- Getting the region of interest 
+- isolate the table and objects
+
+The passthrough filter allows a 3D point cloud to be cropped by specifying an axis with cut-off values along that axis. The region allowed to pass through is often called the region of interest.
+
+The PR2 robot simulation required passthrough filters for both the Y and Z axis (global). This prevented processing values outside the area immediately in front of the robot. For the Y axis, I used a range of -0.4 to 0.4, and for the Z axis, I used a range of 0.61 to 0.9.
+
+
+
 
 ```python 
 # PassThrouh Filter Code

@@ -22,6 +22,15 @@ The algorithm assumes that all of the data in a dataset is composed of both **in
 By modeling the table as a plane, we can remove it from the point cloud.
 
 
+- Segmentation of the table from everything else 
+- to identify the table.
+
+
+Random Sample Consensus (RANSAC) is used to identify points in the dataset that belong to a particular model. It assumes that all of the data in a dataset is composed of both inliers and outliers, where inliers can be defined by a particular model with a specific set of parameters, and outliers don't.
+
+
+
+
 ```python 
 # RANSAC Plane Filtering Code
 def do_ransac_plane_segmentation(pcl_data,pcl_sac_model_plane,pcl_sac_ransac,max_distance):
