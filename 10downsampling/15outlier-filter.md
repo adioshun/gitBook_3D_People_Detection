@@ -4,6 +4,13 @@
 
 ### 5.1 Statistical Outlier Filtering
 
+- Reducing noise 
+
+These outliers are often caused by external factors like dust in the environment, humidity in the air, or presence of various light sources. One such filter is PCL's StatisticalOutlierRemoval filter that computes the distance to each point's neighbors, then calculates a mean distance. Any points whose mean distances are outside a defined interval are removed.
+
+For the PR2 simulation, I found that a mean k value of 20 and a standard deviation threshold of 0.1 provided the optimal outlier filtering. Here is the cloud after performing the outlier removal filter.
+
+
 Statistical Outlier Filtering is use to remove outlieres using number of neighboring points of 10 and standard deviation threshold of 0.001
 
 ```python 

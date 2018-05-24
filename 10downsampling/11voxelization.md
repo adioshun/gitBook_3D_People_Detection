@@ -7,6 +7,14 @@ Left example shows a big voxel size, where all data points are in the same voxel
 Right example is a smaller voxel size, with four centroids.
 ```
 
+A voxel grid filter downsamples the data by taking a spatial average of the points in the cloud confined by each voxel. The set of points which lie within the bounds of a voxel are assigned to that voxel and are statistically combined into one output point.
+
+I used an X, Y, and Z voxel grid filter leaf size of 0.01. This was a good compromise of leaving enough detail while minimizing processing time.
+
+
+
+
+
 
 The input point cloud is segmented in smaller voxels (similar to smaller cube) with a fixed size.
 
