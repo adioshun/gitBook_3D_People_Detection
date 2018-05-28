@@ -38,7 +38,8 @@
 ```bash
 sudo apt-get install vtk6 tcl-vtk python-vtk
 python -c "import vtk"
-# cp -r /usr/lib/python2.7/dist-packages/vtk /opt/anaconda3/envs/python2_gpu/lib/python2.7/site-packages/
+# ImportError: libGLU.so.1: cannot open shared object file: No such file or director
+## -> cp -r /usr/lib/python2.7/dist-packages/vtk /opt/anaconda3/envs/python2_gpu/lib/python2.7/site-packages/
 pip install mayavi
 import mayavi.mlab as mlab
 
