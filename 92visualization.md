@@ -26,14 +26,15 @@
 
 [공식 설치 가이드 /w Jupyter](http://docs.enthought.com/mayavi/mayavi/installation.html#installing-with-pip)
 
+
 ```
-$ pip install mayavi
+# ubuntu 16.04 tested (??)
+$ pip install numpy mayavi
 
 $ pip install PyQt5
 
 $ jupyter nbextension install --py mayavi --user
 $ jupyter nbextension enable --py mayavi --user
-
 ```
 
 ###### Conda 설치  
