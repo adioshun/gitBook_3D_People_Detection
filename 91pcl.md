@@ -163,7 +163,7 @@ fil.filter().to_file("inliers.pcd")
 ```
 
 
-
+> [How to extract depth information from the 3D point cloud data?](https://stackoverflow.com/questions/42430479/how-to-extract-depth-information-from-the-3d-point-cloud-data) : 포인트클라우드에서 depth 계산법 
 
 ---
 
