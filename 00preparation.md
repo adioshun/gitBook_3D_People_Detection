@@ -2,7 +2,7 @@
 
 [Python_PCL API](http://strawlab.github.io/python-pcl/)
 
-
+중요 참고 : [ground_based_rgbd_people_detector.cpp](https://github.com/strawlab/python-pcl/blob/master/examples/official/Applications/ground_based_rgbd_people_detector.txt)
 
 
 ## 1. RoboticsND
