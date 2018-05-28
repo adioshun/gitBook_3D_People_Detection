@@ -11,16 +11,12 @@ A voxel grid filter downsamples the data by taking a spatial average of the poin
 
 I used an X, Y, and Z voxel grid filter leaf size of 0.01. This was a good compromise of leaving enough detail while minimizing processing time.
 
-
-
-
-
-
-The input point cloud is segmented in smaller voxels (similar to smaller cube) with a fixed size.
+The input point cloud is segmented in smaller voxels \(similar to smaller cube\) with a fixed size.
 
 근접한 포인트 들에서만 좋은 성능을 보임 `only works efficiently on nearby data points`
 
 ![](blob:https://imgur.com/c3a955c3-01fe-4850-aff8-8c88f5653b03)
+
 ```
 Figure 3.3: Example for the downsampling quality of a voxel grid filter on a) a tree further afar and b) on a tree nearby.
 The pictures on the left hand side show the input point cloud and the pictures on the right hand side illustrate the output of the voxel grid filter.
@@ -29,9 +25,11 @@ The zoomed in pictures are turned approximately 90 ◦compared to the full pictu
 ```
 
 다운 샘플링 rate는 voxel크기에 depend하다.
-- voxel크기를 0.1m로 잡으면 50%의 포인트 수가 감소 한다. (이건 레이져 수에 따라 다를듯)
+
+* voxel크기를 0.1m로 잡으면 50%의 포인트 수가 감소 한다. \(이건 레이져 수에 따라 다를듯\)
 
 ![](https://i.imgur.com/BMFmPzv.png)
+
 ```
 Figure 3.4: Downsampling rate of voxel filters.
 - Left side shows the quantity of data points using different voxel sizes on the same scenario.
@@ -80,7 +78,7 @@ filename = 'voxel_downsampled.pcd'
 pcl.save(cloud_filtered, filename)
 ```
 
-Mithi 코드 
+Mithi 코드
 
 ```python
 # Returns Downsampled version of a point cloud
@@ -89,4 +87,7 @@ def do_voxel_grid_filter(point_cloud, LEAF_SIZE = 0.01):
   voxel_filter = point_cloud.make_voxel_grid_filter()
   voxel_filter.set_leaf_size(LEAF_SIZE, LEAF_SIZE, LEAF_SIZE) 
   return voxel_filter.filter()
-``` 
+```
+
+
+

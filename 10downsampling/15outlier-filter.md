@@ -1,19 +1,18 @@
-## 5. Outlier 필터 
+## 5. Outlier 필터
 
-- 노이즈 데이터 제거 
+* 노이즈 데이터 제거 
 
 ### 5.1 Statistical Outlier Filtering
 
-- Reducing noise 
+* Reducing noise 
 
 These outliers are often caused by external factors like dust in the environment, humidity in the air, or presence of various light sources. One such filter is PCL's StatisticalOutlierRemoval filter that computes the distance to each point's neighbors, then calculates a mean distance. Any points whose mean distances are outside a defined interval are removed.
 
 For the PR2 simulation, I found that a mean k value of 20 and a standard deviation threshold of 0.1 provided the optimal outlier filtering. Here is the cloud after performing the outlier removal filter.
 
-
 Statistical Outlier Filtering is use to remove outlieres using number of neighboring points of 10 and standard deviation threshold of 0.001
 
-```python 
+```python
 # Statistical Outlier Filtering Code
 
 def do_statistical_outlier_filtering(pcl_data,mean_k,tresh):
@@ -35,8 +34,8 @@ cloud = ros_to_pcl(pcl_msg)
 cloud = do_statistical_outlier_filtering(cloud,10,0.001)
 ```
 
+Mithi 작성 코드
 
-Mithi 작성 코드 
 ```python
 import pcl
 
@@ -62,3 +61,6 @@ pcl.save(noise_filter.filter(), "point_clouds/table_scene_lms400_inliers.pcd")
 noise_filter.set_negative(True)
 pcl.save(noise_filter.filter(), "point_clouds/table_scene_lms400_outliers.pcd")
 ```
+
+
+
