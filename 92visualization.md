@@ -23,6 +23,19 @@
 
 [Plot with Mayavi in Jupyter notebook on Docker for Mac](https://taku-y.github.io/mac-docker-jupyter-mayavi.html)
 
+
+[공식 설치 가이드 /w Jupyter](http://docs.enthought.com/mayavi/mayavi/installation.html#installing-with-pip)
+
+```
+$ pip install mayavi
+
+$ pip install PyQt5
+
+$ jupyter nbextension install --py mayavi --user
+$ jupyter nbextension enable --py mayavi --user
+
+```
+
 ###### Conda 설치  
     - python2 : `conda install -c anaconda mayavi`
     - python3 : `conda install -c clinicalgraphics vtk=7.1.0; pip install mayavi`
