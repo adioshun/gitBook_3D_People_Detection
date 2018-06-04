@@ -17,6 +17,7 @@ The input point cloud is segmented in smaller voxels \(similar to smaller cube\)
 
 ![](blob:https://imgur.com/c3a955c3-01fe-4850-aff8-8c88f5653b03)
 
+
 ```
 Figure 3.3: Example for the downsampling quality of a voxel grid filter on a) a tree further afar and b) on a tree nearby.
 The pictures on the left hand side show the input point cloud and the pictures on the right hand side illustrate the output of the voxel grid filter.
@@ -30,6 +31,7 @@ The zoomed in pictures are turned approximately 90 ◦compared to the full pictu
 
 ![](https://i.imgur.com/BMFmPzv.png)
 
+
 ```
 Figure 3.4: Downsampling rate of voxel filters.
 - Left side shows the quantity of data points using different voxel sizes on the same scenario.
@@ -39,6 +41,7 @@ Figure 3.4: Downsampling rate of voxel filters.
 ```python
 # Import PCL module
 import pcl
+
 '''
 A Voxel Grid filter allows us to down sample the data by taking a spatial average of the points in the could confined by
 each Voxel. We can adjust the sampling size by settings the Voxel size along each dimension. The set of points which lie
@@ -57,6 +60,7 @@ cloud = pcl.load_XYZRGB('tabletop.pcd')
 '''
 Voxel Grid filter
 '''
+
 # Create a VoxelGrid filter object for our input point cloud
 vox = cloud.make_voxel_grid_filter()
 
