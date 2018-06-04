@@ -147,6 +147,7 @@ wget https://raw.github.com/PointCloudLibrary/data/master/tutorials/table_scene_
 
 - 설치가 쉽지만, 느리고 3D를 충분히 표현하지 못한다. [[KITTI Data Demo]](https://github.com/hunjung-lim/awesome-vehicle-datasets/blob/master/vehicle/kitti/KITTI%2BDataset%2BExploration.ipynb)
 
+https://github.com/navoshta/KITTI-Dataset/blob/master/kitti-dataset.ipynb
 
 ```python
 from mpl_toolkits.mplot3d import Axes3D
