@@ -6,7 +6,7 @@
 
 K-means clustering algorithm is able to group data points into n groups based on their distance to randomly chosen centroids. However, K-means clustering requires that you know the number of groups to be clustered, which may not always be the case.
 
-> I have no idea about the **N**, So not suitable for usual case
+> 분류하려는 그룹의 수를 알고 이어야 가능 I have no idea about the **N**, So not suitable for usual case
 
 ## 2. DBSCAN(Density-based spatial cluster of applications with noise)
 
@@ -17,10 +17,12 @@ K-means clustering algorithm is able to group data points into n groups based on
 ```
 
 It is a density-based algorithm designed on the concepts of density reachability and density-connection:
+
 1. density-reachable: a point p is density reachable from a point q if there is a chain of points p1, ..., pn, p1 = p, pn = q such that pi+1 is directly density-reachable from pi. A
 point p is directly density-reachable if the point p is included
 in the area defined by a circle centered on q of radius
 EPS.
+
 2. density-connected: a point p is density connected to a point q if there is a point o such that both, p and q are density-reachable from o.
 
 The algorithm visits all points once and for each p aggregates all density-reachable points according to the parameters EPS and MinPts. 
@@ -105,8 +107,7 @@ Lidar based real time multiple vehicle detection and tracking, Zhongzhen Luo, 20
 
 ## 2. Paper
 
-- [OBPCA(Object-Based Point Cloud Analysis)](https://www.tandfonline.com/doi/abs/10.1080/2150704X.2016.1278310?journalCode=trsl20): 엄준호교수, 2017, 필터링, 세그먼트 추출
-기법
+- [Vehicle detection from airborne LiDAR point clouds based on a decision tree algorithm with horizontal and vertical features](https://www.tandfonline.com/doi/abs/10.1080/2150704X.2016.1278310?journalCode=trsl20): 엄준호교수, 2017, 필터링, 세그먼트 추출, OBPCA(Object-Based Point Cloud Analysis)기법
 
 
 - [Fast Segmentation of 3D Point Clouds for Ground Vehicles](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5548059): Himmelsbach2010,[깃허브_ROS](https://github.com/lorenwel/linefit_ground_segmentation)
