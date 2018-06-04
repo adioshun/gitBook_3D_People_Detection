@@ -44,3 +44,6 @@ def do_euclidean_clustering(white_cloud):
 white_cloud= XYZRGB_to_XYZ(cloud_objects)
 cluster_cloud,cluster_indices = do_euclidean_clustering(white_cloud)
 ```
+
+
+> 중요 : colorlist is a static variable you should define it outside the function getcolorlist, I defined it after if _name == ‘__main‘: get_color_list.color_list = []
