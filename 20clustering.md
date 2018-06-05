@@ -25,9 +25,15 @@
 ## 2. DBSCAN(Density-based spatial cluster of applications with noise)
 
 
-Euclidean clustering, or DBSCAN (Density-Based Spatial Clustering of Application with Noise). You may not know how many clusters to expect, but you do know something about how the points should be clustered (min_samples, max_dist). Each cluster has 3 levels of members: core member, edge member, outlier.
+Euclidean clustering, or DBSCAN. 
 
-> Euclidean clustering 의 한 종류?
+전체 클러스터 수는 모르지만 일부 정보`(min_samples, max_dist)`를 알고 있을때 사용 `You may not know how many clusters to expect, but you do know something about how the points should be clustered (min_samples, max_dist). `
+
+Each cluster has 3 levels of members: 
+- core member, 
+- edge member, 
+- outlier.
+
 
 ```
 [3] M. Ester, H.-P. Kriegel, J. Sander, X. Xu, and others. A density-based algorithm for discovering clusters in large spatial databases with noise. In Kdd, volume 96, pages 226–231, 1996.
