@@ -4,7 +4,7 @@
 
 참고자료 : [Clustering Algorithms:K-means and DBSCAN](https://docs.google.com/presentation/d/1o_rTjzkK7_q672rociNBu11R5dEDlACtrWrfR34FQ3s/edit#slide=id.p): ppt, Python코드 포함
 
-
+ 
 ## 1. K-means
 
 정의 : an interative, unsupervised learning algorithm. K-means clustering algorithm is able to group data points into n groups based on their distance to randomly chosen centroids. 
