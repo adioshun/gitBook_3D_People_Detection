@@ -1,9 +1,37 @@
 # Clustering 
 
+> 컴퓨터 비젼 알고리즘으로 2D 이미지 대상 설명임 
+
 ## 2. Connected-component labeling
 
 CCL 알고리즘은 이미지를 일정한 구역들로 나누고 인접한 구역들끼리의 유사성을 판단하여 같은 label로 묶음
-- OpenCV에 구현되어 있음??
+
+인접 기준 : 픽실 기준 
+- 4연결 : 좌우상하
+- 8연결 : 좌우상하 + 각 대각선 
+
+
+
+연결요소라벨링(connected component labeling)는 크게 두가지 알고리즘이 존재
+- 재귀알고리즘
+- 반복알고리즘 
+
+### 2.1 동작 과정 
+
+#### A. 재귀 알고리즘 
+TBD..
+
+#### B. 반복 알고리즘 
+
+절차 
+- 1차(위 - 아래) : 객체에 라벨을 부여하고 라벨에 대응하는 등가표(eqivalent table)를 작성 
+- 2차(왼쪽 - 오른쪽) :등가표를 적당히 조정하고(resolve) 이에 맞추어서 이미지의 객체에 부여하는 라벨 번호도 조정
+
+##### 가. 1차 상세 
+
+
+
+
 
 논문[8]에서는 데카르트 좌표계에서 2차원 격자로 나눠 CCL을 적용
 
@@ -25,4 +53,13 @@ CCL 알고리즘은 이미지를 일정한 구역들로 나누고 인접한 구�
 
 - 코드 : https://www.codeproject.com/Articles/336915/Connected-Component-Labeling-Algorithm
 
+- [[VB.Net 영상처리] 일지 10 : Connected component Labeling....영상 인식의 세번째](http://m.blog.daum.net/shksjy/198?np_nil_b=2): 추천 
 
+
+- Connected Component Labelling
+    - [Pixel neighbourhoods and connectedness](http://aishack.in/tutorials/pixel-neighbourhoods-connectedness/)
+    - [Connected Component Labelling](http://aishack.in/tutorials/connected-component-labelling/)
+    - [Labelling connected components - Example](http://aishack.in/tutorials/labelling-connected-components-example/)
+
+
+- [Connected component labeling](https://blogs.mathworks.com/steve/2007/05/11/connected-component-labeling-part-5/): 매트랩
