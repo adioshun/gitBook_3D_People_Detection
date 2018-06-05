@@ -27,8 +27,25 @@ TBD..
 - 1차(위 - 아래) : 객체에 라벨을 부여하고 라벨에 대응하는 등가표(eqivalent table)를 작성 
 - 2차(왼쪽 - 오른쪽) :등가표를 적당히 조정하고(resolve) 이에 맞추어서 이미지의 객체에 부여하는 라벨 번호도 조정
 
-##### 가. 1차 상세 
+```
+물체가 있는 픽셀을 만나면 위/왼쪽 체크 
 
+-IF 위 AND 왼쪽에 라벨이 없으면
+ - 새 라벨 부여, 등가표 추가
+
+-IF 위 AND 왼쪽에 라벨이 있으면
+ - 같은 번호 : 해당 라벨 부여 
+ - 다른 전호 : 낮은 라벨 부여, 등가표 조정 O
+
+IF 위 OR 왼쪽에 라벨이 있으면 (한쪽만)
+ - 해당 라벨 부여, 등가표 조정 X
+```
+
+|![image](https://user-images.githubusercontent.com/17797922/40970433-6bcba7fa-686f-11e8-806c-31d2c6ca5138.png)|![image](https://user-images.githubusercontent.com/17797922/40970448-7d901b7e-686f-11e8-904e-28e9c49f7849.png)|![image](https://user-images.githubusercontent.com/17797922/40970476-9b0e5a6c-686f-11e8-8482-b505a4e2e841.png)|
+|-|-|-|
+|픽셀(7)의 위(3)/왼쪽(6)에 라벨 없음<br> . 새 라벨`1` 부여 <br>. 등가표 추가|픽셀(9)의 위(5)/왼쪽(8)에 라벨 없음<br> . 새 라벨`2` 부여 <br>. 등가표 추가|픽셀(11,13,14)의 한쪽에 라벨 있음<br> . 해당 라벨 부여 <br>. 등가표 추가 없음|
+|![image](https://user-images.githubusercontent.com/17797922/40970486-a5fbf59c-686f-11e8-973d-e788014ff323.png)|![image](https://user-images.githubusercontent.com/17797922/40970512-b4eb804a-686f-11e8-91f0-f65fb8cadf38.png)||
+|픽셀(15)의 위(10)/왼쪽(14)에 모두 라벨 있음<br> . 가장 작은 라벨 부여 <br>. 등가표 변경(2-1??)|등가표를 보고 2와 1이 같음 파악 <br> 2를 1로 변경 ||
 
 
 
