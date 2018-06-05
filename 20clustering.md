@@ -12,6 +12,16 @@
 제약 : However, K-means clustering requires that you know the number of groups to be clustered, which may not always be the case.
 
 
+차이점 : 
+ K Means나 Hierarchical 클러스터링의 경우 군집간의 거리를 이용하여 클러스터링을 하는 방법인데, 밀도 기반의 클러스터링은 점이 세밀하게 몰려 있어서 밀도가 높은 부분을 클러스터링 하는 방식이다. 
+
+쉽게 설명하면, 어느점을 기준으로 반경 x내에 점이 n개 이상 있으면 하나의 군집으로 인식하는 방식이다.
+
+
+
+출처: http://bcho.tistory.com/1205 [조대협의 블로그]
+
+
 동작과정 
 - Begin by randomly selecting k initial centroids, 
 - then create k clusters by associate each data points with the nearest centroid. 
