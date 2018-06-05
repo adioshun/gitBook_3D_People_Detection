@@ -2,8 +2,7 @@
 
 > [GitBook 코드 모음](https://adioshun.gitbooks.io/pcl/content/pcl/5-clustering.html)
 
-## 1. Euclidean Clustering
-
+## 1. DBSCAN((Density-based spatial clustering of applications with noise) 
 
 Euclidean clustering, or DBSCAN. 
 
