@@ -5,21 +5,20 @@
 참고자료 : [Clustering Algorithms:K-means and DBSCAN](https://docs.google.com/presentation/d/1o_rTjzkK7_q672rociNBu11R5dEDlACtrWrfR34FQ3s/edit#slide=id.p): ppt, Python코드 포함
 
 
+## 1. K-means
+
+정의 : an interative, unsupervised learning algorithm. K-means clustering algorithm is able to group data points into n groups based on their distance to randomly chosen centroids. 
+
+제약 : However, K-means clustering requires that you know the number of groups to be clustered, which may not always be the case.
 
 
+동작과정 
+- Begin by randomly selecting k initial centroids, 
+- then create k clusters by associate each data points with the nearest centroid. 
 
-
-
-
-## 1. ~~K-means~~
-
-K-means clustering algorithm is able to group data points into n groups based on their distance to randomly chosen centroids. However, K-means clustering requires that you know the number of groups to be clustered, which may not always be the case.
+단점 : However, it may fail due to highly overlapping, complex shapes or highly sensitive to random initialization.
 
 > 분류하려는 그룹의 수를 알고 이어야 가능 I have no idea about the **N**, So not suitable for usual case
-
-k-means clustering: an interative, unsupervised learning algorithm. Begin by randomly selecting k initial centroids, then create k clusters by associate each data points with the nearest centroid. However, it may fail due to highly overlapping, complex shapes or highly sensitive to random initialization.
-
-
 
 
 
