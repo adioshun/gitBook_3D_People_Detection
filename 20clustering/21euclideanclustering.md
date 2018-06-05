@@ -1,27 +1,31 @@
 # Clustering
 
-## 1. EuclideanClustering
+## 1. Euclidean Clustering
 
 
 Euclidean clustering, or DBSCAN. 
 
 전체 클러스터 수는 모르지만 일부 정보`(min_samples, max_dist)`를 알고 있을때 사용 `You may not know how many clusters to expect, but you do know something about how the points should be clustered (min_samples, max_dist). `
 
+
+
 Each cluster has 3 levels of members: 
 - core member, 
 - edge member, 
 - outlier.
-
-
 
 차이점 : 
 - K Means나 Hierarchical 클러스터링의 경우 군집간의 거리를 이용하여 클러스터링을 하는 방법인데, 
 - 밀도 기반의 클러스터링은 점이 세밀하게 몰려 있어서 밀도가 높은 부분을 클러스터링 하는 방식이다. 
     - 쉽게 설명하면, 어느점을 기준으로 반경 x내에 점이 n개 이상 있으면 하나의 군집으로 인식하는 방식이다.
 
+###### 예 : minPts = 4, 반경 = epsilon
 
-
-
+|![image](https://user-images.githubusercontent.com/17797922/40961916-f2976c78-68de-11e8-9696-aff088b189ce.png)|![image](https://user-images.githubusercontent.com/17797922/40962055-6e81f6fa-68df-11e8-9617-4846be50bfec.png)|![image](https://user-images.githubusercontent.com/17797922/40962080-7ff69e7c-68df-11e8-8ca7-163465efa6ea.png)|
+|-|-|-|
+|p=코어포인트<br>. 반경안에 점 4개 존재|P2=경계점(Border point)<br>. 반경안에 점 4개 없음<br>. But, Core point에는 속함|P4=Noise Point<br>. 반경안에 점 4개 없음 <br>.And, Core point에 속하지 않음<br>  (어느군집에도 안속함) |
+|![image](https://user-images.githubusercontent.com/17797922/40962067-744f3674-68df-11e8-8602-67df0a739c69.png)|![image](https://user-images.githubusercontent.com/17797922/40962073-7afb11d2-68df-11e8-8b3a-81ad25a242fe.png)|![image](https://user-images.githubusercontent.com/17797922/40961898-e1623212-68de-11e8-8cec-c20eaf8bb93b.png)|
+|P=코어포인트<br> P3 = 코어포인트|두 코어 포인트를 연결하여 <br> 하나의 군집으로 처리|**정리**|
 
 
 
@@ -84,119 +88,4 @@ The k-d tree data structure is used in the Euclidian Clustering algorithm to dec
 ```
 
 
-
---- 
-
-> 중요 : colorlist is a static variable you should define it outside the function getcolorlist, I defined it after if _name == ‘__main‘: get_color_list.color_list = []
-
-```python
-
-# Eucliean Cluster Extraction Code
-def do_euclidean_clustering(white_cloud):
-    '''
-    :param cloud_objects:
-    :return: cluster cloud and cluster indices
-    '''
-    tree = white_cloud.make_kdtree()
-
-    # Create Cluster-Mask Point Cloud to visualize each cluster separately
-    ec = white_cloud.make_EuclideanClusterExtraction()
-    ec.set_ClusterTolerance(0.015)
-    ec.set_MinClusterSize(50)
-    ec.set_MaxClusterSize(20000)
-    ec.set_SearchMethod(tree)
-    cluster_indices = ec.Extract()
-    cluster_color = get_color_list(len(cluster_indices))
-
-    color_cluster_point_list = []
-
-    for j, indices in enumerate(cluster_indices):
-        for i, indice in enumerate(indices):
-            color_cluster_point_list.append([white_cloud[indice][0],
-                                             white_cloud[indice][1],
-                                             white_cloud[indice][2],
-                                             rgb_to_float(cluster_color[j])])
-
-    cluster_cloud = pcl.PointCloud_PointXYZRGB()
-    cluster_cloud.from_list(color_cluster_point_list)
-    return cluster_cloud,cluster_indices
-    
-# Euclidean Clustering
-get_color_list.color_list = []
-white_cloud = pcl.load("sample_table.pcd") #white_cloud= XYZRGB_to_XYZ(cloud_objects)
-white_cloud = XYZRGB_to_XYZ(white_cloud)
-cluster_cloud,cluster_indices = do_euclidean_clustering(white_cloud)
-```
-
-
-> 중요 : colorlist is a static variable you should define it outside the function getcolorlist, I defined it after if _name == ‘__main‘: get_color_list.color_list = []
-
-
----
-
-
-Yuchao's blogspot
-```python
-# Euclidean Clustering
-white_cloud = XYZRGB_to_XYZ(white_cloud) # <type 'pcl._pcl.PointCloud'>
-tree = white_cloud.make_kdtree() # <type 'pcl._pcl.KdTree'>
-ec = white_cloud.make_EuclideanClusterExtraction()
-ec.set_ClusterTolerance(0.02) # for hammer
-ec.set_MinClusterSize(10)
-ec.set_MaxClusterSize(250)
-ec.set_SearchMethod(tree)
-cluster_indices = ec.Extract() # indices for each cluster (a list of lists)
-# Assign a color to each cluster
-cluster_color = get_color_list(len(cluster_indices))
-color_cluster_point_list = []
-for j, indices in enumerate(cluster_indices):
-  for i, indice in enumerate(indices):             
-  color_cluster_point_list.append([white_cloud[indice][0], white_cloud[indice][1],  white_cloud[indice][2], rgb_to_float(cluster_color[j])])
-# Create new cloud containing all clusters, each with unique color
-cluster_cloud = pcl.PointCloud_PointXYZRGB()
-cluster_cloud.from_list(color_cluster_point_list)
-# publish to cloud
-ros_cluster_cloud = pcl_to_ros(cluster_cloud)
-# save to local
-pcl.save(cluster_cloud, 'cluster.pcd')
-```
-
-분리수행
-
-```python
-# Euclidean Clustering
-def euclid_cluster(cloud):
-    white_cloud = XYZRGB_to_XYZ(cloud) # Apply function to convert XYZRGB to XYZ
-    tree = white_cloud.make_kdtree()
-    ec = white_cloud.make_EuclideanClusterExtraction()
-    ec.set_ClusterTolerance(0.015)
-    ec.set_MinClusterSize(20)
-    ec.set_MaxClusterSize(3000)
-    ec.set_SearchMethod(tree)
-    cluster_indices = ec.Extract()
-
-    return cluster_indices, white_cloud
-    
-def cluster_mask(cluster_indices, white_cloud):
-    # Create Cluster-Mask Point Cloud to visualize each cluster separately
-    #Assign a color corresponding to each segmented object in scene
-    cluster_color = get_color_list(len(cluster_indices))
-
-    color_cluster_point_list = []
-
-    for j, indices in enumerate(cluster_indices):
-        for i, indice in enumerate(indices):
-            color_cluster_point_list.append([
-                                            white_cloud[indice][0],
-                                            white_cloud[indice][1],
-                                            white_cloud[indice][2],
-                                            rgb_to_float( cluster_color[j] )
-                                           ])
-
-    #Create new cloud containing all clusters, each with unique color
-    cluster_cloud = pcl.PointCloud_PointXYZRGB()
-    cluster_cloud.from_list(color_cluster_point_list)
-
-    return cluster_cloud
-```
 
