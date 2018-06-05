@@ -40,51 +40,24 @@ Each cluster has 3 levels of members:
 |P=코어포인트<br> P3 = 코어포인트|두 코어 포인트를 연결하여 <br> 하나의 군집으로 처리|**정리**|
 
 
-> 출처 : 조대협, [클러스터링 #3 - DBSCAN (밀도 기반 클러스터링)](http://bcho.tistory.com/1205)
 
 
 
 
+---
+
+## 참고 
+
+- 조대협, [클러스터링 #3 - DBSCAN (밀도 기반 클러스터링)](http://bcho.tistory.com/1205)
 
 
-It is a density-based algorithm designed on the concepts of density reachability and density-connection:
-
-1. density-reachable: a point p is density reachable from a point q if there is a chain of points p1, ..., pn, p1 = p, pn = q such that pi+1 is directly density-reachable from pi. A
-point p is directly density-reachable if the point p is included
-in the area defined by a circle centered on q of radius
-EPS.
-
-2. density-connected: a point p is density connected to a point q if there is a point o such that both, p and q are density-reachable from o.
-
-The algorithm visits all points once and for each p aggregates all density-reachable points according to the parameters EPS and MinPts. 
-
-MinPts defines the minimum number of points that a cluster should contain, otherwise the group is considered as noise. 
-
-EPS is a parameter that defines the maximum allowed distance between two density-reachable points. 
-
-By projecting the clusters into the image space, we generate the candidates for detection (see Figure 3a).
+- M. Ester, H.-P. Kriegel, J. Sander, X. Xu, and others. A density-based algorithm for discovering clusters in large spatial databases with noise. In Kdd, volume 96, pages 226–231, 1996.
 
 
+- [Clustering Algorithms:K-means and DBSCAN](https://docs.google.com/presentation/d/1o_rTjzkK7_q672rociNBu11R5dEDlACtrWrfR34FQ3s/edit#slide=id.p): ppt, Python코드 포함
 
 
-### 2.1 Definition 
-
-creates clusters by grouping data points that are within some threshold **distance from their nearest neighbor**.
-
-
-- pros.: Don't need to know how many clusters to expect in the data. 
-
-- cons.: You do need to know something about the density of the data points being clustered.
-
-
-### 2.2 Process
-
-1. converting the XYZRGB point cloud to a XYZ point cloud, 
-2. making a k-d tree (decreases the computation required), 
-3. preparing the Euclidean clustering function, 
-4. extracting the clusters from the cloud. 
-
-This process generates a list of points for each detected object.
+- RoboND-Perception-Exercises/Exercise-2/ : [Euclidean Clustering with ROS and PCL](https://github.com/udacity/RoboND-Perception-Exercises/tree/master/Exercise-2)
 
 
 
@@ -92,13 +65,6 @@ This process generates a list of points for each detected object.
 
 
 
-To perform Euclidean Clustering, a k-d tree from the 'cloud_objects' point cloud needs to be constructed.
-
-The k-d tree data structure is used in the Euclidian Clustering algorithm to decrease the computational burden of searching for neighboring points. While other efficient algorithms/data structures for nearest neighbor search exist, PCL's Euclidian Clustering algorithm only supports k-d trees.
-
-```
-[3] M. Ester, H.-P. Kriegel, J. Sander, X. Xu, and others. A density-based algorithm for discovering clusters in large spatial databases with noise. In Kdd, volume 96, pages 226–231, 1996.
-```
 
 
 
