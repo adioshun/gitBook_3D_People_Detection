@@ -1,3 +1,7 @@
+# Clustering 
+
+## 2. Connected-component labeling
+
 CCL 알고리즘은 이미지를 일정한 구역들로 나누고 인접한 구역들끼리의 유사성을 판단하여 같은 label로 묶음
 - OpenCV에 구현되어 있음??
 
@@ -7,8 +11,18 @@ CCL 알고리즘은 이미지를 일정한 구역들로 나누고 인접한 구�
 
 > 본 연구에서는 앞서 지면 추출 단계에서 생성된 2차원 극좌표 격자에 CCL을 적용하여 기존 결과를 재사용하는 방법을 취하였다. 센서특성에 더 적합한 방법이며, 재사용성을 이용해 메모리나 연산시간 면에서 더 효과적이다.
 
-```
-[8] H. Himmelsbach, Felix v. Hundelshausen and H.-J. Wuensche, “Fast Segmentation of 3D Point Clouds for Ground Vehicles,” Intelligent Vehicles Symposium, San Diego, CA, USA, June 2010.
-```
+
+
+
+---
+
+## 참고 
+
+- [A Review of World’s Fastest Connected Component Labeling Algorithms: Speed and Energy Estimation](https://hal.inria.fr/hal-01081962/document): 2014
+
+- [8] H. Himmelsbach, Felix v. Hundelshausen and H.-J. Wuensche, “Fast Segmentation of 3D Point Clouds for Ground Vehicles,” Intelligent Vehicles Symposium, San Diego, CA, USA, June 2010.
+
+
+- 코드 : https://www.codeproject.com/Articles/336915/Connected-Component-Labeling-Algorithm
 
 
