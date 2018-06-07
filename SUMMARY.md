@@ -7,7 +7,6 @@
   * [11\_Voxelization](10downsampling/11voxelization.md)
   * [12\_Plane Filter](10downsampling/12ground-wallfilter.md)
   * [13\_움직이는 물체 탐지](10downsampling/13c6c0-c9c1-c774-b294-bb3c-ccb4-d0d0-c9c0.md)
-  * [15\_Noise Filter](10downsampling/15outlier-filter.md)
   * [16\_RoI Filter](10downsampling/16roi-filter.md)
 * [20\_Clustering](20clustering.md)
   * [21\_EuclideanClustering](20clustering/21euclideanclustering.md)

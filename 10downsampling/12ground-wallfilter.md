@@ -30,35 +30,6 @@ Random Sample Consensus (RANSAC) is used to identify points in the dataset that 
 
 
 
-
-```python 
-# RANSAC Plane Filtering Code
-def do_ransac_plane_segmentation(pcl_data,pcl_sac_model_plane,pcl_sac_ransac,max_distance):
-    '''
-    Create the segmentation object
-    :param pcl_data: point could data subscriber
-    :param pcl_sac_model_plane: use to determine plane models
-    :param pcl_sac_ransac: RANdom SAmple Consensus
-    :param max_distance: Max distance for apoint to be considered fitting the model
-    :return: segmentation object
-    '''
-    seg = pcl_data.make_segmenter()
-    seg.set_model_type(pcl_sac_model_plane)
-    seg.set_method_type(pcl_sac_ransac)
-    seg.set_distance_threshold(max_distance)
-    return seg
-# Convert ROS msg to PCL data
-cloud = ros_to_pcl(pcl_msg)
-    
-# RANSAC Plane Segmentation
-ransac_segmentation = do_ransac_plane_segmentation(cloud,pcl.SACMODEL_PLANE,pcl.SAC_RANSAC,0.01)
-
-# Extract inliers and outliers
-cloud_table,cloud_objects= extract_cloud_objects_and_cloud_table(cloud,ransac_segmentation )
-```
-
-
-
 ```
 RANSAC 알고리즘을 이용한 지상 라이다 포인트 클라우드의 세그먼테이션, 2009, 정성수 (파라미터 T 구하는법 기술) 
 ```
