@@ -1,38 +1,12 @@
 # Clustering 
 
 
-To perform Euclidean Clustering, a k-d tree from the 'cloud_objects' point cloud needs to be constructed.
 
-The k-d tree data structure is used in the Euclidian Clustering algorithm to decrease the computational burden of searching for neighboring points. While other efficient algorithms/data structures for nearest neighbor search exist, PCL's Euclidian Clustering algorithm only supports k-d trees.
-
-
- 
 ## 1. K-means
-
-정의 : an interative, unsupervised learning algorithm. K-means clustering algorithm is able to group data points into n groups based on their distance to randomly chosen centroids. 
-
-제약 : However, K-means clustering requires that you know the number of groups to be clustered, which may not always be the case.
-
-
-동작과정 
-- Begin by randomly selecting k initial centroids, 
-- then create k clusters by associate each data points with the nearest centroid. 
-
-단점 : However, it may fail due to highly overlapping, complex shapes or highly sensitive to random initialization.
-
-> 분류하려는 그룹의 수를 알고 이어야 가능 I have no idea about the **N**, So not suitable for usual case
-
-
 
 ## 2. DBSCAN(Density-based spatial cluster of applications with noise)
 
-
-
-
 ## 3 CCL(Connected Component Labeling)
-
-
-
 
 ## 4. EMST(Euclidean Minimum Spanning Tree) 
 
