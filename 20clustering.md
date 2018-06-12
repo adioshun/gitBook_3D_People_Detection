@@ -69,3 +69,30 @@ Lidar based real time multiple vehicle detection and tracking, Zhongzhen Luo, 20
 
 
 ## 8. Research Group / Conference 
+
+
+My best guess from your description is that you have 100 data streams, all providing x,y,z data from different sources?
+What do you mean by 'cluster them'? Do you mean group data with similar x,y,x values? Or do want similar x,y,z values at a 'similar time' - in this case it is simply 4D data, time is just another dimension. Also, do you want hyper-elliptical clusters, or arbitary shapes of connected similairty?
+Considerations:
+You first have to consider what you mean by 'cluster'? What do you define as a cluster?
+You then have to consider how many clusters you want? A fixed number, or an appropriate number based on the data spread or clusters of fixed sizes?
+You then have to consider the importance of outliers - do you want to force them into the nearest custer, discard them or are they actually the most important data points?
+Then consider when you want to cluster? Offline after data collection, on-line during data collection or at discreet time intervals?
+If on-line how do you want the clusters to behave? To grow, move and be created based on all data so far or to fully evolve and allow clusters that are no longer receiving data to 'fade and die out'.
+Depending on your answers to these questions different techniques are more appropriate, e.g.
+Hierarchical - not really any use for anything except small, offline data sets as it takes waaaay too much memory
+Subtractive - offline, finds an appropriate number of clusters, but slow
+k-means - only useful if you have a fixed number of clusters and don't mind data being forced into clusters it doesn't belong in
+DBScan - has a number of variants, offline will find arbitrary shaped clusters
+ELM - online evolving hyper-elliptical clusters
+My techniques:
+DDC - very fast offline approach that will find an appropriate number of clusters
+DDCAR - very fast offline and will find appropriate clusters with no user input whatsoever but is limited to hyper-spherical clusters
+DDCAS - DDC adapted for arbitrary shaped clusters (unpublished as yet so you can't have any source code but I can run it for you)
+CODAS - very fast, online and will find the required number of clusters and clusters of arbitrary shape (unpublished as yet so you can't have any source code but I can run it for you)
+All of these are available for Matlab:
+hierarchical, subtractive and k-means are built in
+an implementation of DBScan is available online, I forget where
+DDC & DDCAR I have almost finished tidying up to a releasable version
+DDCAS & CODAS - I can run for you on test data
+There are also various implementations of other technqieus around including Matlab Central File Exchange
