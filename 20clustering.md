@@ -80,6 +80,7 @@ You then have to consider the importance of outliers - do you want to force them
 Then consider when you want to cluster? Offline after data collection, on-line during data collection or at discreet time intervals?
 If on-line how do you want the clusters to behave? To grow, move and be created based on all data so far or to fully evolve and allow clusters that are no longer receiving data to 'fade and die out'.
 Depending on your answers to these questions different techniques are more appropriate, e.g.
+```
 Hierarchical - not really any use for anything except small, offline data sets as it takes waaaay too much memory
 Subtractive - offline, finds an appropriate number of clusters, but slow
 k-means - only useful if you have a fixed number of clusters and don't mind data being forced into clusters it doesn't belong in
@@ -90,6 +91,8 @@ DDC - very fast offline approach that will find an appropriate number of cluster
 DDCAR - very fast offline and will find appropriate clusters with no user input whatsoever but is limited to hyper-spherical clusters
 DDCAS - DDC adapted for arbitrary shaped clusters (unpublished as yet so you can't have any source code but I can run it for you)
 CODAS - very fast, online and will find the required number of clusters and clusters of arbitrary shape (unpublished as yet so you can't have any source code but I can run it for you)
+```
+
 All of these are available for Matlab:
 hierarchical, subtractive and k-means are built in
 an implementation of DBScan is available online, I forget where
