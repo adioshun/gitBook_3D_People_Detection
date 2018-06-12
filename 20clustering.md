@@ -51,7 +51,7 @@ Lidar based real time multiple vehicle detection and tracking, Zhongzhen Luo, 20
 
 ## 3. Article (Post, blog, etc.)
 
-
+[clustering valuation(군집 모델 평가하기)](http://woolulu.tistory.com/50)
 
 ## 3. Tutorial (Series, )
 
