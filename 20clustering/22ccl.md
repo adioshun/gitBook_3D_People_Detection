@@ -91,3 +91,6 @@ n_components, labels = csgraph.connected_components(adj)
 - [Connected component labeling](https://blogs.mathworks.com/steve/2007/05/11/connected-component-labeling-part-5/): 매트랩
 
 - [Find number of connected components of a k-nearest neighbours graph?](https://stackoverflow.com/questions/36294229/find-number-of-connected-components-of-a-k-nearest-neighbours-graph)
+
+- [3D Connected Component in Cython](
+https://codereview.stackexchange.com/questions/189816/3d-connected-component-in-cython)
