@@ -56,7 +56,16 @@ IF 위 OR 왼쪽에 라벨이 있으면 (한쪽만)
 
 > 본 연구에서는 앞서 지면 추출 단계에서 생성된 2차원 극좌표 격자에 CCL을 적용하여 기존 결과를 재사용하는 방법을 취하였다. 센서특성에 더 적합한 방법이며, 재사용성을 이용해 메모리나 연산시간 면에서 더 효과적이다.
 
+### 코드 
 
+I think you can use scipy's [connected_components](http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.sparse.csgraph.connected_components.html) and scikit-learn's [kneighbors_graph](http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.kneighbors_graph.html) together. Does this produce what you're looking for?
+
+```python
+from sklearn import neighbors
+from scipy.sparse import csgraph
+adj = neighbors.kneighbors_graph(X, N_k)
+n_components, labels = csgraph.connected_components(adj)
+```
 
 
 ---
