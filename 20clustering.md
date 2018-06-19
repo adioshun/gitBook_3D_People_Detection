@@ -99,3 +99,8 @@ an implementation of DBScan is available online, I forget where
 DDC & DDCAR I have almost finished tidying up to a releasable version
 DDCAS & CODAS - I can run for you on test data
 There are also various implementations of other technqieus around including Matlab Central File Exchange
+
+---
+# 비교 방법 
+![](http://scikit-learn.org/stable/_images/sphx_glr_plot_cluster_comparison_001.png)
+[Comparing different clustering algorithms on toy datasets](http://scikit-learn.org/stable/auto_examples/cluster/plot_cluster_comparison.html#sphx-glr-auto-examples-cluster-plot-cluster-comparison-py)
