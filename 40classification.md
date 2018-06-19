@@ -47,6 +47,8 @@ RBF (Radial Basis Function) 커널을 사용한 SVM (Support Vector Machine)
 
 - [추천] SqueezeSeg demo: CNN for LiDAR point cloud segmentation : [Youtube](https://www.youtube.com/watch?v=Xyn5Zd3lm6s), [[깃허브]](https://github.com/BichenWuUCB/SqueezeSeg)
 
+- [Tracking People in 3D Using a Bottom-Up Top-Down Detector](http://www2.informatik.uni-freiburg.de/~spinello/ICRA2011.html): ICRA2011
+
 - [DepthCN: Vehicle Detection Using 3D-LIDAR and ConvNet](http://home.isr.uc.pt/~cpremebida/files_cp/DepthCN_preprint.pdf)
 
 - Deep Semantic Classification for 3D LiDAR Data, Ayush Dewan
