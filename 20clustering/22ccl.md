@@ -80,3 +80,5 @@ IF 위 OR 왼쪽에 라벨이 있으면 (한쪽만)
 
 
 - [Connected component labeling](https://blogs.mathworks.com/steve/2007/05/11/connected-component-labeling-part-5/): 매트랩
+
+- [Find number of connected components of a k-nearest neighbours graph?](https://stackoverflow.com/questions/36294229/find-number-of-connected-components-of-a-k-nearest-neighbours-graph)
