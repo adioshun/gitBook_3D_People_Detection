@@ -32,6 +32,8 @@ RBF (Radial Basis Function) 커널을 사용한 SVM (Support Vector Machine)
 
 ### 5.2 Deep learning based approach
 
+![](https://github.com/BichenWuUCB/SqueezeSeg/raw/master/readme/pr_0005.gif)
+[SqueezeSeg: Convolutional Neural Nets with Recurrent CRF for Real-Time Road-Object Segmentation from 3D LiDAR Point Cloud](https://github.com/BichenWuUCB/SqueezeSeg)
 
 ---
 
