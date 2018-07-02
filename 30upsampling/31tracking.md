@@ -1,3 +1,4 @@
+
 ## 4. Obstacle tracking
 
 vehicle odometry 정보 추가적으로 활용
@@ -89,5 +90,39 @@ False separations 을 제거하기 위하여 군집들을 병합하는 단계를
 하지만 때때로 이런 지연전략이 추적 물체 목록을 비대하게 만들 수 있기 때문에 상대적으로 관측 횟수가 적은 물체에는 더 작은 시간 지연을 부여하여 불필요한 리소스 소모를 줄였다.
 
 ---
+
+## Object Tracking using OpenCV (C++/Python)
+
+> https://www.learnopencv.com/object-tracking-using-opencv-cpp-python/
+
+Tracking 정의 : locating an object in successive frames of a video
+
+
+### OpenCV 3.2에서 지원 하는 Tracker
+- BOOSTING
+- MIL
+- KCF
+- TLD
+- MEDIANFLOW
+- GOTURN
+
+
+
+### Object Tracking관련 아이디어들 
+
+- Dense Optical flow: These algorithms help estimate the motion vector of every pixel in a video frame.
+
+- Sparse optical flow: These algorithms, like the Kanade-Lucas-Tomashi (KLT) feature tracker, track the location of a few feature points in an image.
+
+- Kalman Filtering: A very popular signal processing algorithm used to predict the location of a moving object based on prior motion information. One of the early applications of this algorithm was missile guidance! Also as mentioned here, “the on-board computer that guided the descent of the Apollo 11 lunar module to the moon had a Kalman filter”.
+
+- Meanshift and Camshift: These are algorithms for locating the maxima of a density function. They are also used for tracking.
+
+- Single object trackers: In this class of trackers, the first frame is marked using a rectangle to indicate the location of the object we want to track. The object is then tracked in subsequent frames using the tracking algorithm. In most real life applications, these trackers are used in conjunction with an object detector.
+
+- Multiple object track finding algorithms: In cases when we have a fast object detector, it makes sense to detect multiple objects in each frame and then run a track finding algorithm that identifies which rectangle in one frame corresponds to a rectangle in the next frame.
+
+### Tracking vs Detection
+
 
 
