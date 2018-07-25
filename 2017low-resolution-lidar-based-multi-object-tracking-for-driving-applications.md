@@ -30,7 +30,7 @@ we developed a lidar-based system that uses a Convolutional Neural Network (CNN)
 # 2. Related Work
 
 
-Object Detection in Lidar Point Clouds. 
+## 2.1 Object Detection in Lidar Point Clouds. 
 
 오래된 접근법은 클러스터링 알고리즘을 이용하여 세그멘테이션 후 각 그룹별로 Class를 적용 하는 것이다. `Classic approaches for object detection in lidar point clouds use clustering algorithms to segment the data, assigning the resulting groups to different classes [2, 27, 6, 18]. `
 
@@ -45,4 +45,19 @@ Object Detection in Lidar Point Clouds.
 Vote3D는 이러한 sparse한 포인트 클라우드에 다른 특징 정보를 추가 하여 사용 하였다. `Vote3D [29] uses this second approach and encodes the sparse lidar point cloud with different features. `
     - 결과물에 대하여 서로 다른 크기의 3D 슬라이딩 윈도우를 이용하여 스캔후 SVM을 이용하여 식별하였다. The resulting representation is scanned in a sliding manner with 3D windows of different sizes, and an SVM followed by a voting scheme is used to classify the final candidate windows
 
+## 2.2 Deep Learning for Object Detection on Lidar information. 
 
+초기 접근은 CNN을 바로 적용 하였다. `Some early approaches on using CNNs to detect vehicles over 3D lidar point clouds make use of 3D convolutions [14] or sparse 3D convolutions acting as voting weights for predicting the detection scores [8, 10]. `
+
+하지만, Lidar 포인트클라우드의 특징(고차원, 희박성)으로 인하여 연산 부하가 크다. `However, due to the high dimensionality and sparsity
+of 3D lidar data, deploying them over point clouds implies high computational burden.` 
+
+Another adopted approach is to apply the well know 2D convolution tools over equivalent 2D representations of the 3D point cloud. 
+
+In this way, [15] predicts the objectness of each point as well as vehicle 3D bounding boxes
+by applying a Fully Convolutional Network over a front view representation in
+which each element encodes a ground-measured distance and height of the corresponding
+3D point. The recent evolution of [15] combines RGB images with lidar
+information to generate accurate 3D bounding box proposals, obtaining state of
+the art results in the detection challenge of the Kitti dataset [5]. However, this
+method does not fulfill the lidar-only requirement that we impose in our work.
