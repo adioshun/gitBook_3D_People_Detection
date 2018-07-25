@@ -14,3 +14,8 @@ we developed a lidar-based system that uses a Convolutional Neural Network (CNN)
 최근 딥러닝 방식으로 좋은 성과 보임 `However, recent works [8], [5] are pointing at Deep Learning techniques as powerful tools to extract information from point clouds, expanding their applicability beyond image processing tasks. `
 
 저자는 HDL-64로도 비슷한 연구를 진행 하였음 `In previous works [26], we developed a vehicle lidar-based tracking system that used a Fully Convolutional Network (FCN) to perform per-point data segmentation using a Velodyne HDL64 sensor. `
+
+# 2. Related Work
+
+
+
