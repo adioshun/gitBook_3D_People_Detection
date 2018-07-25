@@ -52,12 +52,11 @@ Vote3D는 이러한 sparse한 포인트 클라우드에 다른 특징 정보를 
 하지만, Lidar 포인트클라우드의 특징(고차원, 희박성)으로 인하여 연산 부하가 크다. `However, due to the high dimensionality and sparsity
 of 3D lidar data, deploying them over point clouds implies high computational burden.` 
 
-Another adopted approach is to apply the well know 2D convolution tools over equivalent 2D representations of the 3D point cloud. 
+또다른 접근법은 3D 포인트 클라우드를 2D representation으로 바꾸어 2D CNN을 적용 한다. `Another adopted approach is to apply the well know 2D convolution tools over equivalent 2D representations of the 3D point cloud. `
 
-In this way, [15] predicts the objectness of each point as well as vehicle 3D bounding boxes
-by applying a Fully Convolutional Network over a front view representation in
-which each element encodes a ground-measured distance and height of the corresponding
-3D point. The recent evolution of [15] combines RGB images with lidar
-information to generate accurate 3D bounding box proposals, obtaining state of
-the art results in the detection challenge of the Kitti dataset [5]. However, this
-method does not fulfill the lidar-only requirement that we impose in our work.
+In this way, [15] predicts the objectness of each point as well as vehicle 3D bounding boxes by applying a Fully Convolutional Network over a front view representation in which each element encodes a ground-measured distance and height of the corresponding
+3D point. 
+
+The recent evolution of [15] combines RGB images with lidar information to generate accurate 3D bounding box proposals, obtaining state of the art results in the detection challenge of the Kitti dataset [5]. 
+
+However, this method does not fulfill the lidar-only requirement that we impose in our work.
