@@ -30,4 +30,19 @@ we developed a lidar-based system that uses a Convolutional Neural Network (CNN)
 # 2. Related Work
 
 
+Object Detection in Lidar Point Clouds. 
+
+오래된 접근법은 클러스터링 알고리즘을 이용하여 세그멘테이션 후 각 그룹별로 Class를 적용 하는 것이다. `Classic approaches for object detection in lidar point clouds use clustering algorithms to segment the data, assigning the resulting groups to different classes [2, 27, 6, 18]. `
+
+또다른 접근법은 사전 정보(environment structure)를 이용하여 세그멘테이션과 글러스터링을 쉽게 하는 것이다. `Other strategies, such as the one used as baseline method in this paper, benefit from prior knowledge of the environment structure to ease the object segmentation and clustering [20, 24]. `
+
+
+3D 복셀은 주변 점들을 그룹핑 하여 연산 부하를 줄이기 위한 용도로 탄생하였다. 복셀의 최상위 부터 그래프를 생성하여 분류 작업을 진행 한다. `3D voxels can be also created to reduce computational costs by grouping sets of neighbor points. Graphs can be later built on top of grouped voxels to classify them in objects [30, 25, 19]. `
+
+
+좀더 최근의 접근법은 spin images, shape models, geometric statistics와 같은 hand-crafted 특징들을 추출 할수 있다. `More recent methods are able to process the point cloud space (raw, or reduced in voxels) to extract hand-crafted features such as spin images, shape models or geometric statistics [3]. `
+
+Vote3D는 이러한 sparse한 포인트 클라우드에 다른 특징 정보를 추가 하여 사용 하였다. `Vote3D [29] uses this second approach and encodes the sparse lidar point cloud with different features. `
+    - 결과물에 대하여 서로 다른 크기의 3D 슬라이딩 윈도우를 이용하여 스캔후 SVM을 이용하여 식별하였다. The resulting representation is scanned in a sliding manner with 3D windows of different sizes, and an SVM followed by a voting scheme is used to classify the final candidate windows
+
 
