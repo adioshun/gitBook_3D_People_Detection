@@ -21,4 +21,5 @@
 * [code](code.md)
   * [ROS\_roi\_filter](code/rosroi-filter.md)
 * [People2D\_realtime people detection in 2D range data](people2drealtime-people-detection-in-2d-range-data.md)
+* [Tracking People in 3D Using a Bottom-Up Top-Down Detector](tracking-people-in-3d-using-a-bottom-up-top-down-detector.md)
 
