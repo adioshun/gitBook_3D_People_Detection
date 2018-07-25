@@ -22,4 +22,6 @@
   * [ROS\_roi\_filter](code/rosroi-filter.md)
 * [People2D\_realtime people detection in 2D range data](people2drealtime-people-detection-in-2d-range-data.md)
 * [Tracking People in 3D Using a Bottom-Up Top-Down Detector](tracking-people-in-3d-using-a-bottom-up-top-down-detector.md)
+* [LiDAR Based Real Time Multiple Vehicle Detection and Tracking](lidar-based-real-time-multiple-vehicle-detection-and-tracking.md)
+* [Laser-Based Detection and Tracking of Dynamic Objects](laser-based-detection-and-tracking-of-dynamic-objects.md)
 
