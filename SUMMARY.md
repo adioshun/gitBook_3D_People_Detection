@@ -24,4 +24,5 @@
 * [Tracking People in 3D Using a Bottom-Up Top-Down Detector](tracking-people-in-3d-using-a-bottom-up-top-down-detector.md)
 * [LiDAR Based Real Time Multiple Vehicle Detection and Tracking](lidar-based-real-time-multiple-vehicle-detection-and-tracking.md)
 * [Laser-Based Detection and Tracking of Dynamic Objects](laser-based-detection-and-tracking-of-dynamic-objects.md)
+* [2017\_Low resolution lidar-based multi-object tracking for driving applications](2017low-resolution-lidar-based-multi-object-tracking-for-driving-applications.md)
 
