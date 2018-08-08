@@ -13,7 +13,6 @@
   * [ref\_칼만필터](https://adioshun.gitbooks.io/deep_drive/content/introfusion.html)
 * [40\_Classification](40classification.md)
   * [41\_Features](40classification/41features.md)
-* [80\_Paper](80paper.md)
 * [90\_References](90references.md)
   * [92\_Visualization](92visualization.md)
   * [95\_RANSAC](95ransac.md)
@@ -21,8 +20,4 @@
 * [code](code.md)
   * [ROS\_roi\_filter](code/rosroi-filter.md)
 * [People2D\_realtime people detection in 2D range data](people2drealtime-people-detection-in-2d-range-data.md)
-* [Tracking People in 3D Using a Bottom-Up Top-Down Detector](tracking-people-in-3d-using-a-bottom-up-top-down-detector.md)
-* [LiDAR Based Real Time Multiple Vehicle Detection and Tracking](lidar-based-real-time-multiple-vehicle-detection-and-tracking.md)
-* [Laser-Based Detection and Tracking of Dynamic Objects](laser-based-detection-and-tracking-of-dynamic-objects.md)
-* [2017\_Low resolution lidar-based multi-object tracking for driving applications](2017low-resolution-lidar-based-multi-object-tracking-for-driving-applications.md)
 
