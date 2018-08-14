@@ -19,5 +19,6 @@
 * [50\_SLAM](50slam.md)
 * [code](code.md)
   * [ROS\_roi\_filter](code/rosroi-filter.md)
+  * [Bird-eye-view](code/bird-eye-view.md)
 * [People2D\_realtime people detection in 2D range data](people2drealtime-people-detection-in-2d-range-data.md)
 
