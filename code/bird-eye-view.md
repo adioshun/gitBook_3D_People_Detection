@@ -3,7 +3,10 @@ http://ronny.rest/blog/post_2017_03_26_lidar_birds_eye/
 
 ```python
 
-from PIL import Image
+from PIL import Image as Image2
+import cv2
+
+
 import numpy as np
 
 # ==============================================================================
@@ -56,54 +59,64 @@ def birds_eye_point_cloud(points,
                     Filename to save the image as.
                     If None, then it just displays the image.
     """
-    x_lidar = points[:, 0]
-    y_lidar = points[:, 1]
-    z_lidar = points[:, 2]
-    # r_lidar = points[:, 3]  # Reflectance
-
-    # INDICES FILTER - of values within the desired rectangle
-    # Note left side is positive y axis in LIDAR coordinates
-    ff = np.logical_and((x_lidar > fwd_range[0]), (x_lidar < fwd_range[1]))
-    ss = np.logical_and((y_lidar > -side_range[1]), (y_lidar < -side_range[0]))
-    indices = np.argwhere(np.logical_and(ff,ss)).flatten()
-
-    # CONVERT TO PIXEL POSITION VALUES - Based on resolution
-    x_img = (-y_lidar[indices]/res).astype(np.int32) # x axis is -y in LIDAR
-    y_img = (x_lidar[indices]/res).astype(np.int32)  # y axis is -x in LIDAR
-                                                     # will be inverted later
-
-    # SHIFT PIXELS TO HAVE MINIMUM BE (0,0)
-    # floor used to prevent issues with -ve vals rounding upwards
-    x_img -= int(np.floor(side_range[0]/res))
-    y_img -= int(np.floor(fwd_range[0]/res))
-
-    # CLIP HEIGHT VALUES - to between min and max heights
-    pixel_values = np.clip(a = z_lidar[indices],
-                           a_min=min_height,
-                           a_max=max_height)
-
-    # RESCALE THE HEIGHT VALUES - to be between the range 0-255
-    pixel_values  = scale_to_255(pixel_values, min=min_height, max=max_height)
-
-    # FILL PIXEL VALUES IN IMAGE ARRAY
-    x_max = int((side_range[1] - side_range[0])/res)
-    y_max = int((fwd_range[1] - fwd_range[0])/res)
-    im = np.zeros([y_max, x_max], dtype=np.uint8)
-    im[-y_img, x_img] = pixel_values # -y because images start from top left
-
-    # Convert from numpy array to a PIL image
-    im = Image.fromarray(im)
-
-    # SAVE THE IMAGE
-    if saveto is not None:
-        im.save(saveto)
+    
+    if points.ndim is 0:
+        print ("Points .ndim is 0")
     else:
-        im.show()
+        x_lidar = points[:, 0]
+        y_lidar = points[:, 1]
+        z_lidar = points[:, 2]
+        # r_lidar = points[:, 3]  # Reflectance
+
+        # INDICES FILTER - of values within the desired rectangle
+        # Note left side is positive y axis in LIDAR coordinates
+        ff = np.logical_and((x_lidar > fwd_range[0]), (x_lidar < fwd_range[1]))
+        ss = np.logical_and((y_lidar > -side_range[1]), (y_lidar < -side_range[0]))
+        indices = np.argwhere(np.logical_and(ff,ss)).flatten()
+
+        # CONVERT TO PIXEL POSITION VALUES - Based on resolution
+        x_img = (-y_lidar[indices]/res).astype(np.int32) # x axis is -y in LIDAR
+        y_img = (x_lidar[indices]/res).astype(np.int32)  # y axis is -x in LIDAR
+                                                        # will be inverted later
+
+        # SHIFT PIXELS TO HAVE MINIMUM BE (0,0)
+        # floor used to prevent issues with -ve vals rounding upwards
+        x_img -= int(np.floor(side_range[0]/res))
+        y_img -= int(np.floor(fwd_range[0]/res))
+
+        # CLIP HEIGHT VALUES - to between min and max heights
+        pixel_values = np.clip(a = z_lidar[indices],
+                            a_min=min_height,
+                            a_max=max_height)
+
+        # RESCALE THE HEIGHT VALUES - to be between the range 0-255
+        pixel_values  = scale_to_255(pixel_values, min=min_height, max=max_height)
+
+        # FILL PIXEL VALUES IN IMAGE ARRAY
+        x_max = int((side_range[1] - side_range[0])/res)
+        y_max = int((fwd_range[1] - fwd_range[0])/res)
+        im = np.zeros([y_max, x_max], dtype=np.uint8)
+        im[-y_img, x_img] = pixel_values # -y because images start from top left
+
+        
+        imgRGB=cv2.cvtColor(im, cv2.COLOR_GRAY2BGR)
+
+        """
+        # Convert from numpy array to a PIL image
+        im2 = Image2.fromarray(im)
+
+        # SAVE THE IMAGE
+        if saveto is not None:
+            im2.save(saveto)
+        else:
+            im2.show()
+        """
+        return imgRGB 
 
 
 ```
 
-
+```
 # View a Square that is 10m on all sides of the car
 birds_eye_point_cloud(lidar, side_range=(-10, 10), fwd_range=(-10, 10), res=0.1, saveto="lidar_pil_01.png")
 
@@ -113,3 +126,26 @@ birds_eye_point_cloud(lidar, side_range=(-10, 10), fwd_range=(0, 20), res=0.1, s
 
 # View a rectangle that is 5m on either side of the car and 20m in front
 birds_eye_point_cloud(lidar, side_range=(-5, 5), fwd_range=(0, 20), res=0.1, saveto="lidar_pil_03.png")
+```
+
+```
+data = np.asarray(input_pcl_xyz) 
+
+
+if data.ndim is 0:
+        print ("data.ndim is 0")
+       
+    else :
+        
+        frame = birds_eye_point_cloud(data, side_range=(-10, 10), fwd_range=(-10, 10), res=0.05, saveto=None)  
+
+
+
+        #bridge = CvBridge()
+        image_pub = rospy.Publisher("image_topic_3",Image, queue_size=10)    
+        image_pub.publish(bridge.cv2_to_imgmsg(frame, "passthrough"))
+
+```
+
+
+
