@@ -70,6 +70,8 @@ RBF (Radial Basis Function) 커널을 사용한 SVM (Support Vector Machine)
 - [Lidar Based Object Detection Near Vehicle](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7973852): 2017
 
 
+- [A Fully Convolutional Network for Semantic Labeling of 3D Point Clouds](https://arxiv.org/pdf/1710.01408.pdf): 2017
+
 - [Self-supervised online learning of appearance for 3D tracking](https://ieeexplore.ieee.org/abstract/document/8206373/): 2017
 
 - [3D Lidar-based Static and Moving Obstacle Detection in Driving Environments:an approach based on voxels and multi-region ground planes](http://home.isr.uc.pt/~cpremebida/files_cp/3D%20Lidar-based%20static%20and%20moving%20obstacle%20detection%20in%20driving%20environments_Preprint.pdf): 2016
