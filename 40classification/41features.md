@@ -37,3 +37,23 @@ P(t) = ax + by + c
 
 5) ICP (Interactive Iterative Closest Point)
 두개의 포인트 클라우드 PCD1, PCD2가 있을 경우, 각 PCD의 특징점 집합을 구해, 서로 위치가 같도록 (서로간의 거리가 가깝도록), 좌표 변환 행렬을 계산해 각 PCD에 적용한다. 그리고, 이 과정을 계산된 거리 편차가 Tolerance이하 일때까지 반복적으로 실행한다.
+
+---
+
+### 3.3 Features (7개)
+
+Our feature vector per cluster consists of 8 different features introduced in the literature, 
+- where f1 and f2 are presented by Premebida et al. [17] and describe the number of points included in a cluster and the minimum distance of the cluster to the sensor. 
+- Navarro-Serment et al. [15] apply a Principal Component Analysis (PCA) to the clusters, which represents f3 to f7. 
+
+Those features are the 3D covariance matrix of a cluster, the normalized moment of inertia tensor, the 2D covariance matrix in different zones (cf. [15]), the normalized 2D histogram for the main plane and the normalized 2D histogram for the secondary plane. 
+
+In another approach, Kidono et al. [11] introduce two additional features. 
+- The first one, the slice feature of a cluster, forms our last feature f8 and aims to differentiate pedestrians from false positives in the shape of trees or poles. 
+    - A cluster is partitioned into slices along the z-axis and for each slice the first and second largest eigenvalue is calculated. 
+    - As the descriptive power of the slice feature decreases over longer distances, only a rough estimate remains in long distances.
+- The other feature introduced by Kidono et al. considers the distribution of the reflection intensities in the cluster. 
+    -Since our LRF is not calibrated wrt. the intensities, this feature could not be integrated.
+
+> Confidence-Based Pedestrian Tracking in Unstructured Environments Using 3D Laser Distance Measurements
+
