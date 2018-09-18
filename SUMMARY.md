@@ -6,6 +6,7 @@
 * [10\_Downsampling](10downsampling.md)
   * [13\_움직이는 물체 탐지](10downsampling/13c6c0-c9c1-c774-b294-bb3c-ccb4-d0d0-c9c0.md)
   * [배경 제거](10downsampling/bc30-acbd-c81c-ac70.md)
+  * [Occupancy\_map](10downsampling/occuoancymap.md)
 * [20\_Clustering](20clustering.md)
   * [21\_EuclideanClustering](20clustering/21euclideanclustering.md)
   * [24\_RegionGrow](20clustering/24regiongrow.md)
