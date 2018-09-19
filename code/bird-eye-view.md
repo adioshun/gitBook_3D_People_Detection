@@ -7,7 +7,7 @@ libvtkproj4-6.2.so.6.2.0에러시
 sudo apt-get install libvtk6-dev
 
 ```
-
+> 파라미터 문제 인지 모르지만 큰 효과 없음 
 
 ---
 
