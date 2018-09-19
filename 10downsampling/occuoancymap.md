@@ -27,4 +27,6 @@
 [코세라강좌 : 3.2.1. Occupancy Grid Map](https://www.coursera.org/lecture/robotics-learning/3-2-1-occupancy-grid-map-0QuFW):6분 27초, 이론 
 
 
+[taogashi/backgroud_subtraction.md](https://gist.github.com/taogashi/3df54bd061e67d526bbb09937814e82a)
+
 [CSE550 숙제: Assignment 2: Sensor Data](https://classes.engineering.wustl.edu/cse550/a02.php)
