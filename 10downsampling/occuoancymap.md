@@ -14,6 +14,8 @@
 [cloud_to_map](https://github.com/jacobhuesman/cloud_to_map): ROS, use of normal vectors to generate an occupancy grid
 
 
+[voxel_grid](http://wiki.ros.org/voxel_grid): ROS
+
 [octomap_server](http://wiki.ros.org/octomap_server): ROS, his will filter redundant points by binning them into a 3d occupancy grid, [홈페이지](https://octomap.github.io/)
 - A. Hornung,. K.M. Wurm, M. Bennewitz, C. Stachniss, and W. Burgard, "OctoMap: An Efficient Probabilistic 3D Mapping Framework Based on Octrees" in Autonomous Robots, 2013
 
