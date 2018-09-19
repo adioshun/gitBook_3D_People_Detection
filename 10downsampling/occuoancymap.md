@@ -46,7 +46,7 @@ extract.filter (*full_cloud);
 full_cloud contains only the difference and that's what you 
 want I guess 
 ```
-
+> [실시간에 적합치 않음, 추가 제안](http://www.pcl-users.org/Background-subtraction-Clustering-person-movement-td4026192.html)
 
 
 [코세라강좌 : 3.2.1. Occupancy Grid Map](https://www.coursera.org/lecture/robotics-learning/3-2-1-occupancy-grid-map-0QuFW):6분 27초, 이론 
