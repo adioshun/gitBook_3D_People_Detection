@@ -14,6 +14,7 @@
 
 [cloud_to_map](https://github.com/jacobhuesman/cloud_to_map): ROS, use of normal vectors to generate an occupancy grid
 
+[volumetric_mapping](https://github.com/ethz-asl/volumetric_mapping): ROS, 3D volumetric (occupancy) maps
 
 [voxel_grid](http://wiki.ros.org/voxel_grid): ROS
 
