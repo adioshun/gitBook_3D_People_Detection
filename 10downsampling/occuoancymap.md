@@ -25,6 +25,29 @@
 
 
 [Subtracting clouds](http://www.pcl-users.org/Subtracting-clouds-td3569049.html)
+```cpp
+Then you can use the following, 
+
+pcl::PointIndices::Ptr fInliers (new pcl::PointIndices); 
+populate fInliers with indices of part_of_full_cloud i.e. 
+fInliers := indices of part_of_full_cloud; 
+
+// Extract fInliers from the input cloud 
+pcl::ExtractIndices<pcl::PointXYZ> extract ; 
+extract.setInputCloud (full_cloud); 
+extract.setIndices (fInliers); 
+//extract.setNegative (false); //Removes part_of_cloud but retain the 
+original full_cloud 
+extract.setNegative (true); // Removes part_of_cloud from full cloud  and 
+keep the rest 
+extract.filter (*full_cloud); 
+
+.... 
+full_cloud contains only the difference and that's what you 
+want I guess 
+```
+
+
 
 [코세라강좌 : 3.2.1. Occupancy Grid Map](https://www.coursera.org/lecture/robotics-learning/3-2-1-occupancy-grid-map-0QuFW):6분 27초, 이론 
 
