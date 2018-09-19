@@ -24,6 +24,8 @@
 [3D-OccupancyGrid-Python](https://github.com/balzer82/3D-OccupancyGrid-Python): [쥬피터](http://nbviewer.jupyter.org/github/balzer82/3D-OccupancyGrid-Python/blob/master/3D-Occupancy-Grid-ibeo-Lux.ipynb)
 
 
+[Subtracting clouds](http://www.pcl-users.org/Subtracting-clouds-td3569049.html)
+
 [코세라강좌 : 3.2.1. Occupancy Grid Map](https://www.coursera.org/lecture/robotics-learning/3-2-1-occupancy-grid-map-0QuFW):6분 27초, 이론 
 
 
