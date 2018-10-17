@@ -57,3 +57,12 @@ In another approach, Kidono et al. [11] introduce two additional features.
 
 > Confidence-Based Pedestrian Tracking in Unstructured Environments Using 3D Laser Distance Measurements
 
+---
+### [PCL/OpenNI tutorial 4: 3D object recognition (descriptors)](http://robotica.unileon.es/index.php/PCL/OpenNI_tutorial_4:_3D_object_recognition_(descriptors))
+
+![image](https://user-images.githubusercontent.com/17797922/47074467-68e8ff80-d235-11e8-9c5c-541cf31ac671.png)
+
+
+
+
+
