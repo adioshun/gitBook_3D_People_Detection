@@ -1,6 +1,14 @@
 # Clustering 
 
+[Octree-based region growing for point cloud segmentation](https://www.researchgate.net/publication/274645446_Octree-based_region_growing_for_point_cloud_segmentation): 2015
+1. Model fitting-based methods
+2. Region growing-based methods
+3. Clustering feature-based methods
 
+
+
+
+---
 
 ## 1. K-means
 
