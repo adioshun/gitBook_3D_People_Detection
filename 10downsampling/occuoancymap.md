@@ -25,27 +25,7 @@
 
 
 [Subtracting clouds](http://www.pcl-users.org/Subtracting-clouds-td3569049.html)
-```cpp
-Then you can use the following, 
 
-pcl::PointIndices::Ptr fInliers (new pcl::PointIndices); 
-populate fInliers with indices of part_of_full_cloud i.e. 
-fInliers := indices of part_of_full_cloud; 
-
-// Extract fInliers from the input cloud 
-pcl::ExtractIndices<pcl::PointXYZ> extract ; 
-extract.setInputCloud (full_cloud); 
-extract.setIndices (fInliers); 
-//extract.setNegative (false); //Removes part_of_cloud but retain the 
-original full_cloud 
-extract.setNegative (true); // Removes part_of_cloud from full cloud  and 
-keep the rest 
-extract.filter (*full_cloud); 
-
-.... 
-full_cloud contains only the difference and that's what you 
-want I guess 
-```
 > [실시간에 적합치 않음, 추가 제안](http://www.pcl-users.org/Background-subtraction-Clustering-person-movement-td4026192.html)
 
 
