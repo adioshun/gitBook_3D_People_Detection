@@ -35,3 +35,10 @@
 [taogashi/backgroud_subtraction.md](https://gist.github.com/taogashi/3df54bd061e67d526bbb09937814e82a)
 
 [CSE550 숙제: Assignment 2: Sensor Data](https://classes.engineering.wustl.edu/cse550/a02.php)
+
+
+## 3D to 2D Projection 
+
+http://wiki.ros.org/velodyne_height_map
+
+https://github.com/hecperleo/velodyne_height_map
