@@ -6,6 +6,25 @@
 3. Clustering feature-based methods
 
 
+## 1. Model fitting-based methods(=parameter-based approach)
+
+
+
+### 1.1 Hough Transform (HT) (Ballard, 1981) 
+
+### 1.2 the Random sample consensus (RANSAC) approach proposed by Fischler and Bolles (1981). 
+
+The HT is used to detect 
+- planes (Vosselman et al., 2004), 
+- cylinders (Tarsha-Kurdi,2007), 
+- spheres (Rabbani and Heuvel, 2005). 
+
+속도/신뢰성 향상을 위해 파라미터 선별시 여러 Step 으로 나누어 진행 `determined the parameters of the objects through several separate steps. `
+
+For example, plane identification employed two steps: 
+- (1) determination of the plane normal vector and 
+- (2) establishment of the distance from the plane to the origin.
+
 
 
 ---
