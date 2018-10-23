@@ -7,8 +7,6 @@
   * [Occupancy\_map](10downsampling/occuoancymap.md)
 * [20\_Clustering](20clustering.md)
   * [Intro\_Clustering](20clustering/introclustering.md)
-  * [21\_EuclideanClustering](20clustering/21euclideanclustering.md)
-  * [24\_RegionGrow](20clustering/24regiongrow.md)
 * [30\_Upsampling](30upsampling.md)
   * [ref\_칼만필터](https://adioshun.gitbooks.io/deep_drive/content/introfusion.html)
 * [40\_Classification](40classification.md)
