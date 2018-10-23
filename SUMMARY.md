@@ -10,11 +10,7 @@
 * [30\_Upsampling](30upsampling.md)
   * [ref\_칼만필터](https://adioshun.gitbooks.io/deep_drive/content/introfusion.html)
 * [40\_Classification](40classification.md)
-  * [41\_Features](40classification/41features.md)
-* [90\_References](90references.md)
-  * [92\_Visualization](92visualization.md)
 * [50\_SLAM](50slam.md)
 * [code](code.md)
-  * [Bird-eye-view](code/bird-eye-view.md)
 * [People2D\_realtime people detection in 2D range data](people2drealtime-people-detection-in-2d-range-data.md)
 
