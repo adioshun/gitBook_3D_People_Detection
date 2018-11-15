@@ -13,9 +13,9 @@
   - Annotation files in text format, including single-person (pedestrian) labels and human-group (group) labels.
   - A Qt-based GUI tool for data annotation, providing a semi-automatic labelling function, released as open-source.
 
-- label data
+#### A. label data
 
-```
+```python
 pedestrian 16.8915 0.282575 0.0424143 16.7578 0.0922886 -0.296726 17.0572 0.498739 0.297738 0
 pedestrian 6.55263 0.582247 0.132658 6.34313 0.284879 -0.561632 6.95758 0.850341 0.822374 0
 pedestrian 7.62397 -0.641525 0.162471 7.3658 -0.872086 -0.67842 7.73205 -0.440035 0.662384 0
@@ -24,13 +24,25 @@ pedestrian -3.31128 -3.02812 -0.0352137 -3.61874 -3.23663 -0.392724 -3.1304 -2.7
 pedestrian 1.13967 -8.59664 0.111699 0.982876 -8.71929 -0.444542 1.29828 -8.34763 0.455323 0
 pedestrian 12.6652 2.21514 0.47063 12.508 2.12521 0.22175 12.7653 2.35142 0.679425 0
 pedestrian 14.9873 0.837819 -0.262016 14.8933 0.72961 -0.264125 15.1031 0.947489 -0.26032 0
+  """
+  Column 1:	category (pedestrian or group)
+  Column 2-4:	centroid (x-y-z)
+  Column 5-7:	minimum bounds (x-y-z)
+  Column 8-10:	maximum bounds (x-y-z)
+  Column 11:	visibility (0 = visible, 1 = partially visible)
+  """
 ```
 
-Column 1:	category (pedestrian or group)
-Column 2-4:	centroid (x-y-z)
-Column 5-7:	minimum bounds (x-y-z)
-Column 8-10:	maximum bounds (x-y-z)
-Column 11:	visibility (0 = visible, 1 = partially visible)
+#### B. LCAS rosbag에서 velodyne_points 토픽 추출 
+
+```bash
+1. $rosbag play -l LCAS_20160523_1200_1218.bag
+2. $rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
+3. $watch 'rostopic list' 로 /velodyne_points 추가됨을 확인 
+4. $rosrun rosbag record -O Lcas_pointcloud.bag /velodyne_points 로 [Lcas_pointcloud.bag]파일 생성
+```
+
+
 
 
 
