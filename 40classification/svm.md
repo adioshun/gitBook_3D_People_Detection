@@ -1,7 +1,7 @@
 
 # Object Recognition with an SVM
 
-> https://www.haidynmcleod.com/3d-robot-perception
+> https://www.haidynmcleod.com/3d-robot-perception, [3D Perception Project](https://hortovanyi.wordpress.com/2017/11/19/3d-perception-project/)
 
 
 ## Train 
@@ -11,6 +11,8 @@
 
 [capture_features.py](https://github.com/chriswernst/Perception-Udacity-RoboticsND-Project3/blob/master/training/capture_features.py)
 - 결과물 : [training_set_worlds123_V2.sav](https://github.com/chriswernst/Perception-Udacity-RoboticsND-Project3/blob/master/training/training_set_worlds123_V2.sav)
+
+[feature.py](https://github.com/mkhuthir/RoboND-Perception-Project/blob/master/src/sensor_stick/src/sensor_stick/features.py) :  compute_normal_histograms()
 
 [Training_helper.py](https://github.com/udacity/RoboND-Perception-Exercises/blob/master/Exercise-3/sensor_stick/src/sensor_stick/training_helper.py)
 
