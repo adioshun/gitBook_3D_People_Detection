@@ -3,6 +3,19 @@
 
 > https://www.haidynmcleod.com/3d-robot-perception
 
+
+## Train 
+
+[train_svm.py](https://github.com/udacity/RoboND-Perception-Exercises/blob/master/Exercise-3/sensor_stick/scripts/train_svm.py) : [참고](https://github.com/jychstar/NanoDegreeProject/blob/master/RoboND/p3_perception/writeup_perception.md#machine-learning-train_svmpy)
+
+[Training_helper.py](https://github.com/udacity/RoboND-Perception-Exercises/blob/master/Exercise-3/sensor_stick/src/sensor_stick/training_helper.py)
+
+## Test
+
+
+# Extract indices for each of the discovered clusters
+
+
 ```python 
 
 '''
@@ -14,6 +27,11 @@ Classifies all the objects in a point cloud
 '''
 
 def classifyClusters(point_cloud, white_cloud, cluster_indices):
+        """
+        point_cloud = cloud_filtered.extract(inliers, negative=True)
+        white_cloud = XYZRGB_to_XYZ(point_cloud)
+        cluster_indices = ec.Extract()
+        """
     detected_objects_labels = []
     detected_objects = []
 
@@ -37,6 +55,10 @@ def classifyClusters(point_cloud, white_cloud, cluster_indices):
 ​        # Make the prediction, retrieve the label for the result
         # and add it to detected_objects_labels list
         # clf is the trained SVM classifier
+            """
+            model = pickle.load(open('model.sav', 'rb'))
+            clf = model['classifier']
+            """
         prediction = clf.predict(scaler.transform(feature.reshape(1, -1)))
         label = encoder.inverse_transform(prediction)[0]
         detected_objects_labels.append(label)
