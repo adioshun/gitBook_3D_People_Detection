@@ -1,11 +1,9 @@
 # Summary
 
 * [Introduction\(To Read\)](README.md)
-* [00\_Preparation](00preparation.md)
-* [10\_Downsampling](10downsampling.md)
-  * [Occupancy\_map](10downsampling/occuoancymap.md)
 * [20\_Clustering](20clustering.md)
   * [Intro\_Clustering](20clustering/introclustering.md)
+* [Occupancy\_map](10downsampling/occuoancymap.md)
 * [30\_Upsampling](30upsampling.md)
   * [ref\_칼만필터](https://adioshun.gitbooks.io/deep_drive/content/introfusion.html)
 * [40\_Classification](40classification.md)
