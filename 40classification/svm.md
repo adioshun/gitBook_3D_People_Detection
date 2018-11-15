@@ -7,13 +7,20 @@
 ## Train 
 
 [train_svm.py](https://github.com/udacity/RoboND-Perception-Exercises/blob/master/Exercise-3/sensor_stick/scripts/train_svm.py) : [참고](https://github.com/jychstar/NanoDegreeProject/blob/master/RoboND/p3_perception/writeup_perception.md#machine-learning-train_svmpy)
+- 결과물 : [model_worlds123_V2.sav](https://github.com/chriswernst/Perception-Udacity-RoboticsND-Project3/blob/master/training/model_worlds123_V2.sav)
+
+[capture_features.py](https://github.com/chriswernst/Perception-Udacity-RoboticsND-Project3/blob/master/training/capture_features.py)
+- 결과물 : [training_set_worlds123_V2.sav](https://github.com/chriswernst/Perception-Udacity-RoboticsND-Project3/blob/master/training/training_set_worlds123_V2.sav)
 
 [Training_helper.py](https://github.com/udacity/RoboND-Perception-Exercises/blob/master/Exercise-3/sensor_stick/src/sensor_stick/training_helper.py)
 
+[model.sav](https://github.com/Heych88/udacity-robond-Perception/blob/master/sensor_stick/scripts/model.sav): 3.23MB
+
+
+
 ## Test
 
-
-# Extract indices for each of the discovered clusters
+> https://gist.github.com/dexter800/d6f5b3c0adf99f338a3baad9a5dc3f11
 
 
 ```python 
@@ -56,8 +63,12 @@ def classifyClusters(point_cloud, white_cloud, cluster_indices):
         # and add it to detected_objects_labels list
         # clf is the trained SVM classifier
             """
+            # Load model from disk
             model = pickle.load(open('model.sav', 'rb'))
             clf = model['classifier']
+            encoder = LabelEncoder()
+            encoder.classes_ = model['classes']
+            scaler = model['scaler']
             """
         prediction = clf.predict(scaler.transform(feature.reshape(1, -1)))
         label = encoder.inverse_transform(prediction)[0]
