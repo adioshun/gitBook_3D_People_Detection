@@ -10,6 +10,7 @@
 * [30\_Upsampling](30upsampling.md)
   * [ref\_칼만필터](https://adioshun.gitbooks.io/deep_drive/content/introfusion.html)
 * [40\_Classification](40classification.md)
+  * [SVM](40classification/svm.md)
 * [50\_SLAM](50slam.md)
 
 ## 구현물
