@@ -2,7 +2,6 @@
 
 * [Introduction\(To Read\)](README.md)
 * [00\_Preparation](00preparation.md)
-  * [05\_TrainingData](00preparation/05trainingdata.md)
 * [10\_Downsampling](10downsampling.md)
   * [Occupancy\_map](10downsampling/occuoancymap.md)
 * [20\_Clustering](20clustering.md)
@@ -16,6 +15,7 @@
 ## 구현물
 
 * [code](code.md)
+* [TrainingData](00preparation/05trainingdata.md)
 * [People2D\_realtime people detection in 2D range data](people2drealtime-people-detection-in-2d-range-data.md)
 * [Didi\_Challenge\_2017\_ROS](didichallenge-2017-ros.md)
 
