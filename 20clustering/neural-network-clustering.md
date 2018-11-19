@@ -1,4 +1,4 @@
-Neural Networks and Clustering (Autoencoders) : youtube [#1](https://www.youtube.com/watch?v=0oEMORg04zw), #2
+Neural Networks and Clustering (Autoencoders) : youtube [#1](https://www.youtube.com/watch?v=0oEMORg04zw), [#2](https://youtu.be/ci0xtJwZdzk)
 
 ![](https://i.imgur.com/3bMrnmG.png)
 AUtoencoder 
