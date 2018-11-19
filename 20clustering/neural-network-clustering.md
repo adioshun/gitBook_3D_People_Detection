@@ -11,4 +11,8 @@ AUtoencoder
 [How to do Unsupervised Clustering with Keras](https://www.dlology.com/blog/how-to-do-unsupervised-clustering-with-keras/) : blog, 2018.06
 
 
-https://www.google.co.kr/search?q=deep+learning+clustering&oq=deep+learning+clustering+&aqs=chrome..69i57j0l5.5951j1j7&sourceid=chrome&ie=UTF-8
+[Clustering with Deep Learning: Taxonomy and New Methods](https://arxiv.org/abs/1801.07648): 2018.01 [[깃허브]](https://github.com/elieJalbout/Clustering-with-Deep-learning)
+
+[DeepCluster: A General Clustering Framework based on Deep Learning](http://ecmlpkdd2017.ijs.si/papers/paperID345.pdf): 2017
+
+[Essentials of Deep Learning: Introduction to Unsupervised Deep Learning (with Python codes)](https://www.analyticsvidhya.com/blog/2018/05/essentials-of-deep-learning-trudging-into-unsupervised-deep-learning/): 2018.05, analyticsvidhya
