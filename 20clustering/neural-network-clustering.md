@@ -1,4 +1,7 @@
-Neural Networks and Clustering (Autoencoders) : youtube [#1](https://www.youtube.com/watch?v=0oEMORg04zw), [#2](https://youtu.be/ci0xtJwZdzk)
+## Neural Networks and Clustering (Autoencoders) youtube 
+- [#1](https://www.youtube.com/watch?v=0oEMORg04zw) : 개요, Autoencoder
+- [#2](https://youtu.be/ci0xtJwZdzk): Autoencoder + k-means, "autoencode based data slustering", 2013 song, et al
+- [#3](https://www.youtube.com/watch?v=E0tMbFQOHuQ): Autoencoder + Spectral Clustering, "Learning Deep Representation for graph clustering", 2014, tian et al.
 
 ![](https://i.imgur.com/3bMrnmG.png)
 AUtoencoder 
@@ -6,6 +9,23 @@ AUtoencoder
 - 입력과 출력이 같은 네트워크를 만들면  
 - 네트워크의 중간을 압축(작게)해도 출력을 생성할수 있는 충분한 정보(represeation)를 가지고 있을 것이다. 
 
+
+![](https://i.imgur.com/OETXeQ6.png)
+[기본적 방법]
+1. Run autoencoder
+2. Get f(x)
+3. Run k-mean of f(x)
+
+
+Neural Networks and Clustering = 
+- 
+
+
+
+
+
+
+## 참고 자료 
 [Convolutional Autoencoder: Clustering Images with Neural Networks](https://sefiks.com/2018/03/23/convolutional-autoencoder-clustering-images-with-neural-networks/): blog, 2018.03.23
 
 [How to do Unsupervised Clustering with Keras](https://www.dlology.com/blog/how-to-do-unsupervised-clustering-with-keras/) : blog, 2018.06
