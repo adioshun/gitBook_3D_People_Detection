@@ -2,6 +2,8 @@
 - [#1](https://www.youtube.com/watch?v=0oEMORg04zw) : 개요, Autoencoder
 - [#2](https://youtu.be/ci0xtJwZdzk): Autoencoder + k-means, "autoencode based data slustering", 2013 song, et al
 - [#3](https://www.youtube.com/watch?v=E0tMbFQOHuQ): Autoencoder + Spectral Clustering, "Learning Deep Representation for graph clustering", 2014, tian et al.
+- [#4](https://www.youtube.com/watch?v=_DPLpV-vZT4): Autoencoders + Sparese Subspace Clustering, "Deep subspace clustering Net, Ji, et al.
+
 
 ![](https://i.imgur.com/3bMrnmG.png)
 AUtoencoder 
