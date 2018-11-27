@@ -37,3 +37,24 @@ catkin_make -DCMAKE_BUILD_TYPE=Release
 
 > ros.yaml과 yolov3.yaml은 launch파일에서 수정 
 
+
+
+---
+
+
+
+# [PyTorch-YOLOv3](https://github.com/eriklindernoren/PyTorch-YOLOv3)
+
+```
+@article{yolov3,
+  title={YOLOv3: An Incremental Improvement},
+  author={Redmon, Joseph and Farhadi, Ali},
+  journal = {arXiv},
+  year={2018}
+}
+```
+
+> [PyTorch 로 YOLO v3 구현한 것을 Colaboratory 에서 돌려보자](https://medium.com/@hyunseokjeong/pytorch-%EB%A1%9C-yolo-v3-%EA%B5%AC%ED%98%84%ED%95%9C-%EA%B2%83%EC%9D%84-colaboratory-%EC%97%90%EC%84%9C-%EB%8F%8C%EB%A0%A4%EB%B3%B4%EC%9E%90-5b99e847b420) 
+
+wget https://raw.githubusercontent.com/nicewook/datascience_exercise/master/PyTorch_YOLOv3.ipynb
+
