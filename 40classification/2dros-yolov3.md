@@ -15,6 +15,25 @@ git clone --recursive https://github.com/leggedrobotics/darknet_ros.git
 cd  ..
 catkin_make -DCMAKE_BUILD_TYPE=Release
 
-
-gedit ros.yaml 
 ```
+
+설정 파일 
+
+입력 topic : `~/catkin_ws/src/darknet_ros/darknet_ros/config/ros.yaml`
+```
+  camera_reading:
+    topic: /camera/image_color
+    queue_size: 1
+```
+
+라벨 : `~/catkin_ws/src/darknet_ros/darknet_ros/config/yolov3.yaml`
+
+
+학습 설정 : `~/catkin_ws/src/darknet_ros/darknet_ros/yolo_network_config/cfg/yolov3.cfg`
+
+실행 : `~/catkin_ws/src/darknet_ros/darknet_ros/launch`
+- darknet_ros.launch : YOLOv2-tiny
+- yolo_v3.launch : YOLOv3
+
+> ros.yaml과 yolov3.yaml은 launch파일에서 수정 
+
