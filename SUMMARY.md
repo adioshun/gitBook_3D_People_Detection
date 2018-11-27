@@ -9,6 +9,7 @@
   * [ref\_칼만필터](https://adioshun.gitbooks.io/deep_drive/content/introfusion.html)
 * [40\_Classification](40classification.md)
   * [SVM](40classification/svm.md)
+  * [2D\_ROS\_YOLOv3](40classification/2dros-yolov3.md)
 * [50\_SLAM](50slam.md)
 
 ## 구현물
