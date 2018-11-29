@@ -5,3 +5,49 @@ https://autonomoustuff.com/product-category/radar/
 Delphi의 경우 ethernet/can 둘다 지원이 될텐데, can의 경우 usb2can 이 되는 kvaser 제품을 쓰시면 ros로 구동이 가능하죠. ^^;
 
 ㅋㅋㅋ 한국 대기업은 델파이가 지원해줘서 이더넷도 되고 멀티 센서 트랙킹도 됩니다 ㅎㅎ 저희 같은 영세업채에겐 안 해줍니다 ㅋㅋㅋ
+
+
+Delphi ESR 2.5 : https://docs.polysync.io/sensors/delphi-esr-2-5/
+
+
+https://autonomoustuff.atlassian.net/wiki/spaces/RW/pages/17509820/Delphi+ESR
+
+
+https://github.com/diyjac/Udacity-SDC-Radar-Driver-Micro-Challenge
+
+
+rosbag : https://vision.eng.au.dk/fieldsafe/
+
+
+rosbag store : https://rosbag.tier4.jp/index/  , 13page
+
+
+
+Delphi ESR 9.21.21  구매 사이트 : http://www.unmanshop.com/goods/view.php?seq=83 , 700만
+
+
+https://www.youtube.com/watch?v=NySMRVElhdY  2016 03 07 Delphi ESR Sensor Video
+
+
+point cloud : https://www.youtube.com/watch?v=QAqgY1AcLhM
+
+
+ROS radar_omnipresense : http://wiki.ros.org/radar_omnipresense
+
+ROS sick_scan : http://wiki.ros.org/sick_scan
+
+
+RVIZ : Select laser as fixed frame. And add a new PointCloud decoder subscribed at topic cloud.
+
+
+ROS Rviz and SICK LD-MRS Laserscanner: Detecting Renault Twizy and Pylons : https://www.youtube.com/watch?v=IjfLJb4il9E :라이다센서 
+
+https://mrsdprojects.ri.cmu.edu/2016teama/system-implementation/radar/
+
+---
+## SICK 제품군 
+
+- Radar : [RMS3xx](https://cdn.sick.com/media/docs/2/72/472/Telegram_listing_Radar_sensor_RMS320_en_IM0080472.PDF), RMS4xx
+
+![](https://i.imgur.com/5Etrw1e.png)
+https://cdn.sick.com/media/docs/0/30/930/Product_overview_Detection_and_Ranging_Solutions_2D_laser_scanners_3D_laser_scanners_radar_sensors_en_IM0063930.PDF
