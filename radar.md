@@ -62,6 +62,8 @@ https://mrsdprojects.ri.cmu.edu/2016teama/system-implementation/radar/
 
 ![](https://i.imgur.com/129elrY.png)
 
+- nrOfTargets : Number of detected targets
+
 ## Delphi 제품군 
 
 - [Delphi Electronically Scanning RADAR](https://www.autonomoustuff.com/wp-content/uploads/2016/08/delphi-esr.pdf): pdf
