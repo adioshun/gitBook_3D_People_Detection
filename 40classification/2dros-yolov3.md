@@ -58,3 +58,16 @@ catkin_make -DCMAKE_BUILD_TYPE=Release
 
 wget https://raw.githubusercontent.com/nicewook/datascience_exercise/master/PyTorch_YOLOv3.ipynb
 
+---
+
+뭐 구현하기 따라 다른데 GPU를 최대한 활용하시려면 실시간 이미지를 여러장 모아서 배치 하나 만드셔서 forward하시면되고 아니면 한장한장 하셔야되고요. Dimension 첫번째에 1 추가하셔서 만드셔야해요. 1추가 한후에 torch.cat으로 합쳐서 batch로 만들어서 쓰셔도되고요
+
+unsqueeze였던거같은데 dimension추가하는 함수가 있습니다.
+
+
+
+x = torch.from_numpy(transform(img)[0]).permute(2, 0, 1)
+      x = Variable(x.unsqueeze(0))
+
+
+
