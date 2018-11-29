@@ -51,7 +51,6 @@ ROS sick_scan : http://wiki.ros.org/sick_scan
 RVIZ : Select laser as fixed frame. And add a new PointCloud decoder subscribed at topic cloud.
 
 
-ROS Rviz and SICK LD-MRS Laserscanner: Detecting Renault Twizy and Pylons : https://www.youtube.com/watch?v=IjfLJb4il9E :라이다센서 
 
 https://mrsdprojects.ri.cmu.edu/2016teama/system-implementation/radar/
 
