@@ -1,4 +1,7 @@
-pip3 install matplotlib pandas opencv-python mayavi
+pip3 install matplotlib pandas opencv-python pyyaml
+
+sudo apt-get install vtk6 tcl-vtk python-vtk
+pip install mayavi
 
 
 
