@@ -1,11 +1,12 @@
 pip3 install matplotlib pandas opencv-python pyyaml
 
 pip3 install PyQt5
-sudo apt-get install vtk6 tcl-vtk python-vtk
+sudo apt-get install vtk6 tcl-vtk python-vtk python3-tk ffmpeg
+
 pip3 install mayavi
 
 
-apt-get install ffmpeg
+
 
 
 ---
