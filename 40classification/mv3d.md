@@ -7,7 +7,7 @@ pip3 install matplotlib pandas opencv-python mayavi
 ---
 
 
-![](http://i.imgur.com/Myw0TVr.png)
+`![](http://i.imgur.com/Myw0TVr.png)`
 
 # boston didi team
 
