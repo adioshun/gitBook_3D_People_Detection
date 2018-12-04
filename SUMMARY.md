@@ -10,6 +10,7 @@
 * [40\_Classification](40classification.md)
   * [SVM](40classification/svm.md)
   * [2D\_ROS\_YOLOv3](40classification/2dros-yolov3.md)
+  * [MV3d](40classification/mv3d.md)
 * [50\_SLAM](50slam.md)
 * [Radar](radar.md)
 
