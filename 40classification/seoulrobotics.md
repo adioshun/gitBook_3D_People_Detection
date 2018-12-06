@@ -1,11 +1,11 @@
-# Train 
+# Seoul Robotics
 
-
+## 1. Train 
 
 ```python
 
 model.fit_generator(             # generator로 생성한 데이터로 학습시 (보통은 model.fit())
-                   generator, # 훈련데이터셋을 제공할 제네레이터를 지정합니다. 
+                   generator, # 훈련데이터셋을 제공할 제네레이터를 지정합니다. (하단 추가설명)
                    steps_per_epoch=steps_per_epoch, # 한 epoch에 사용한 스텝 수를 지정합니다. 
                                                    #총 45개의 훈련 샘플이 있고 배치사이즈가 3이므로 15 스텝으로 지정합니다.
                    epochs=5, # 전체 훈련 데이터셋에 대해 학습 반복 횟수를 지정합니다. 
@@ -16,17 +16,28 @@ model.fit_generator(             # generator로 생성한 데이터로 학습시
                    #validation_steps : 한 epoch 종료 시 마다 검증할 때 사용되는 검증 스텝 수를 지정합니다. 
                                        #총 15개의 검증 샘플이 있고 배치사이즈가 3이므로 5 스텝으로 지정합니다.
 
-generator=train_batch_generator(list_of_lidar, list_of_gtbox, batch_size = batch_size, data_augmentation = True, width = 256, height = 64,
-                    car_index = car_index, undersample = undersample, percent_noncar = percent_noncar)
-
-
-
+generator=train_batch_generator(
+                    list_of_lidar, 
+                    list_of_gtbox, 
+                    batch_size = batch_size, 
+                    data_augmentation = True, 
+                    width = 256, 
+                    height = 64,
+                    car_index = car_index, 
+                    undersample = False, 
+                    percent_noncar = 0.097)
 ```
 
+필요 데이터 
+- list_of_lidar : 1.1에서 다룸 
+- list_of_gtbox : 1.1에서 다룸 
+- car_index : 1.2에서 다룸 
 
-# gt_boxes3d.npy / gt_label.npy 생성 
 
-## 1. object 생성 (`kitti_data/io.py`)
+
+### 1.1 gt_boxes3d.npy / gt_label.npy 생성 
+
+#### A. object 생성 (`kitti_data/io.py`)
 
 object = read_objects(tracklet)
 - 입력 : tracklet = kitti raw데이터에서 배포하는 xml 타입의 데이터 
@@ -57,7 +68,7 @@ trackletBox = np.array([
  
 ```
 
-## 2. gt_boxes3d, gt_labels = obj_to_gt_boxes3d(object)
+#### B. gt_boxes3d, gt_labels = obj_to_gt_boxes3d(object)
 
 - gt_boxes3d : object의 box정보 , np.zeros((num,8,3)
     - box = cornerPosInVelo.transpose() = np.dot(rotMat, trackletBox) + np.tile(translation, (8,1)).T
@@ -83,3 +94,8 @@ def obj_to_gt_boxes3d(objs):
 
 
 ```
+
+### 1.2 car_index
+
+
+
