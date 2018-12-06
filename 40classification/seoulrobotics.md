@@ -32,4 +32,29 @@ trackletBox = np.array([
  
 ```
 
-## 2. 
+## 2. gt_boxes3d, gt_labels = obj_to_gt_boxes3d(object)
+
+- gt_boxes3d : object의 box정보 , np.zeros((num,8,3)
+    - box = cornerPosInVelo.transpose() = np.dot(rotMat, trackletBox) + np.tile(translation, (8,1)).T
+
+- gt_labels : 현재는 1로 고정 
+
+```python
+
+def obj_to_gt_boxes3d(objs):
+    num        = len(objs)
+    gt_boxes3d = np.zeros((num,8,3),dtype=np.float32)
+    gt_labels  = np.zeros((num),    dtype=np.int32)
+
+    for n in range(num):
+        obj = objs[n]
+        b   = obj.box
+        label = 1 #<todo>
+
+        gt_labels [n]=label
+        gt_boxes3d[n]=b
+
+    return  gt_boxes3d, gt_labels
+
+
+```
