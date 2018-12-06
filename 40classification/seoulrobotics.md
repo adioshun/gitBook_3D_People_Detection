@@ -126,7 +126,62 @@ eg. `2.0: [108]` : 108번 프레임에는 차량이 2대
 
 
 
+---
 
+
+# Generate tracklet file (`python-seoul-robotics/generate_tracklet-.ipynb`)
+
+```python 
+
+generate_tracklet(pred_model=model, input_folder='/workspace/_test_data/lidar_npy',
+                  output_file='/workspace/_test_data/tracklet_sync_cs_model_no_merge_0531.xml', 
+                  fixed_size=None, # [4.241800, 1.447800, 1.574800], # fixed box size: None or [l, w, h]
+                  no_rotation=False, 
+                  cluster=True, seg_thres=0.07, cluster_dist = 1.8, min_dist = 1., neigbor_thres = 7,
+                  ver_fov=(-24.4, 15.), v_res=1., num_hor_seg=2,
+                  merge=False)
+
+#Frame 0: 6 boxes detected
+#Frame 1: 6 boxes detected
+#Frame 2: 6 boxes detected
+#Exported tracklet to /workspace/_test_data/tracklet_sync_cs_model_no_merge_0531.xml
+
+
+"""
+count,18
+item_version,1
+
+
+objectType,Car
+h,1.471019
+w,2.456383
+l,2.362085
+first_frame,-19
+count,1
+item_version,2
+tx,-3.301863
+ty,-21.410707
+tz,-0.070407
+rx,0.000000
+ry,0.000000
+rz,-3.141593
+state,1
+occlusion,-1
+occlusion_kf,-1
+truncation,-1
+amt_occlusion,0.0
+amt_occlusion_kf,-1
+amt_border_l,0.0
+amt_border_r,0.0
+amt_border_kf,-1
+finished,1
+"""
+ 
+ 
+ 
+ ```
+ 
+ 
 
 
 
