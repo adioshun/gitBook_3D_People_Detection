@@ -69,7 +69,9 @@ trackletBox = np.array([
  
 ```
 
-#### B. gt_boxes3d, gt_labels = obj_to_gt_boxes3d(object)
+#### B. gt_boxes3d, gt_labels  (`convert_kiti_to_numpy.py`)
+
+gt_boxes3d, gt_labels = obj_to_gt_boxes3d(object)
 
 - gt_boxes3d : object의 box정보 , np.zeros((num,8,3)
     - box = cornerPosInVelo.transpose() = np.dot(rotMat, trackletBox) + np.tile(translation, (8,1)).T
@@ -96,7 +98,36 @@ def obj_to_gt_boxes3d(objs):
 
 ```
 
-### 1.2 car_index
+### 1.2 car_index (`data_exploration.ipynb`)
+
+frame별 차량의 수 
+
+eg. `2.0: [108]` : 108번 프레임에는 차량이 2대 
+
+```
+
+{2.0: [108],
+ 3.0: [0,  1,  2,  3,  4,  6, ..., 112],
+ 4.0: [5, 113, 114, 115, 116],
+ 5.0: [117, 118, 119],
+ 6.0: [120, 122, 123],
+ 7.0: [121, 124, 125],
+ 9.0: [126, 127, 128, 129],
+ 10.0: [130, 131, ... , 153],
+ 11.0: [144, 145, 146, 147, 148, 149],
+ 12.0: [138, 139, 140, 141, 142, 143]}
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
