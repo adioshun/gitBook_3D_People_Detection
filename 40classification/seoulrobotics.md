@@ -26,6 +26,7 @@ generator=train_batch_generator(
                     car_index = car_index, 
                     undersample = False, 
                     percent_noncar = 0.097)
+
 ```
 
 필요 데이터 
