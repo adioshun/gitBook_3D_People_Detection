@@ -1,4 +1,6 @@
-# Seoul Robotics
+# [Seoul Robotics Didi Challenge 결과물](https://github.com/hb0702/Didi_challenge_2017_Python)
+
+> [ROS버젼: Didi_Challenge_2017_ROS](https://github.com/hb0702/Didi_Challenge_2017_ROS)
 
 ## 1. Train 
 
