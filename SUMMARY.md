@@ -12,7 +12,7 @@
   * [2D\_ROS\_YOLOv3](40classification/2dros-yolov3.md)
   * [MV3d](40classification/mv3d.md)
   * [seoul\_robotics](40classification/seoulrobotics.md)
-  * [segnet](40classification/segnet.md)
+  * [SqueezeSeg](40classification/segnet.md)
 * [50\_SLAM](50slam.md)
 * [Radar](radar.md)
 
