@@ -6,6 +6,8 @@
 - Tensorflow : https://github.com/charlesq34/pointnet
 - open3d활용 pytorch : https://github.com/IntelVCL/Open3D-PointNet
 - Semantic3D (semantic-8) segmentation with Open3D and PointNet++ : https://github.com/IntelVCL/Open3D-PointNet2-Semantic3D
+- pointnet-autoencoder : https://github.com/charlesq34/pointnet-autoencoder
+
 
 This dataset provides part segmentation to a subset of ShapeNetCore models, containing ~16K models from 16 shape categories. The number of parts for each category varies from 2 to 6 and there are a total number of 50 parts.
 The dataset is based on the following work:
