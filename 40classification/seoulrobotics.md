@@ -45,9 +45,12 @@ generator=train_batch_generator(
 object = read_objects(tracklet)
 - 입력 : tracklet = kitti raw데이터에서 배포하는 xml 타입의 데이터 
 - 출력 : object
-    - box = cornerPosInVelo.transpose() = np.dot(rotMat, trackletBox) + np.tile(translation, (8,1)).T
+    - box = 3D박스의 8개 꼭지점 
     - type = tracklet.objectType
     - tracket_id 
+
+> - trackletbox는 (0,0,0)기준으로 angle이 0도일때의 3d box이니 계산식은 회전변환으로 z축기준으로 회전시킨 후에 centet x,y,z를 더해서 실제 3d box의 8개의 꼭지점을 구하는 식으로 보면 될것 같습니다
+> - 기본적으로 데이터 측정시 각 프레임의 기준 좌표계(원점 및 방향)는 velodyne sensor coordinate를 기준으로 하기 때문에 데이터 및 바운딩 박스를 해당 좌표계에서 바로 표시하면 너무 제각각입니다. 이는 여러 응용에 사용되는 benchmark로써 제한이 될 수 있기 때문에 bounding box들을 원점 좌표로 옮기고 이를 bird'eye view(z축 positive) 시점에서 데이터를 보는 방식으로 표현한 것입니다. 그래서 앞서 말씀하신것 처럼 z축 기준으로 rotMat을 이용해서 회전시키고, translation 시키면 각 프레임의 센서 좌표계로 다시 변환 할 수 있습니다.
 
 ```python     
 tracklets = parseXML(tracklet_file)
