@@ -14,7 +14,7 @@
   * [MV3d](40classification/mv3d.md)
   * [seoul\_robotics](40classification/seoulrobotics.md)
   * [SqueezeSeg](40classification/segnet.md)
-  * [PointNET](40classification/pointnet.md)
+  * [PointNET](https://adioshun.gitbooks.io/deep_drive/content/paper2016-pointnet.html)
 * [50\_SLAM](50slam.md)
 * [Radar](radar.md)
 
