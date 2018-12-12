@@ -3,3 +3,6 @@ Learning Representations and Generative Models For 3D Point Clouds : https://git
 
 
 pointGAN : https://github.com/fxia22/pointGAN
+
+
+Autoencoder for Point Clouds : https://github.com/charlesq34/pointnet-autoencoder 
