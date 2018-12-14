@@ -8,6 +8,7 @@
 * [30\_Upsampling](30upsampling.md)
   * [ref\_칼만필터](https://adioshun.gitbooks.io/deep_drive/content/introfusion.html)
   * [GAN](30upsampling/gam.md)
+  * [Learning Representations and Generative Models For 3D Point Clouds](30upsampling/learning-representations-and-generative-models-for-3d-point-clouds.md)
 * [40\_Classification](40classification.md)
   * [SVM](40classification/svm.md)
   * [2D\_ROS\_YOLOv3](40classification/2dros-yolov3.md)
