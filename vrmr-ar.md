@@ -1,4 +1,12 @@
-ROS Reality - Controlling Baxter with the HTC Vive : https://www.youtube.com/watch?v=Aw3713v7xzQ
+ROS Reality - Controlling Baxter with the HTC Vive 
+- Brown University. 
+- ROS Reality: A Virtual Reality Framework Using Consumer-Grade Hardware for ROS-Enabled Robots
+- https://www.youtube.com/watch?v=HlRJZYNNndI
+- https://www.youtube.com/watch?v=Aw3713v7xzQ
+- https://www.youtube.com/watch?v=jMmBaltZ3LY
+
+
+
 
 
 ![](https://github.com/RViMLab/vrviz/raw/master/turtlebot_demo.jpg)
@@ -9,3 +17,24 @@ ROS package for publishing HTV VIVE device locations. : https://github.com/robos
 
 ![](https://github.com/ros-visualization/oculus_rviz_plugins/raw/groovy-devel/doc/screenshot.png)
 oculus_rviz_plugins : https://github.com/ros-visualization/oculus_rviz_plugins
+
+
+
+
+An Immersive Virtual Robotics Environment based on ROS : http://www.ros.org/news/2014/03/an-immersive-virtual-robotics-environment-based-on-ros.html 
+
+
+ROS Cardboard - https://github.com/cloudspace/ros_cardboard 
+
+
+University of Surrey. : VR for Baxter in Unity : https://github.com/celynwalters/baxter-vr-unity
+
+
+---
+
+MR  : Teleoperation of the robotic arm from virtual environment by exploiting ROS, Unity3D, Leap Motion and HTC Vive. 
+
+- https://www.youtube.com/watch?v=MzMwHLuK7g8
+- https://www.swri.org/industries/manufacturing-technologies
+
+
