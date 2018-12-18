@@ -27,7 +27,7 @@ An Immersive Virtual Robotics Environment based on ROS : http://www.ros.org/news
 ROS Cardboard - https://github.com/cloudspace/ros_cardboard 
 
 
-University of Surrey. : VR for Baxter in Unity : https://github.com/celynwalters/baxter-vr-unity
+University of Surrey. : VR for Baxter in Unity : https://github.com/celynwalters/baxter-vr-unity / c.walters@surrey.ac.uk
 
 
 ---
