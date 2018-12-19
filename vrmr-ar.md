@@ -38,3 +38,19 @@ MR  : Teleoperation of the robotic arm from virtual environment by exploiting RO
 - https://www.swri.org/industries/manufacturing-technologies
 
 
+---
+
+# ROS sharp 
+- https://github.com/siemens/ros-sharp
+- 지멘스 
+- https://rosindustrial.org/news/2018/1/8/announcing-ros
+
+
+---
+
+ROS Communication with Microsoft HoloLens
+- https://www.tudordonca.com/blog/2018/09/08/ros-hololens/
+
+HoloLens + ROS + AR : https://www.youtube.com/watch?v=TkorsuwkU1g
+
+HoloLens + ROS : [youtube](https://www.youtube.com/watch?v=FMtvrTGnP04), [GITHUB](https://github.com/soliagabriel/holoROS) 
