@@ -6,7 +6,7 @@ ROS Reality - Controlling Baxter with the HTC Vive
 - https://www.youtube.com/watch?v=jMmBaltZ3LY
 
 
-
+- https://github.com/nmadapan/Baxter-VR
 
 
 ![](https://github.com/RViMLab/vrviz/raw/master/turtlebot_demo.jpg)
