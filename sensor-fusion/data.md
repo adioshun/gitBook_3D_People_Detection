@@ -2,8 +2,10 @@
 
 [L(for lidar)] [m_x] [m_y] [t] [r_x] [r_y] [r_vx] [r_vy]
 - (m_x, m_y) - measurements by the lidar
-- `R 8.60363 0.0290616 -2.99903  1477010443399637  8.6 0.25  -3.00029  0`
 
+
+
+- `R 8.60363 0.0290616 -2.99903  1477010443399637  8.6 0.25  -3.00029  0`
 
 # Radar
 
@@ -13,5 +15,9 @@
 - (m_rho, m_phi, m_dho) - measurements by the radar in polar coordinates
 - (t) - timestamp in unix/epoch time the measurements were taken
 - (r_x, r_y, r_vx, r_vy) - the real ground truth state of the system
+- `R	8.46642	0.0287602	-3.04035	1477010443399637	8.6	0.25	-3.00029	0`
 
+
+
+- `L 8.45  0.25  1477010443349642  8.45  0.25  -3.00027  0 `
 - `L 8.45  0.25  1477010443349642  8.45  0.25  -3.00027  0 `
