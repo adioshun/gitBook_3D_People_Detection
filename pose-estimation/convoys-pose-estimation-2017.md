@@ -47,6 +47,7 @@ They also have room for improvements as there was several sources of uncertainty
 
 ```
 [21] D. F. DeMenthon and L. S. Davis, “Model-based object pose in 25 lines of code,” International Journal of Computer Vision, vol. 15, pp. 123–141, June 1995.
+[22] “Aforge.net: 3d pose estimation.” http://www.aforgenet.com/articles/posit/. Accessed: 2017-05-20.
 ```
 
 Based on perspective projection the POS method generates a linear equation system based on the given feature point coordinate pairs. When solved an approximate of the current rotation and translation matrices of that object in relation to the camera position is estimated. [21] [22]POSIT is an extended version of POS. 

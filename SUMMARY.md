@@ -24,6 +24,7 @@
 * [Pose-Estimation](pose-estimation.md)
   * [Vehicle-detection-pose-estimation-2017 \(10%\)](pose-estimation/vehicle-detection-pose-estimation-2017.md)
   * [Convoys-pose-estimation-2017](pose-estimation/convoys-pose-estimation-2017.md)
+  * [POSIT-Algorithm](pose-estimation/posit-algorithm.md)
 
 ## 구현물
 
