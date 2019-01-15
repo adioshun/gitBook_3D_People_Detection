@@ -17,6 +17,13 @@ The number of iteration can be specified according to available processing time.
 
 
 
+
+---
+
+# 구현물 
+
 https://github.com/mightymercado/PySigmoid
 
 https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_calib3d/py_pose/py_pose.html
+
+http://www.aforgenet.com/articles/posit/
