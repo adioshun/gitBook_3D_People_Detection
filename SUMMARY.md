@@ -22,7 +22,8 @@
 * [Radar](radar.md)
 * [VR\_MR\_AR](vrmr-ar.md)
 * [Pose-Estimation](pose-estimation.md)
-  * [Vehicle-detection-pose-estimation-2017](pose-estimation/vehicle-detection-pose-estimation-2017.md)
+  * [Vehicle-detection-pose-estimation-2017 \(10%\)](pose-estimation/vehicle-detection-pose-estimation-2017.md)
+  * [Convoys-pose-estimation-2017](pose-estimation/convoys-pose-estimation-2017.md)
 
 ## 구현물
 
