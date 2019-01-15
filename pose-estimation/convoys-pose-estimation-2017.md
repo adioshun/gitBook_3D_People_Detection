@@ -64,4 +64,45 @@ Forward projection : the process of converting 3D world coordinates into 2D imag
 
 **Imaging geometry** and **perspective projection** is used to create a conversion method from LiDAR 3D-coordinates to camera image 2D-coordinates
 
+![](https://i.imgur.com/Aq1ltga.png)
+
+![](https://i.imgur.com/nHl7rFO.png)
+
+### 2.4 RANSAC
+
+
+
+
+
+
+
+
+## 3. Methods
+
+
+
+### 3.1 Vehicle detection
+
+
+#### 3.1.1 Vehicle properties
+
+
+
+##### Visual properties
+
+- colour, shape and illumination
+- license plate
+
+
+##### Geometrical properties
+
+- 3D Lidar 
+- Four general vehicle properties[25] : 다음장 3.1.2에서 상세히 다룸
+
+
+```
+[25] K. J. Steinemann, P. and J. e. a. Dickmann, “Determining the outline contour of vehicles in 3d-lidar-measurements,” IEEE Intelligent Vehicle Symposium (IV), pp. 479–484, 2011.
+```
+
+
 
