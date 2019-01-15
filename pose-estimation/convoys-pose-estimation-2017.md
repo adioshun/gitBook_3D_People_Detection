@@ -74,7 +74,7 @@ Forward projection : the process of converting 3D world coordinates into 2D imag
 
 
 
-
+---
 
 
 ## 3. Methods
@@ -109,6 +109,45 @@ Forward projection : the process of converting 3D world coordinates into 2D imag
 
 
 5단계로 구성됨 
-1. Normal estimation
+
+##### (1) Normal estimation
+
+##### (2) Ground angle computation
+
+
+
+##### (3) Object extraction
+
+
+##### (4) Clustering
+
+
+##### (5) Vehicle verification
+
+
+---
+
+### 3.2 Pose estimation
+
+![](https://i.imgur.com/yQUQgc2.png)
+
+pose = position($$\rho$$,Distance), orientation($$\gamma $$), rotation($$ \omega$$)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
