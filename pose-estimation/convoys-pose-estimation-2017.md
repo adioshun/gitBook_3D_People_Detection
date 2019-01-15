@@ -29,3 +29,22 @@ For driving that not require millimetre precision the conclusion it that the met
 
 They also have room for improvements as there was several sources of uncertainty in this project.
 
+
+## 1. Introduction
+
+## 2. Background
+
+### 2.1 Previous work
+
+
+### 2.2 POS/POSIT
+
+Assuming a 3D model of the object is known, i.e. the relative geometry of a set of feature points, the translation and rotation matrices can be approximated by means of the **POS/POSIT method** from a single image.
+
+The methods POS, Pose from Orthography and Scaling, and POSIT, POS with Iterations, was first presented by DeMenthon et al. in [21]. 
+
+The methods require minimum four known pairs of 3D feature point coordinates and the corresponding 2D image coordinates.
+
+```
+[21] D. F. DeMenthon and L. S. Davis, “Model-based object pose in 25 lines of code,” International Journal of Computer Vision, vol. 15, pp. 123–141, June 1995.
+```
