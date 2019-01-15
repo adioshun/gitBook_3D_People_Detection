@@ -86,23 +86,29 @@ Forward projection : the process of converting 3D world coordinates into 2D imag
 
 #### 3.1.1 Vehicle properties
 
-
-
 ##### Visual properties
 
 - colour, shape and illumination
 - license plate
 
-
 ##### Geometrical properties
 
-- 3D Lidar 
-- Four general vehicle properties[25] : 다음장 3.1.2에서 상세히 다룸
+3D Lidar, Four general vehicle properties[25] : 다음장 3.1.2에서 상세히 다룸
+
+1. 90 degree requirement (along the z-axis)
+2. Smoothness
+3. Convexity (xy-plane/ground plane)
+4. Negative gradients (along the z-axis)
 
 
 ```
 [25] K. J. Steinemann, P. and J. e. a. Dickmann, “Determining the outline contour of vehicles in 3d-lidar-measurements,” IEEE Intelligent Vehicle Symposium (IV), pp. 479–484, 2011.
 ```
 
+#### 3.1.2 Point cloud detection
+
+
+5단계로 구성됨 
+1. Normal estimation
 
 
