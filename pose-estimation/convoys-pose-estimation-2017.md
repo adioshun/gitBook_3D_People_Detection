@@ -130,9 +130,9 @@ Forward projection : the process of converting 3D world coordinates into 2D imag
 
 ### 3.2 Pose estimation
 
-![](https://i.imgur.com/yQUQgc2.png)
 
-pose = position($$\rho$$,Distance), orientation($$\gamma $$), rotation($$ \omega$$)
+POSIT-Algorithm에 별도 정리 
+
 
 
 

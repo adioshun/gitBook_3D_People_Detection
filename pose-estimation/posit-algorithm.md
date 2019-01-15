@@ -1,3 +1,18 @@
+# Pose Estimation 
+
+> [Vehicle Detection and Pose Estimation in Autonomous Convoys](https://brage.bibsys.no/xmlui/bitstream/handle/11250/2455922/Baardseth_Elisabeth.pdf?sequence=1&isAllowed=y): 2017, Master Thesis
+
+
+
+
+
+![](https://i.imgur.com/yQUQgc2.png)
+
+pose = position($$\rho$$,Distance), orientation($$\gamma $$), rotation($$ \omega$$)
+
+## 1. Implementation of POSIT
+
+
 물체의 3D모델이 알려져 있다는 가정 하에, POS/POIST기법을 이용하여 변형, 회전 정보를 예측 할수 있다. `Assuming a 3D model of the object is known, i.e. the relative geometry of a set of feature points, the translation and rotation matrices can be approximated by means of the **POS/POSIT method** from a single image.`
 
 기법 제안자는 [21]이다. `The methods POS and POSIT was first presented by DeMenthon et al. in [21]. `
@@ -14,6 +29,9 @@ Based on perspective projection the POS method generates a linear equation syste
 By implementing POS in an iteration loop the results can be used to estimate an even more accurate approximation. 
 
 The number of iteration can be specified according to available processing time. POSIT converges after only a few iterations, see section 16 in [21].
+
+
+
 
 
 
