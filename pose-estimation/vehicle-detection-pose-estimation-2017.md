@@ -4,7 +4,7 @@
 
 > [Bc. Libor Novák](https://dspace.cvut.cz/bitstream/handle/10467/68586/F3-DP-2017-Novak-Libor-vehicle_detection_and_pose_estimation_for_autonomous_driving.pdf): 2017, Master Thesis, 75p
 
-
+> [깃허브](https://github.com/libornovax/master_thesis_code): Python, Caffe framework
 
 
 ## Abstract
