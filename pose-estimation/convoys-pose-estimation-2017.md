@@ -37,13 +37,13 @@ They also have room for improvements as there was several sources of uncertainty
 ### 2.1 Previous work
 
 
-### 2.2 POS/POSIT
+### 2.2 POS(Pose from Orthography and Scaling)/POSIT(POS with Iterations)
 
-Assuming a 3D model of the object is known, i.e. the relative geometry of a set of feature points, the translation and rotation matrices can be approximated by means of the **POS/POSIT method** from a single image.
+물체의 3D모델이 알려져 있다는 가정 하에, POS/POIST기법을 이용하여 변형, 회전 정보를 예측 할수 있다. `Assuming a 3D model of the object is known, i.e. the relative geometry of a set of feature points, the translation and rotation matrices can be approximated by means of the **POS/POSIT method** from a single image.`
 
-The methods POS, Pose from Orthography and Scaling, and POSIT, POS with Iterations, was first presented by DeMenthon et al. in [21]. 
+기법 제안자는 [21]이다. `The methods POS and POSIT was first presented by DeMenthon et al. in [21]. `
 
-The methods require minimum four known pairs of 3D feature point coordinates and the corresponding 2D image coordinates.
+최소 요구 사항안 4개 이상의 3D feature 쌍과 관련 2D 이미지다. `The methods require minimum four known pairs of 3D feature point coordinates and the corresponding 2D image coordinates.`
 
 ```
 [21] D. F. DeMenthon and L. S. Davis, “Model-based object pose in 25 lines of code,” International Journal of Computer Vision, vol. 15, pp. 123–141, June 1995.
