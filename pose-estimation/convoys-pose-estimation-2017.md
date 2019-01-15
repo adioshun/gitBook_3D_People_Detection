@@ -48,3 +48,20 @@ They also have room for improvements as there was several sources of uncertainty
 ```
 [21] D. F. DeMenthon and L. S. Davis, “Model-based object pose in 25 lines of code,” International Journal of Computer Vision, vol. 15, pp. 123–141, June 1995.
 ```
+
+Based on perspective projection the POS method generates a linear equation system based on the given feature point coordinate pairs. When solved an approximate of the current rotation and translation matrices of that object in relation to the camera position is estimated. [21] [22]POSIT is an extended version of POS. 
+
+By implementing POS in an iteration loop the results can be used to estimate an even more accurate approximation. 
+
+The number of iteration can be specified according to available processing time. POSIT converges after only a few iterations, see section 16 in [21].
+
+
+
+### 2.3 Imaging geometry (3D coordinates -> 2D Coordinates)
+
+
+Forward projection : the process of converting 3D world coordinates into 2D image pixel coordinates.
+
+**Imaging geometry** and **perspective projection** is used to create a conversion method from LiDAR 3D-coordinates to camera image 2D-coordinates
+
+
