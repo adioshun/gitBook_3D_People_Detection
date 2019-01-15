@@ -18,6 +18,12 @@ The number of iteration can be specified according to available processing time.
 
 
 
+## SoftPOSIT
+
+SoftPOSIT is an algorithm for determining the pose of a 3D object from a single 2D image in the case that correspondences between model features and image features are unknown. 
+
+http://users.umiacs.umd.edu/~daniel/Site_2/Code.html
+
 ---
 
 # 구현물 
@@ -26,4 +32,6 @@ https://github.com/mightymercado/PySigmoid
 
 https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_calib3d/py_pose/py_pose.html
 
+
 http://www.aforgenet.com/articles/posit/
+
