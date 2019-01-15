@@ -19,12 +19,7 @@
   * [SqueezeSeg](40classification/segnet.md)
   * [PointNET](https://adioshun.gitbooks.io/deep_drive/content/paper2016-pointnet.html)
 * [50\_SLAM](50slam.md)
-* [Radar](radar.md)
 * [VR\_MR\_AR](vrmr-ar.md)
-* [Pose-Estimation](pose-estimation.md)
-  * [Vehicle-detection-pose-estimation-2017 \(10%\)](pose-estimation/vehicle-detection-pose-estimation-2017.md)
-  * [Convoys-pose-estimation-2017](pose-estimation/convoys-pose-estimation-2017.md)
-  * [POSIT-Algorithm](pose-estimation/posit-algorithm.md)
 
 ## 구현물
 
