@@ -250,7 +250,272 @@ GAN/VAE기반 네트워크에서는 네트워크 LOSS와 클러스터링 LOSS가
 - VAE-based, and
 - GAN-based deep clustering. 
 
-The components of representative algorithms are illutrated in Table 2 and their contributions are described briefly in Table 3.
+ 
+### 3.1 AE-BASED DEEP CLUSTERING
+
+Autoencoder is a kind of neural network designed for unsupervised data representation. 
+
+It aims at minimizing the reconstruction loss. 
+
+An autoencoder may be viewed as consisting of two parts: 
+- an encoder function h = fφ(x) which maps original data x into a latent representation h, 
+- and a decoder that produces a reconstruction r = gθ (h). 
+
+The reconstructed representation r is required to be as similar to x as possible.
+
+Note that both encoder and decoder can be constructed by
+- fully-connected neural network or 
+- convolutional neural network.
+
+
+#### A. 성능 개선 요소 `The performance of autoencoder can be improved from the following perspectives: `
+- Architecture: 
+ - The original autoencoder is comprised of multiple layer perceptions. 
+ - For the sake of handling data with spatial invariance, e.g., image data, convolutional and pooling layers can be used to construct a convolutional autoencoder (CAE).
+- Robustness: 
+ - To avoid overfitting and to improve robustness, it is natural to add noise to the input.
+ - Denoising autoencoder [35] attempts to reconstruct x from x˜, which is a corrupted version of x through some form of noise. Additionally, noise can also be added to the inputs of each layer [14].
+- Restrictions on latent features: 
+ - Under-complete autoencoder constrains the dimension of latent coder z lower than that of input x, enforcing the encoder to extract the most salient features from original space.
+ - Other restrictions can also be adopted, e.g., sparse autoencoder [36] imposes a sparsity constraint on latent coder to obtain a sparse representation.
+- Reconstruction loss: 
+ - Commonly the reconstruction loss of an autoencoder consists of only the discrepancy between input and output layer, 
+ - but the reconstruction losses of all layers can also be optimized jointly [14].
+ 
+
+The optimizing objective of AE-based deep clustering is thus formulated as follows:
+![](https://i.imgur.com/CMue6Fs.png)
+
+
+The reconstruction loss enforce the network to learn a feasible representation and avoid trivial solutions. 
+
+#### B. 일반적인 네트워크 구조 `The general architecture of AE-based deep clustering algorithms is illustrated in Figure 1,`
+![](https://i.imgur.com/aMPdXhg.png)
+
+
+#### C. 대표적인 기법 들 `some representative methods are introduced as follows:`
+
+##### 가. Deep Clustering Network (DCN)
+
+DCN = 오토인코더 + k-mean 알고리즘 `DCN [13] is one of the most remarkable methods in this field, which combines autoencoder with the k-means algorithm. `
+
+단계 
+- In the first step, it pre-trains an autoencoder.
+- Then, it jointly optimizes the reconstruction loss and k-means loss. 
+ - Since k-means uses discrete cluster assignments, the method requires an alternative optimization algorithm. 
+
+
+목적 :  The objective of DCN is simple compared with other methods and the computational complexity is relatively low.
+
+##### 나.  Deep Embedding Network (DEN):
+
+DEN [31] proposes a deep embedding network to extract effective representations for clustering. 
+
+
+단계 
+- It first utilizes a deep autoencoder to learn reduced representation from the raw data. 
+- Secondly, in order to preserve the local structure property of the original data, a localitypreserving constraint is applied. 
+ - Furthermore, it also incorporates a group sparsity constraint to diagonalize the affinity of representations. 
+ - Together with the reconstruction loss, the three losses are jointly optimized to fine-tune the network for a clustering-oriented representation.
+ - The locality-preserving and group sparsity constraints serve as the auxiliary clustering loss (see Section II-B), 
+- thus, as the last step, k-means is required to cluster the learned representations.
+
+##### 다. Deep Subspace Clustering Networks (DSC-Nets):
+
+DSC-Nets [37] introduces a novel autoencoder architecture to learn an explicit non-linear mapping that is friendly to subspace clustering [38]. 
+
+The key contribution is introducing a novel self-expressive layer, which is a fully connected layer without bias and non-linear activation and inserted to the junction between the encoder and the decoder. 
+
+This layer aims at encoding the self-expressiveness property [39] [40] of data drawn from a union of subspaces. 
+
+Mathematically, its optimizing objective is a subspace clustering loss combined with a reconstruction loss. 
+
+Although it has superior performance on several small-scale datasets, it is really memory-consuming and time-consuming and thus can not be applied to large-scale datasets. 
+
+The reason is that its parameter number is O(n^2) for n samples, and it can only be optimized by gradient descent
+
+
+##### 라. Deep Multi-Manifold Clustering (DMC):
+
+DMC [41] is deep learning based framework for multi-manifold clustering (MMC). 
+
+It optimizes a joint loss function comprised of two parts: 
+- the locality preserving objective and 
+- the clustering-oriented objective.
+
+The first part makes the learned representations meaningful and embedded into their intrinsic manifold.
+- It includes the autoencoder reconstruction loss and locality preserving loss. 
+
+The second part penalizes representations based on their proximity to each cluster centroids, making the representation cluster-friendly and discriminative. 
+
+Experimental results show that DMC has a better performance than the state-of-the-art multi-manifold clustering methods.
+
+##### 마. Deep Embedded Regularized Clustering (DEPICT):
+
+DEPICT [14] is a sophisticated method consisting of multiple striking tricks. 
+
+It consists of a softmax layer stacked on top of a multi-layer convolutional autoencoder.
+
+It minimizes a relative entropy loss function with a regularization term for clustering. 
+
+The regularization term encourages balanced cluster assignments and avoids allocating clusters to outlier samples. 
+
+Furthermore, the reconstruction loss of autoencoder is also employed to prevent corrupted feature representation.
+
+Note that each layer in both encoder and decoder contributes to the reconstruction loss, rather than only the input and output layer. 
+
+Another highlight of this method is that it employs a noisy encoder to enhance the robustness of the algorithm. 
+
+Experimental results show that DEPICT achieves superior clustering performance while having a high computational efficiency
+
+##### 바. Deep Continuous Clustering (DCC):
+
+DCC [42] is also an AE-based deep clustering algorithm.
+
+It aims at solving two limitations of deep clustering. Since most deep clustering algorithms are based on classical center-based, divergence-based or hierarchical clustering formulations, they have some inherent limitations. 
+- For one thing, they require setting the number of clusters in priori. 
+- For another, the optimization procedures of these methods involve discrete reconfigurations of the objective, which require updating the clustering parameters and network parameters alternatively. 
+
+DCC is rooted in Robust Continuous Clustering (RCC) [43], a formulation having a clear continuous objective and no prior knowledge of clusters number. 
+
+Similar to many other methods, the representation learning and clustering is optimized jointly.
+
+
+
+### 3.2 CDNN-BASED DEEP CLUSTERING
+
+CDNN-based algorithms only use the clustering loss to train the network, where the network can be FCN, CNN or DBN.
+
+The optimizing objective of CDNN-based algorithms can be formulated as follows: $$ L = L_c $$
+
+Without the reconstruction loss, CDNN-based algorithms suffer from the risk of obtaining corrupted feature space, when all data points are simply mapped to tight clusters, resulting in a small value of clustering loss but meaningless.
+
+Consequently, the clustering loss should be designed carefully and network initialization is important for certain
+clustering loss. 
+
+network initialization에 따른 분류 `For this reason, we divide CDNN-based deep clustering algorithms into three categories according to the ways of network initialization, i.e., `
+- unsupervised pre-trained, 
+- supervised pre-trained and 
+- randomly initialized (non-pre-trained).
+
+#### A. UNSUPERVISED PRE-TRAINED NETWORK
+
+RBMs and autoencoders have been applied to CDNN-based clustering. 
+
+- These algorithms firstly train a RBM or an autoencoder in an unsupervised manner, 
+- then fine-tune the network (only encoder part for the autoencoder) by the clustering loss.
+
+Several representative algorithms are introduced as below.
+
+##### 가. Deep Nonparametric Clustering (DNC)
+
+##### 나. Deep Embedded Clustering (DEC)
+
+##### 다. Discriminatively Boosted Clustering (DBC)
+
+
+#### B. SUPERVISED PRE-TRAINED NETWORK
+
+Although unsupervised pre-training provides a better initialization of networks, it is still challenging to extract feasible features from complex image data. 
+
+Guérin et al. [44] conduct extensive experiments by testing the performance of combinations of different popular CNN architectures pre-trained on ImageNet [45] and different classical clustering algorithms.
+
+The experimental results show that feature extracted from deep CNN trained on large and diverse labeled datasets, combined with classical clustering algorithms, can outperform the state-of-the-art image clustering methods. 
+
+To this effect, when the clustering objective is complex image data, it is natural to make use of the most popular network architectures like VGG [46], ResNet [47] or Inception [48] models, which are pre-trained on large-scale image datasets like ImageNet, to speed up the convergence of iterations and to boost the clustering quality. 
+
+The most remarkable method of this type is introduced as follows:
+
+##### 가. Clustering Convolutional Neural Network (CCNN)
+
+
+#### C. NON-PRE-TRAINED NETWORK
+
+Despite the fact that a pre-trained network can significantly boost the clustering performance, under the guidance of
+a well-designed clustering loss, the networks can also be trained to extract discriminative features.
+
+
+##### 가. Information Maximizing Self-Augmented Training (IMSAT)
+
+##### 나. Joint Unsupervised Learning (JULE)
+
+##### 다. Deep Adaptive Image Clustering (DAC)
+
+
+
+
+
+### 3.4 SUMMARY OF DEEP CLUSTERING ALGORITHMS
+
+
+In this part, we present an overall scope of deep clustering algorithms. 
+
+Specifically, we compare the four categories of algorithms in terms of loss function, advantages, disadvantages
+and computational complexity. 
+
+![](https://i.imgur.com/QB3NNnp.png)
+
+#### A. loss function
+
+In regard to the loss function, apart from CDNN-based algorithms, the other three categories of algorithms jointly
+optimize both clustering loss Lc and network loss Ln. 
+
+The difference is that the network loss of AE-based algorithms is explicitly reconstruction loss, while the two losses of VAE-based and GAN-based algorithms are usually incorporated together.
+
+AE-based DC algorithms are most common as autoencoder can be combined with almost all clustering algorithms.
+
+The reconstruction loss of autoencoder ensures the network learns a feasible representation and avoid obtaining trivial solutions. 
+
+However, due to the symmetry architecture, the network depth is limited for computational feasibility.
+
+Besides, the hyper-parameter to balance the two losses requires extra fine-tuning. 
+
+In contrast to AE-based DC algorithms, CDNN-based DC algorithms only optimize the clustering loss. 
+
+Therefore, the depth of network is unlimited and supervisedly pre-trained architectures can be used to extract more discriminative features, thus they are capable to cluster large-scale image datasets. 
+
+However, without the reconstruction loss, they have the risk of learning a corrupted feature representation, thus the clustering loss should be welldesigned.
+
+VAE-based and GAN-based DC algorithms are generative DC techniques, as they are capable to generate samples from the finally obtained clusters. 
+
+VAE-based algorithms have a good theoretical guarantee because they minimizes the variational lower bound on the marginal likelihood of data, but it suffer from high-computational complexity.
+
+GAN-based algorithms impose a multi-class priori on general GAN framework. 
+
+They are more flexible and diverse than VAE-based ones. 
+
+Some of them aim at learning interpretable representations and just take clustering task as a specific case.
+
+The shortcomings of GAN-based algorithms are similar to GANs, e.g, mode collapse and converge slowly.
+
+#### B. computational complexity
+
+The computational complexity of deep clustering varies a lot. 
+
+For AE-based and CDNN-based algorithms, the computational cost is highly related to the clustering loss. 
+
+For example, k-means loss results in a relatively low overhead while the cost of agglomerative clustering is extremely high.
+
+At the same time, the network architectures also influence the computational complexity significantly, as a deep CNN
+requires a long time to train. 
+
+For VAE and GAN, due to the difficulty to optimize, they usually have a higher computational complexity than efficient methods in the AE-based and CDNN-based categories, e.g., DEC, DCN, DEPICT and so on.
+
+---
+
+
+Some notations frequently used in the paper and their meanings are presented in Table 1
+![](https://i.imgur.com/QJrkVh1.png)
+
+
+The components of representative algorithms are illutrated in Table 2
+![](https://i.imgur.com/EG3bmn5.png)
+
+
+their contributions are described briefly in Table 3.
+![](https://i.imgur.com/lnEiH6X.png)
+
+
 
 
 
