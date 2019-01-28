@@ -48,6 +48,7 @@
 
 ## 7. Implementation (Project)
 
+- Fast segmentation of 3D point clouds: A paradigm on LiDAR data for autonomous vehicle applications, 2017, [깃허브 ](https://github.com/VincentCheungM/Run_based_segmentation) : ROS, Cpp
 
 ## 8. Research Group / Conference 
 
