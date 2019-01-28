@@ -13,6 +13,11 @@
 
 - 레이저스캐너 기반 도심 도로 환경 차량 인지/추적 알고리즘 개발: 서울대 김선욱 2017, seonwook2017surrounding
 
+- [A Survey of Clustering With Deep Learning: From the Perspective of Network Architecture](https://www.semanticscholar.org/paper/A-Survey-of-Clustering-With-Deep-Learning%3A-From-the-Min-Guo/d9e9ef4c91134a90704f2fe0722fbec8995734ab): 2018
+
+- [Learning Neural Models for End-to-End Clustering](https://www.semanticscholar.org/paper/Learning-Neural-Models-for-End-to-End-Clustering-Meier-Elezi/54a9ed950458f4b7e348fa78a718657c8d3d0e05):2018
+
+
 ## 3. Article (Post, blog, etc.)
 
 [clustering valuation(군집 모델 평가하기)](http://woolulu.tistory.com/50)
