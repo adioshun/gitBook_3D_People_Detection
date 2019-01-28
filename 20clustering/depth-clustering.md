@@ -206,17 +206,43 @@ Without loss of generality, we assume the coordinates of A and B to be in a coor
 
 We define the angle β as the angle between the laser beam and the line connecting A and B in the point that is further away from the scanner (in our example that is A). 
 
-In practice, the angle β
-turns out to be a valuable piece of information to determine if the points A and B lie on the same
-object or not.
-Given the nature of the laser range measurements, we know the distance kOAk as it corresponds
-to the first laser measurement as well as kOBk (second laser measurement). We will call
-these range measurements d1 and d2 respectively. One can use this information to calculate β by applying trigonometric equations 
+In practice, the angle β turns out to be a valuable piece of information to determine if the points A and B lie on the same object or not.
+
+거리 정보를 알수 있음,이를 통해 β추출 가능  Given the nature of the laser range measurements, we know the distance ||OA|| as it corresponds to the first laser measurement as well as ||OB|| (second laser measurement). 
+
+We will call these range measurements d1 and d2 respectively. One can use this information to calculate β by applying trigonometric equations 
+
+![](https://i.imgur.com/b0rMuSH.png)
 
 
+> 추가 설명 논문 참고, θ = 10◦ 로 사용  
 
 
 ## 5. Experimental Evaluation
+
+성능 평가 요소 
+- all computation can be executed fast, even on a single core of a mobile CPU with around 70 Hz, 
+- we can segment typical 3D range data obtained by mobile robots into meaningful segments, 
+- and the approach performs well on sparse data such as those obtained from a 16-beam Velodyne Puck scanner
+
+비교 대상 `In our evaluation, we also provide comparisons to the`
+- grid based segmentation method proposed by TEICHMAN & THRUN (2012) as used by BEHLEY et al.(2013) as well as to
+- Euclidean clustering implemented in the point cloud library PCL.
+
+
+### 5.1 Runtime
+
+### 5.2 Segmentation Results
+
+테스트 데이터 
+- For the 64-beam evaluation, we rely on the publicly available street scenes dataset by MOOSMANN (2013) and the KITTI dataset by GEIGER et al. (2013), 
+- while we recorded the 16-beam datasets using our robot in Bonn, Germany
+
+테스트 설정 값
+- grid : 0.05m ~ 1.25m
+- 제안 : θ from 5◦ to 45◦
+
+
 
 
 ## 6 Conclusion
