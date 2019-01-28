@@ -276,9 +276,80 @@ In this case, several scenarios are possible, dependent on two main factors:
     - For instance in Yang et al. (2016b), for every P network model update steps, one cluster updates step happens.
     
 
+### 2.7 AFTER NETWORK TRAINING
+
+After the training is finished, even if a clustering result was produced in the process, it can make sense to re-run a clustering algorithm from scratch using the learned features, for one of several reasons:
+
+#### 가. Clustering a similar dataset
+
+- The general and the most trivial case is to reuse the learned features representation mapping on another dataset which is similar to the one that has been used but has different data.
+
+#### 나. Obtaining better results
+
+- Under certain circumstances, it is possible that the results of clustering after the training are better than the ones obtained during the learning procedure.
+
+- For instance, in Yang et al. (2016b), such a behavior is reported. One possible reason for this to happen is that the cluster update step during the training doesn’t go all the way till the end (see Number of iterations in Section 2.6).
 
 
 
+## 3 RELATED METHODS
+
+![](https://i.imgur.com/ZqPbP1J.png)
+
+### 3.1 Convolutional neural networks as feature extractors 
+
+Some methods utilize convolutional neural networks as feature extractors to improve clustering of image data. 
+
+- JULE (Yang et al., 2016b) follows a hierarchical clustering approach and uses the agglomerative clustering loss as the sole loss function.
+- In CCNN (Hsu and Lin, 2017), initialization of the k-means centroids is performed based on the softmax output layer of a convolutional neural network and the output of internal network layers are used as features. 
+- IMSAT (Hu et al., 2017) uses the information maximization loss and a selfaugmentation loss. 
+- SCCNN (Lukic et al., 2016) uses a convolutional network that was pretrained on a related, domain-specific task (speaker identification) as a feature extractor.
+
+### 3.2 Autoencoders as feature extractors 
+
+In contrast to the aforementioned methods, some of the most promising methods utilize autoencoders as feature extractors. 
+
+Training is performed in two phases.
+- In the first phase, the autoencoder is pretrained using a standard reconstruction loss. 
+- The second phase differs between the methods: 
+
+#### 가. DEC (Xie et al., 2016), 
+
+In the second phase of DEC (Xie et al., 2016), the network is fine-tuned using the cluster assignment hardening loss. 
+
+DEC is often used as a baseline for new publications. 
+
+DBC (Li et al., 2017) and DEPICT Dizaji et al. (2017) are similar to DEC except for one aspect each: 
+    - DBC utilizes a convolutional autoencoder in order to improve clustering of image datasets and 
+    - DEPICT adds a balanced assignments loss to the clustering loss to alleviate the danger of obtaining degenerate solutions
+    
+#### 나. DCN (Yang et al., 2016a)
+
+In contrast to DEC and similar methods, DCN (Yang et al., 2016a) jointly trains the network with both the autoencoder reconstruction loss and the k-means clustering loss in the second phase. 
+
+In, DEN Huang et al. (2014), the second phase is comprised of joint training with a combination of the reconstruction loss, a locality-preserving loss, and a group sparsity loss. 
+
+In Neural Clustering Saito and Tan (2017), the second training phase does not exist and no additional clustering loss is used.
+
+The good results can possibly be attributed to the fact that multiple network layers are concatenated
+and used as the clustering features.
+
+
+
+### 3.3 Other deep architectures as feature extractors 
+
+- NMMC (Chen, 2015) and UMMC (Chen et al., 2017) each use a deep belief network for feature extraction. 
+- UGTAC (Premachandran and Yuille, 2016) uses the penultimate layer of the discriminator in the DCGAN (Radford et al., 2015) architecture as features for k-means++ clustering. 
+- VaDE (Zheng et al., 2016) uses a variational autoencoder in combination with a mixture of Gaussians.
+
+
+### 3.4 Other methods 
+
+Instead of directly using a neural network to extract features, 
+
+- infinite ensemble clustering (Liu et al., 2016) uses neural networks to generate infinite ensemble partitions and to fuse them into a consensus partition to obtain the final clustering.
+
+## 4.  CASE STUDY: NEW METHOD
 
 
 
