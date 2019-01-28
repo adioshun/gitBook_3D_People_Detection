@@ -1,3 +1,6 @@
+누적 방법 : [Time-series LIDAR Data Superimposition for Autonomous Driving](http://lab.cntl.kyutech.ac.jp/~nishida/paper/2016/ThBT3.3.pdf)
+
+
 # A New Upsampling Method for Mobile LiDAR Data
 
 > Ruisheng Wang, Jeff Bach, Jane Macfarlane
