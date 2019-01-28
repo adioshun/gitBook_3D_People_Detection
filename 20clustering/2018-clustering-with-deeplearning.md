@@ -351,6 +351,34 @@ Instead of directly using a neural network to extract features,
 
 ## 4.  CASE STUDY: NEW METHOD
 
+![](https://i.imgur.com/aL93gvU.png)
+
+학습데이터가 이미지 이므로 `Since the dataset that is to be clustered consists of images,`
+- we chose a convolutional architecture for the architecture building block (Section 2.1) and 
+- an autoencoder reconstruction loss as the nonclustering loss building block (Section 2.3).
+
+After pretraining the network with this configuration, 
+- we chose to keep the non-clustering autoencoder reconstruction loss and 
+- add the cluster hardening loss as the clustering loss building block (Section 2.4). 
+
+We decided to keep the **non-clustering loss** in this phase, 
+- because other methods(e.g. DEC and DBC) which omit it, have a theoretical risk of collapsing clusters and 
+- have also empirically shown to yield worse clustering quality. 
+- This is because valuable feature detectors that were previously learned during pretraining can be destroyed. 
+- Keeping the non-clustering loss helps to keep those detectors stable. 
+
+For a similar reason, we decided to avoid a training procedure with alternating losses as for instance used by DBC, DEN, and UMMC. 
+
+The necessity for this alternation originates in the hard assignments as enforced by the k-means loss, which is why we chose soft cluster assignments and cluster hardening loss instead. 
+
+This loss is achieved via introducing a clustering layer, which aims at estimating the cluster assignments based on equation (4).
+
+Once both training phases (pretraining on non-clustering loss and fine-tuning on both losses) are completed, the network’s encoder has learned to map its input to a clustering-friendly space. 
+
+Additionally, the resulting network is capable of estimating the cluster assignments. 
+
+However, based on the previous success of re-running clustering from scratch after training (see Section 2.7), we run
+the k-means algorithm on the network’s output representation.
 
 
 
