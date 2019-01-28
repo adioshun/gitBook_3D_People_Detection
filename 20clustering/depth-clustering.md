@@ -120,15 +120,113 @@ Using both cues may improve the results but it is seldom possible at speeds fast
 
 Therefore, we focus on segmenting unknown objects from pure 3D range data not requiring any additional visual or intensity information.
 
+### E. 시각 정보외 데이터들 : 시간, tracking
 
-Visual information is not the only information that aids segmentation. Temporal information and tracking are also shown to be useful to enhance the segmentation performance by FLOROS & LEIBE (2012) and TEICHMAN & THRUN (2012). While the benefit of using the information about the moving objects is clear, we show that it is possible to perform a fast and meaningful segmentation on single scans even without relying on temporal integration.
+Visual information is not the only information that aids segmentation. Temporal information and tracking are also shown to be useful to enhance the segmentation performance by FLOROS & LEIBE (2012) and TEICHMAN & THRUN (2012). 
 
-
-
-
-
+While the benefit of using the information about the moving objects is clear, we show that it is possible to perform a fast and meaningful segmentation on single scans even without relying on temporal integration.
 
 
 
+## 3. Range Image based Ground Removal
+
+기존 방식과 문제점 
+- A standard approach to ground removal simply discards all 3D points that are lower than the vehicle. 
+    - While this approach may work in simple scenes, it fails if the vehicle’s pitch or roll angle is unequal to zero or if the ground is not a perfect plane. 
+- Using RANSAC-based plane fitting may improve the situation but even using this method, 
+    - non-zero curvatures may remain a challenge and the operation can be time consuming. 
+    
+제안 방식 & 생성 방법 
+- 제안 방식 : Most laser range scanners provide raw data in the form of individual range readings per laser beam with a time stamp and an orientation of the beam. This allows us to directly convert the data into a range image. 
+- 생성 방식 
+    - The number of rows in the image is defined by the number of beams in the vertical direction, i.e., 16, 32 or 64 for the Velodyne scanners. 
+    - The number of columns is given by the range readings per 360◦ revolution of the laser. 
+    - Each pixel of such a virtual image stores the measured distance from the sensor to the object.
+    
+
+Raw데이터 제공 안 하는 장비 경우 `only provides a 3D point cloud per revolution and not the individual range measurements,` 
+- one can project the 3D points cloud onto a cylindrical image, 
+- compute the Euclidean distance per pixel, and proceed with our approach.
 
 
+가정 사항 3가지 `For identifying the ground plane, we make three assumptions.`
+- First, we assume that the sensor is mounted roughly horizontally on the mobile base/robot (this assumption can be relaxed, but the explanation would turn out to be more complex). 
+- Second, we assume that the curvature of the ground is low. 
+- Third, we assume that the robot observes the ground plane at least in some pixels of the lowest row of the range image (corresponding to the laser beam scans close to the ground close to the robot).
+
+
+> 추후 논문 참고 
+
+
+## 4. Fast and Effective Segmentation Using Laser Range Images
+
+
+The vertical resolution of the sensors has an impact on the difficulty of the segmentation problem. 
+
+For every pair of neighbouring points, one basically has to decide if the laser beams have been reflected by the same object or not.
+
+
+본 논문에서는 range image를 사용 하였다. `In our approach, outlined in Fig. 4, we avoid the explicit creation of the 3D point cloud and perform our computations using a laser range image, in our case a cylindrical one for the Velodyne scanners. `
+
+장점 두가지 `This has two advantages: `
+- First, we can exploit the clearly defined neighbourhood relations directly in the range image and this makes the segmentation problem easier. 
+- Second, we avoid the generation of the 3D point cloud, which makes the overall approach faster to compute.
+
+가정 사항 `We assume `
+- the vehicle to move on the ground (see Fig. 1 for our setup) and 
+- we expect the sensor to be oriented roughly horizontally with respect to the wheels. 
+    - Thus, we can quickly obtain an estimate of the ground plane by analysing the columns of such range image as described in Sec. 3. 
+    - The ground is then removed from the range image.
+
+
+주요 요소는 두개의 빔에서 반사된 정보가 같은 물체에서 온 것인가를 판단 하는 것이다.  : The key component of our approach is the ability to estimate which measured points originate from the same object for any two laser beams. 
+
+방법은 angle-based measure를 이용하는것이다. 다음장에서 자세히 설명 하겠다. `To answer the question if two laser measurements belong to the same object, we use an angle-based measure, which is illustrated in Fig. 5 and is described in the following paragraphs.`
+
+![](https://i.imgur.com/XK7X0Jp.png)
+```
+Fig. 5: 레이져가 물체에 도달시 각도 β가 특정값 θ이내이면 동일한 물체로 판단 
+- Left: example scene with two pedestrians, a cyclist and a car. 
+- Middle: Given that the sensor is in O and the lines OA and OB represent two laser beams, 
+    - the points A and B spawn a line that estimates the surface of an object should they both belong to the same object. 
+    - We make the decision about this fact based on the angle β. 
+    - If β > θ, where θ is a predefined threshold, we consider the points to represent one object. 
+- Right: a top view on the pedestrians from the example scene.
+    - The green lines represent points with β > θ while the red one shows an angle that falls under the threshold and thus labels objects as different.
+
+```
+
+The left image of Fig. 5 shows an example scene with two people walking close to each other in front of a cyclist, who passes between them and a parked car. 
+
+This scene has been recorded using our Velodyne VLP-16 scanner. 
+
+The middle image shows an illustration of two arbitrary points A and B measured from the scanner located at O with the illustrated laser beams OA and OB. 
+
+Without loss of generality, we assume the coordinates of A and B to be in a coordinate system which is centred in O and the y-axis is oriented along the longer of two laser beams. 
+
+We define the angle β as the angle between the laser beam and the line connecting A and B in the point that is further away from the scanner (in our example that is A). 
+
+In practice, the angle β
+turns out to be a valuable piece of information to determine if the points A and B lie on the same
+object or not.
+Given the nature of the laser range measurements, we know the distance kOAk as it corresponds
+to the first laser measurement as well as kOBk (second laser measurement). We will call
+these range measurements d1 and d2 respectively. One can use this information to calculate β by applying trigonometric equations 
+
+
+
+
+## 5. Experimental Evaluation
+
+
+## 6 Conclusion
+This paper presents a fast and easy to implement method for 3D laser range data segmentation
+including fast ground removal. Instead of operating in the 3D space, our approach performs all
+computations directly on the range images. This speeds up the segmentation of the individual
+range images and allows us to directly exploit neighbourhood relations. It enables us to successfully
+segment even sparse laser scans like those recorded with a 16-beam Velodyne scanner. We
+implemented and evaluated our approach on different publicly available and self-recorded datasets
+and provide comparisons to other existing techniques. On a single core of a mobile i5 CPU, we
+obtain segmentation results at average frame rates between 74 Hz and 250 Hz and can run up to
+667 Hz on an i7 CPU. We will release our code that can either be used standalone with C++ or as
+a ROS module.
