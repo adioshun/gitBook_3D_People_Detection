@@ -100,3 +100,35 @@ They can not only perform clustering task, but also can generate new samples fro
 
 
 ## II. PRELIMINARIES
+
+
+### 2.1 NEURAL NETWORK ARCHITECTURE FOR DEEP CLUSTERING
+
+
+used to transform inputs to a new feature representation.
+
+#### A. FEEDFORWARD FULLY-CONNECTED NEURAL NETWORK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
