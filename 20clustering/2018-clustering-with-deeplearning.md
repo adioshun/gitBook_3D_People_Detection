@@ -1,5 +1,7 @@
 # [Clustering with Deep Learning: Taxonomy and New Methods](https://arxiv.org/abs/1801.07648): 2018.01 [[깃허브]](https://github.com/elieJalbout/Clustering-with-Deep-learning)
 
+> Elie Aljalbout, Vladimir Golkov, Yawar Siddiqui, Daniel Cremers "Clustering with Deep Learning: Taxonomy and new methods"
+
 ## 1 INTRODUCTION
 
 - 클러스터링 알고리즘들은 데이터에 영향을 많이 받는다. `The performance of current clustering methods is however highly dependent on the input data.`
