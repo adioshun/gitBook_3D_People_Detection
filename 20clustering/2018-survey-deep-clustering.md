@@ -110,12 +110,98 @@ used to transform inputs to a new feature representation.
 #### A. FEEDFORWARD FULLY-CONNECTED NEURAL NETWORK
 
 
+개요 : A fully-connected network (FCN) consists of multiple layers of neurons, each neuron is connected to every neuron in the previous layer, and each connection has its own weight. The FCN is also known as multi-layer perceptron (MLP). It is a totally general purpose connection pattern and makes no assumptions about the features in the data. 
+
+보통 지도 학습용으로 사용 됨 `It is usually used in supervised learning when labels are provided. `
+
+클러서터링 학습에 사용시 : However, for clustering, a good initialization of parameters of network is necessary because a naive FC network tends to obtain a trivial solution when all data points are simply mapped to tight clusters, which will lead to a small value of clustering loss, but be far from being desired [13].
+
+#### B. FEEDFORWARD CONVOLUTIONAL NEURAL NETWORK
+
+개요 : Convolutional neural networks (CNNs) [26] were inspired by biological process, in which the connectivity pattern between neurons is inspired by the organization of the animal visual cortex. Likewise, each neuron in a convolutional layer is only connected to a few nearby neurons in the previous layer, and the same set of weights is used for every neuron. 
+
+이미지 데이터에 많이 적용됨 : It is widely applied to image datasets when locality and shift-invariance of feature extraction are required. 
+
+군집화 loss학습시 사용 가능 : It can be trained with a specific clustering loss directly without any requirements on initialization, and a good initialization would significantly boost the clustering performance. 
+
+To the best of our knowledge, no theoretical explanation is given in any existing papers, but extensive work shows its feasibility for clustering.
+
+
+#### C. DEEP BELIEF NETWORK
+
+개요 : Deep Belief Networks (DBNs) [27] are generative graphical models which learn to extract a deep hierarchical representation of the input data. A DBN is composed of several stacked Restricted Boltzmann machines (RBMs) [28]. 
+
+비지도 학습이 적용된 예 : The greedy layer-wise unsupervised training is applied to DBNs with RBMs as the building blocks for each layer. 
+
+Then, all (or part) of the parameters of DBN are fine-tuned with respect to certain criterion (loss function), e.g., a proxy for the DBN log-likelihood, a supervised training criterion, or a clustering loss.
+
+#### D. AUTOENCODER
+
+개요 
+- Autoencoder (AE) is one of the most significant algorithms in unsupervised representation learning. 
+- It is a powerful method to train a mapping function, which ensures the minimum reconstruction error between coder layer and data layer. 
+- Since the hidden layer usually has smaller dimensionality than the data layer, it can help find the most salient features of data. 
+
+지도/비지도 에서 좋은 성과 보임 : Although autoencoder is mostly applied to find a better initialization for parameters in supervised learning, it is also natural to combine it with unsupervised clustering. 
+
+More details and formulations will be introduced in Section III-A.
+
+#### E. GAN & VAE
+
+개요 : Generative Adversarial Network (GAN) and Variational Autoencoder (VAE) are the most powerful frameworks for deep generative learning. 
+- **GAN** aims to achieve an equilibrium between a generator and a discriminator, 
+- while **VAE** attempts to maximizing a lower bound of the data loglikelihood.
+
+A series of model extensions have been developed for both GAN and VAE. 
+
+군집화에 많이 적용 되었음 `Moreover, they have also been applied to handle clustering tasks. `
+
+The details of the two models will be elaborated in Section III-C and Section III-D, respectively.
 
 
 
+### 2.2 LOSS FUNCTIONS RELATED TO CLUSTERING
+
+#### A. Principal Clustering Loss
+
+This category of clustering loss functions contain the **cluster centroids** and **cluster assignments** of samples. 
+
+즉, 학습이 끝나고 군집 결과를 바로 얻을수 있음 `In other words, after the training of network guided by the clustering loss, the clusters can be obtained directly.`
+
+It includes 
+- k-means loss [13], 
+- cluster assignment hardening loss [11], 
+- agglomerative clustering loss [29], 
+- nonparametric maximum margin clustering [30] 
+- and so on
+
+#### B. Auxiliary Clustering Loss
+
+군집을 위한 representation학습을 진행, 바로 군집 결과를 알수 없음 `The second category solely plays the role of guiding the network to learn a more feasible representation for clustering, but cannot output clusters straightforwardly. `
+
+It means deep clustering methods with merely auxiliary clustering loss require to run a clustering method after the training of network to obtain the clusters. 
+
+There are many auxiliary clustering losses used in deep clustering, such as
+- locality-preserving loss [31], which enforces the network to preserve the local property of data embedding;
+- group sparsity loss [31], which exploits block diagonal similarity matrix for representation learning; 
+- sparse subspace clustering loss [32], which aims at learning a sparse code of data.
 
 
+### 2.3 PERFORMANCE EVALUATION METRICS FOR DEEP CLUSTERING
 
+#### A. unsupervised clustering accuracy (ACC)
+
+![](https://i.imgur.com/yfHtjoZ.png)
+- where yi is the ground-truth label, 
+- ci is the cluster assignment generated by the algorithm, 
+- and m is a mapping function which ranges over all possible one-to-one mappings between assignments and labels. 
+
+It is obvious that this metric finds the best matching between cluster assignments from a clustering method and the ground truth. 
+
+The optimal mapping function can be efficiently computed by **Hungarian algorithm** [33].
+
+
+#### B. Normalized Mutual Information (NMI)
 
 
 
