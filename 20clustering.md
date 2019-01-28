@@ -2,7 +2,15 @@
 
 ## 1. List
 
-
+[Lidar Point clound processing for Autonomous Driving](https://github.com/beedotkiran/Lidar_For_AD_references)
+- Clustering/Segmentation (road/ground extraction, plane extraction)
+- Registration and Localization
+- Feature Extraction
+- Object detection and Tracking
+- Classification/Supervised Learning
+- Maps / Grids / HD Maps / Occupancy grids/ Prior Maps
+- End-To-End Learning
+- Lidar Datasets and Simulators
 
 ## 2. Paper
 
@@ -17,6 +25,8 @@
 
 - [Learning Neural Models for End-to-End Clustering](https://www.semanticscholar.org/paper/Learning-Neural-Models-for-End-to-End-Clustering-Meier-Elezi/54a9ed950458f4b7e348fa78a718657c8d3d0e05):2018
 
+
+- [CNN for Very Fast Ground Segmentation in Velodyne LiDAR Data](https://arxiv.org/pdf/1709.02128.pdf): 2017
 
 ## 3. Article (Post, blog, etc.)
 
