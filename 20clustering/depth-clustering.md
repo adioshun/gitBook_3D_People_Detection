@@ -1,6 +1,15 @@
-# [Efficient Online Segmentation for Sparse 3D Laser Scans](http://www.ipb.uni-bonn.de/pdfs/bogoslavskyi16pfg.pdf)
+|논문명 |Efficient Online Segmentation for Sparse 3D Laser Scans |
+| --- | --- |
+| 저자\(소속\) | IGOR BOGOSLAVSKY\(\) |
+| 학회/년도 | 2017, [논문](http://www.ipb.uni-bonn.de/pdfs/bogoslavskyi16pfg.pdf) |
+| Citation ID / 키워드 | Range-image, VPL-16, Depth-clustering|
+| 데이터셋(센서)/모델 | |
+| 관련연구||
+| 참고 | |
+| 코드 |[Youtube](https://www.youtube.com/watch?v=xAAz3Zgkmy80), [깃허브](https://github.com/PRBonn/depth_clustering)|
 
-> IGOR BOGOSLAVSKY,2017,  [Youtube](https://www.youtube.com/watch?v=xAAz3Zgkmy80), [깃허브](https://github.com/PRBonn/depth_clustering)
+
+# Efficient Online Segmentation for Sparse 3D Laser Scans
 
 
 ```
