@@ -203,6 +203,15 @@ The optimal mapping function can be efficiently computed by **Hungarian algorith
 
 #### B. Normalized Mutual Information (NMI)
 
+![](https://i.imgur.com/B8iAUhY.png)
+- where Y denotes the ground-truth labels, 
+- C denotes the clusters labels, 
+- I is the mutual information metric 
+- and H is entropy.
+
+
+## III. TAXONOMY OF DEEP CLUSTERING
+
 
 
 
