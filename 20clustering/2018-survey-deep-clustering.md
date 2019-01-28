@@ -212,6 +212,46 @@ The optimal mapping function can be efficiently computed by **Hungarian algorith
 
 ## III. TAXONOMY OF DEEP CLUSTERING
 
+목적 : Deep clustering is a family of clustering methods that adopt deep neural networks to learn clustering-friendly representations.
+
+The loss function (optimizing objective) of deep clustering methods are typically composed of two parts: 
+- network loss Ln  
+- clustering loss Lc, 
+
+thus the loss function can be formulated as follows:
+
+![](https://i.imgur.com/jfGqPDc.png)
+
+- where λ ∈ [0, 1] is a hype-parameter to balance Ln and Lc.
+
+The network loss Ln is used to learn feasible features and avoid trivial solutions, and the clustering loss Lc encourages the feature points to form groups or become more discriminative.
+
+The network loss can be 
+- the reconstruction loss of an autoencoder (AE), 
+- the variational loss of a variational encoder (VAE) 
+- or the adversarial loss of a generative adversarial network (GAN). 
+
+the clustering loss can be 
+- k-means loss, 
+- agglomerative clustering loss, 
+- locality-preserving loss 
+- and so on. 
+
+AE네트워크 기반에서는 네트워크 LOSS는 필수 적이다. `For deep clustering methods based on AE network, the network loss is essential.`
+
+그러나 일부 네트워크에서는 클러스터링 LOSS만 사용 되기도 한다. `But some other work designs a specific clustering loss to guide the optimization of networks, in which case the network loss can be removed.`
+- we refer this type of networks trained only by Lc as clustering DNN (CDNN). 
+
+GAN/VAE기반 네트워크에서는 네트워크 LOSS와 클러스터링 LOSS가 같이 통합되어 사용된다. `For GAN-based or VAE-based deep clustering, the network loss and the clustering loss are usually incorporated together. `
+
+본 논문에서는 네트워크 구조에 따라 4종류로 구분 하였다. `In this section, from the perspective of DNN architecture, we divide deep clustering algorithms into four categories: `
+- AE-based, 
+- CDNN-based, 
+- VAE-based, and
+- GAN-based deep clustering. 
+
+The components of representative algorithms are illutrated in Table 2 and their contributions are described briefly in Table 3.
+
 
 
 
