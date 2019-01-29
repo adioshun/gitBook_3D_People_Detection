@@ -246,13 +246,17 @@ We will call these range measurements d1 and d2 respectively. One can use this i
 
 
 ## 6 Conclusion
-This paper presents a fast and easy to implement method for 3D laser range data segmentation
-including fast ground removal. Instead of operating in the 3D space, our approach performs all
-computations directly on the range images. This speeds up the segmentation of the individual
-range images and allows us to directly exploit neighbourhood relations. It enables us to successfully
-segment even sparse laser scans like those recorded with a 16-beam Velodyne scanner. We
-implemented and evaluated our approach on different publicly available and self-recorded datasets
-and provide comparisons to other existing techniques. On a single core of a mobile i5 CPU, we
-obtain segmentation results at average frame rates between 74 Hz and 250 Hz and can run up to
-667 Hz on an i7 CPU. We will release our code that can either be used standalone with C++ or as
-a ROS module.
+
+This paper presents a fast and easy to implement method for 3D laser range data segmentation including fast ground removal. 
+
+Instead of operating in the 3D space, our approach performs all computations directly on the range images. 
+
+This speeds up the segmentation of the individual range images and allows us to directly exploit neighbourhood relations. 
+
+It enables us to successfully segment even sparse laser scans like those recorded with a 16-beam Velodyne scanner. 
+
+We implemented and evaluated our approach on different publicly available and self-recorded datasets and provide comparisons to other existing techniques. 
+
+On a single core of a mobile i5 CPU, we obtain segmentation results at average frame rates between 74 Hz and 250 Hz and can run up to 667 Hz on an i7 CPU. 
+
+We will release our code that can either be used standalone with C++ or as a ROS module.
