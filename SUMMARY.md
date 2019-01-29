@@ -25,6 +25,7 @@
   * [PointNET](https://adioshun.gitbooks.io/deep_drive/content/paper2016-pointnet.html)
 * [50\_SLAM](50slam.md)
 * [VR\_MR\_AR](vrmr-ar.md)
+* [2018-SECOND](40classification/2018-second.md)
 
 ## 구현물
 
