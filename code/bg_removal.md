@@ -124,7 +124,7 @@ def background_removal(daytime, nighttime):
 
     pc = pcl.PointCloud(result)
     
-
+    # 노이즈 제거 
     #cloud = filter.do_statistical_outlier_filtering(pc,10,0.01) #(pc,10,0.001)
 
 
