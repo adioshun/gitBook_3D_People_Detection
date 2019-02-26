@@ -28,11 +28,6 @@
 
 ## 구현물
 
-* [code](code.md)
 * [TrainingData](00preparation/05trainingdata.md)
 * [People2D\_realtime people detection in 2D range data](people2drealtime-people-detection-in-2d-range-data.md)
 
-## code
-
-* [배경제거](code/bg_removal.md)
-* [군집화(DBSCAN)](code/clustering_dbscan.md)
