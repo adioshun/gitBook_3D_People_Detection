@@ -69,7 +69,7 @@ print("")
 
 ```
 
-## 2. 배경 제거 
+## 2. 배경 제거 `(bg_helper.py)`
 
 ```python 
 
@@ -79,28 +79,39 @@ print("")
 import sys
 sys.path.append("/workspace/include")
 
-from ddynamic_reconfigure import DDynamicReconfigure 
-from ddynamic_reconfigure import DyConfigure
 
+import pcl_helper
+import filter_helper
+
+
+import pickle
+import numpy as np
+import pcl
+import pcl_msg
 import rospy
 from sensor_msgs.msg import PointCloud2
 import sensor_msgs.point_cloud2 as pc2
 
-import numpy as np
-import pcl
-import pcl_msg
+baselinefile = "baseline.pkl"
+leaf_size = 0.1
 
-import pcl_helper
-import filter_helper
-import time
+print("serchPointNP Loaded : {}".format(baselinefile))
+pkl_file = open(baselinefile, 'rb')   
+arr = pickle.load(pkl_file)
 
-import argparse
+searchPoint = pcl.PointCloud()
+searchPoint.from_array(arr)   
 
-def background_removal(daytime, nighttime):
+print("Normal Baseline point {}".format(searchPoint))
+baseline = filter_helper.do_voxel_grid_downssampling(searchPoint,leaf_size)
+print("Voxeled Basedline point {}".format(searchPoint))
 
-    resolution = 1.0#0.8  # 값이 커지면 missing 존재, noise도 존재 
+
+def background_removal(daytime):
+
+    resolution = 0.5#0.8  # 값이 커지면 missing 존재, noise도 존재 
     #배경 포인트 
-    octree = nighttime.make_octreeChangeDetector(resolution)
+    octree = baseline.make_octreeChangeDetector(resolution)
     octree.add_points_from_input_cloud ()
     octree.switchBuffers () #Switch buffers and reset current octree structure.
 
@@ -124,24 +135,14 @@ def background_removal(daytime, nighttime):
 
     pc = pcl.PointCloud(result)
     
-    # 노이즈 제거 
-    #pc = filter_helper.do_statistical_outlier_filtering(pc,10,0.01) #(pc,10,0.001)
+
+    #pc = filter_helper.do_statistical_outlier_filtering(pc,10,0.001) #(pc,10,0.001)
 
 
     cloud = pcl_helper.XYZ_to_XYZRGB(pc,[255,255,255])
     
     return cloud
-
-
-
-
-
-
-
-
-
-
-
+"""
 def callback(input_ros_msg):
     
     pcl_xyzrgb = pcl_helper.ros_to_pcl(input_ros_msg) #ROS 메시지를 PCL로 변경
@@ -151,36 +152,5 @@ def callback(input_ros_msg):
     bg_ros_msg = pcl_helper.pcl_to_ros(pcl_xyzrgb) #PCL을 ROS 메시지로 변경 
     pub_bg = rospy.Publisher("/velodyne_bg", PointCloud2, queue_size=1)
     pub_bg.publish(bg_ros_msg)
-
-
-
-
-if __name__ == "__main__":
-
-    rospy.init_node('node_bg_removal', anonymous=True)
-    E = DyConfigure()
-    #leaf_size = E.leaf_size
-    leaf_size = 0.5  #0.5는 missing은 없지만, 잔상 존재, 0.1은 잔상은 없지만 missing존재 0.8은 속도 저하 
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--baseline", help="Use baseline rosbag to remove background")
-
-    args = parser.parse_args()
-    if args.baseline:
-        import pickle
-        print("serchPointNP Loaded : {}".format(args.baseline))
-        pkl_file = open(args.baseline, 'rb')   
-        arr = pickle.load(pkl_file)
-
-        searchPoint = pcl.PointCloud()
-        
-        searchPoint.from_array(arr)   
-        print("Normal Baseline point {}".format(searchPoint))
-        searchPoint = filter_helper.do_voxel_grid_downssampling(searchPoint,leaf_size)
-        print("Voxeled Basedline point {}".format(searchPoint))
-
- 
-    
-    rospy.Subscriber('/velodyne_points', PointCloud2, callback) 
-    rospy.spin()
+"""
 ```
