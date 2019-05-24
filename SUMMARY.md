@@ -2,7 +2,6 @@
 
 * [Introduction\(To Read\)](README.md)
 * [20\_Clustering](20clustering.md)
-  * [Intro\_Clustering](20clustering/introclustering.md)
   * [Neural Network Clustering](20clustering/neural-network-clustering.md)
   * [hierarchical-clustering \(30%\)](20clustering/hierarchical-clustering.md)
   * [Deep-Clustering-Visual-Features-2018](20clustering/deep-clustering-visual-features-2018.md)
@@ -20,12 +19,10 @@
 * [50\_SLAM](50slam.md)
 * [VR\_MR\_AR](vrmr-ar.md)
 
-
 ## 구현물
 
 * [README](Implementation/README.md)
 * [TrainingData](00preparation/05trainingdata.md)
 * [People2D\_realtime people detection in 2D range data](people2drealtime-people-detection-in-2d-range-data.md)
 * [ROS People Tracking](Implementation/ROS_hdl_people_tracking.md)
-
 
