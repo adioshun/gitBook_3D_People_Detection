@@ -13,11 +13,6 @@ RANSAC은 주어진 데이터에서 반복적으로 샘플을 취하여 전체 �
 
 * 제거를 위해서 바닥은 평평\(`even plane`\)하거나, 약간의 경사가 있다고 가정 한다. \(`small elevations like curbside`\)
 
-The algorithm assumes that all of the data in a dataset is composed of both **inliers** and **outliers**.
-
-* Inliers can be defined by a particular model with a specific set of parameters.
-* Outliers if that model does not fit then it gets discarded.
-
 By modeling the table as a plane, we can remove it from the point cloud.
 
 * Segmentation of the table from everything else 
@@ -27,7 +22,9 @@ RANSAC은 포인트들이 특정 Model에 속하는지 아닌지 식별 한다. 
 
 RANSAC은 포인트들은 두 종류로 구분 된다고 가정 한다: inlier, outlier ` It assumes that all of the data in a dataset is composed of both inliers and outliers,`
 - where inliers can be defined by a particular model with a specific set of parameters, 
-- and outliers don't.
+- Outliers if that model does not fit then it gets discarded.
+
+
 
 ```
 RANSAC 알고리즘을 이용한 지상 라이다 포인트 클라우드의 세그먼테이션, 2009, 정성수 (파라미터 T 구하는법 기술)
