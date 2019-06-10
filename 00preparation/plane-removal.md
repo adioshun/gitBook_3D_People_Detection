@@ -47,6 +47,20 @@ RANSAC 알고리즘을 이용한 지상 라이다 포인트 클라우드의 세�
 
 > 다중 저채널 라이다와 카메라의 센서 융합에 의한 차량 객체 검출 알고리즘
 
-### 2.3 IPP
+---
+
+### 2.3 RGB filter
+
+Color filtering is one of the examples where the presence of RGB sensors
+in Kinect® v2 is expressed, in a robust and effective way, certain color
+spots can be removed by defining the correct RGB range.
+However, it is important to keep in mind that objects of interest are not of
+the same color as the background because the filtration will be the same.
+It is recommended that the background be black or white because only
+the narrow RGB intervals are excluded, leaving a larger RGB space for
+objects of interest.
+As a part of the work, it was decided to remove the background with RGB
+filter for faster processing, stable action on each image and without
+affecting the amount of objects on the background.
 
 
