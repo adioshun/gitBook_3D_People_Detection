@@ -1,16 +1,12 @@
 # Summary
 
 * [Introduction\(To Read\)](README.md)
-
-* [10_전처리](00preparation/README.md)
+* [10\_전처리](00preparation/README.md)
   * [TrainingData](00preparation/05trainingdata.md)
   * [바닥제거](00preparation/plane-removal.md)
 
+---
 
-* [20\_Clustering](20clustering.md)
-  * [Neural Network Clustering](20clustering/neural-network-clustering.md)
-  * [hierarchical-clustering \(30%\)](20clustering/hierarchical-clustering.md)
-  * [Deep-Clustering-Visual-Features-2018](20clustering/deep-clustering-visual-features-2018.md)
 * [Occupancy\_map](10downsampling/occuoancymap.md)
 * [30\_Upsampling](30upsampling.md)
   * [ref\_칼만필터](https://adioshun.gitbooks.io/deep_drive/content/introfusion.html)
@@ -28,7 +24,6 @@
 ## 구현물
 
 * [README](Implementation/README.md)
-
 * [People2D\_realtime people detection in 2D range data](people2drealtime-people-detection-in-2d-range-data.md)
 * [ROS People Tracking](Implementation/ROS_hdl_people_tracking.md)
 
