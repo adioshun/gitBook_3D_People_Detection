@@ -8,10 +8,7 @@
 ---
 
 * [Occupancy\_map](10downsampling/occuoancymap.md)
-* [30\_Upsampling](30upsampling.md)
-  * [ref\_칼만필터](https://adioshun.gitbooks.io/deep_drive/content/introfusion.html)
-  * [GAN](30upsampling/gam.md)
-* [40\_Classification](40classification.md)
+* [Classification](40classification.md)
   * [SVM](40classification/svm.md)
   * [2D\_ROS\_YOLOv3](40classification/2dros-yolov3.md)
   * [MV3d](40classification/mv3d.md)
