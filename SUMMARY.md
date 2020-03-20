@@ -26,5 +26,6 @@
 
 * [2장](ebook/part02/README.md)
   * [Clustering](ebook/part02/part02-chapter01/README.md)
+    * [Region-Growing](ebook/part02/part02-chapter01/part02-chapter01-region-growing.md)
     * [Euclidean clustering](ebook/part02/part02-chapter01/part02-chapter01-euclidean.md)
 
