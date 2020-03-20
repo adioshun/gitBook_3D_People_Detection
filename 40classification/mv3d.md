@@ -1,71 +1,44 @@
+# MV3d
 
+pip3 install PyQt5 sudo apt-get install vtk6 tcl-vtk python-vtk python3-tk ffmpeg
 
-pip3 install PyQt5
-sudo apt-get install vtk6 tcl-vtk python-vtk python3-tk ffmpeg
-
-pip3 install mayavi
-pip3 install matplotlib pandas opencv-python pyyaml
-
-
-
-
-
-
----
-
+pip3 install mayavi pip3 install matplotlib pandas opencv-python pyyaml
 
 `![](http://i.imgur.com/Myw0TVr.png)`
 
-# boston didi team
+## boston didi team
 
-* [bostondiditeam](https://github.com/bostondiditeam/MV3D) 
-
+* [bostondiditeam](https://github.com/bostondiditeam/MV3D)
   * [nepal](https://github.com/s-nepal/MV3D)
-
   * [zxf8665905](https://github.com/zxf8665905/didi-udacity-compatition) : 추천
-
     * [lihua213\#1](https://github.com/lihua213/didi-udacity-compatition)
-
     * [lihua213\#2](https://github.com/lihua213/MV3D): Old version
 
-
-# leeyevi
+## leeyevi
 
 * [leeyevi](https://github.com/leeyevi/MV3D_TF)
-
   * [Super-Tree](https://github.com/Super-Tree/MV3D_TF)
 
+## hengck23
 
-# hengck23
+[https://github.com/hengck23/didi-udacity-2017](https://github.com/hengck23/didi-udacity-2017)
 
-https://github.com/hengck23/didi-udacity-2017
-
-# mv3d_ros_interface
+## mv3d\_ros\_interface
 
 * [jinbeibei\(??\)](https://github.com/jinbeibei/mv3d_ros_interface) :cpp
 
-
-
-## 0. 환경 준비
+### 0. 환경 준비
 
 * install tensorflow-gpu and CUDA.
-
 * A Nvidia GPU card with computation capability
-
 * ubuntu \(\* Cuda7.5에 맞는 버젼은 14.04임\)
-* CUDA   
-    \(\*environment\_gpu.yml상 버젼 =7.5\)
-
+* CUDA \(\*environment\_gpu.yml상 버젼 =7.5\)
   * [http://developer.download.nvidia.com/compute/cuda/7.5/Prod/local\_installers/cuda-repo-ubuntu1404-7-5-local\_7.5-18\_amd64.deb](http://developer.download.nvidia.com/compute/cuda/7.5/Prod/local_installers/cuda-repo-ubuntu1404-7-5-local_7.5-18_amd64.deb)
   * `apt-get install cuda-7.5-15`\)
-
 * cuDNN
-
   * Download cuDNN v5.1  for CUDA 7.5 : [Runtime lib.](https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v5.1/prod_20161129/7.5/libcudnn5_5.1.10-1+cuda7.5_amd64-deb), [소스설치방법](https://github.com/adioshun/System_Setup/wiki/4_CUDA_CuDNN-Setup#driver--cuda-install-script)
-
 * Python3.5 for MV3D related code
-
-* Tensorflow-GPU\(version&gt;1.0\)  
+* Tensorflow-GPU\(version&gt;1.0\)
 * Python2.7 for ROS related script
 
 ```bash
@@ -78,11 +51,11 @@ conda install tensorflow-gpu opencv3 shapely scikit-learn keras Cython matplotli
 pip install easydict
 ```
 
-### 0.1 GPU용으로 설정 변경
+#### 0.1 GPU용으로 설정 변경
 
 `src/net/lib/setup.py` and `src/lib/make.sh` : "arch=sm\_37" \#Google Cloud GPU Tesla K80
 
-```
+```text
 # Which CUDA capabilities do we want to pre-build for?
 # https://developer.nvidia.com/cuda-gpus
 #   Compute/shader model   Cards
@@ -105,34 +78,34 @@ sess = tf.Session()
 print(tf.__version__) # version more than v1.
 ```
 
-## 1. 데이터 다운로드
+### 1. 데이터 다운로드
 
 ![](http://i.imgur.com/TqGRi0G.png)
 
 [The KITTI Vision Benchmark Suite Raw Data](http://www.cvlibs.net/datasets/kitti/raw_data.php)
 
-## 1.9 수정 필요
+### 1.9 수정 필요
 
-### A.
+#### A.
 
 ![](http://i.imgur.com/va7Lg8J.png)
 
 * `data/raw/kitti/` 경로 밑에 데이터 위치 
 * `tracklet_labels.xml`파일은 `2011_09_26_drive_0001_sync` 하위 폴더에 위치 
 
-### B.
+#### B.
 
 `src/kitti_data/pykitti/tracklet.py L289`에서 다운 받은 파일명으로 변경
 
-```
+```text
 DEFAULT_DRIVE = '2011_09_26_drive_0001'
 ```
 
-## 2. ./src/make.sh
+### 2. ./src/make.sh
 
-### 2.1 실행 방법
+#### 2.1 실행 방법
 
-```
+```text
 cd src
 source activate didi
 sudo chmod 755 ./make.sh
@@ -143,34 +116,36 @@ conda create -n python27 python=2.7
 
 > 아래 \[2.2\]를 직접 실행 하는것 추천
 
-### 2.2 실행시 진행 내용
+#### 2.2 실행시 진행 내용
 
-    #- `python ./net/lib/setup.py build_ext --inplace` : Fast R-CNN (MS)
+```text
+#- `python ./net/lib/setup.py build_ext --inplace` : Fast R-CNN (MS)
 
-    #- 'bash ./net/lib/make.sh` : building psroi_pooling layer
+#- 'bash ./net/lib/make.sh` : building psroi_pooling layer
 
-    #- build required .so files
-    ln -s ./net/lib/roi_pooling_layer/roi_pooling.so ./net/roipooling_op/roi_pooling.so
-    ln -s ./net/lib/nms/gpu_nms.cpython-35m-x86_64-linux-gnu.so ./net/processing/gpu_nms.cpython-35m-x86_64-linux-gnu.so
-    ln -s ./net/lib/nms/cpu_nms.cpython-35m-x86_64-linux-gnu.so ./net/processing/cpu_nms.cpython-35m-x86_64-linux-gnu.so
-    ln -s ./net/lib/utils/cython_bbox.cpython-35m-x86_64-linux-gnu.so ./net/processing/cython_bbox.cpython-35m-x86_64-linux-gnu.so
+#- build required .so files
+ln -s ./net/lib/roi_pooling_layer/roi_pooling.so ./net/roipooling_op/roi_pooling.so
+ln -s ./net/lib/nms/gpu_nms.cpython-35m-x86_64-linux-gnu.so ./net/processing/gpu_nms.cpython-35m-x86_64-linux-gnu.so
+ln -s ./net/lib/nms/cpu_nms.cpython-35m-x86_64-linux-gnu.so ./net/processing/cpu_nms.cpython-35m-x86_64-linux-gnu.so
+ln -s ./net/lib/utils/cython_bbox.cpython-35m-x86_64-linux-gnu.so ./net/processing/cython_bbox.cpython-35m-x86_64-linux-gnu.so
+```
 
-###### \[에러\]  nvcc 못 찾을경우
+**\[에러\]  nvcc 못 찾을경우**
 
 * 절대 경로로 수정 후 실행 
 
-###### \[에러\] `arning: calling a constexpr __host__ function from a __host__ __device__ function is not allowed.`
+**\[에러\] arning: calling a constexpr \_\_host\_\_ function from a \_\_host\_\_ \_\_device\_\_ function is not allowed.**
 
 * `make.sh`파일에 아래 flag `--expt-relaxed-constexpr` 추가 
 
-```
+```text
 if [ -d "$CUDA_PATH" ]; then
     nvcc -std=c++11 -c -o roi_pooling_op.cu.o roi_pooling_op_gpu.cu.cc \
         -I $TF_INC -D GOOGLE_CUDA=1 -x cu -Xcompiler -fPIC $CXXFLAGS \
         -arch=sm_37 --expt-relaxed-constexpr
 ```
 
-## 3. Preprocess data \(`./src/data.py`\)
+### 3. Preprocess data \(`./src/data.py`\)
 
 > kitti기준, didi data 이용시 `utils/bag_to_kitti` 실행 필요
 
@@ -182,7 +157,7 @@ if [ -d "$CUDA_PATH" ]; then
   * Ground bounding box coordinate
   * time stamp
 
-```
+```text
 ./data/preprocessing/kitti/
     - gt_boxes3d :npy
     - gt_box_plot : png
@@ -193,12 +168,12 @@ if [ -d "$CUDA_PATH" ]; then
 ```
 
 | ![](http://i.imgur.com/bb67R50.png) | ![](http://i.imgur.com/AbdY7YU.png) |
-| --- | --- |
+| :--- | :--- |
 
 
-### 3.9 수정 필요
+#### 3.9 수정 필요
 
-#### A. data.py 수정
+**A. data.py 수정**
 
 작업 환경
 
@@ -217,9 +192,9 @@ if config.cfg.USE_CLIDAR_TO_TOP:
 #                                        'Python_to_C_Interface/ver3/LidarTopPreprocess.so')
 ```
 
-#### B. NameError: name 'MATRIX\_Mt' is not defined
+**B. NameError: name 'MATRIX\_Mt' is not defined**
 
-```
+```text
 # /MV3D/src/net/processing/boxes3d.py 상단에 추가 
 # ./src/config.py L126 참고 
 #rgb camera
@@ -233,9 +208,9 @@ MATRIX_Kt = ([[ 721.5377, 0. , 0. ],
 [ 609.5593, 172.854 , 1. ]])
 ```
 
-### A. ./src/config.py
+#### A. ./src/config.py
 
-```
+```text
 #if __C.DATA_SETS_TYPE=='test':
 #    __C.DATA_SETS_DIR = osp.abspath('/home/stu/round12_data_test')
 
@@ -243,44 +218,41 @@ if __C.DATA_SETS_TYPE=='test':
     __C.DATA_SETS_DIR = osp.abspath('/workspace/mv3d')
 ```
 
-### B. roi\_pooling.so을 심볼릭이 아닌 파일로 대체
+#### B. roi\_pooling.so을 심볼릭이 아닌 파일로 대체
 
 > 이후에도 같은 문제가 발생 하므로 \[C\]방법 추천
 
-```
+```text
 cd ./src/net/roipooling_op
 mv roi_pooling.so roi_pooling.so~
 cp ../../net/lib/roi_pooling_layer/roi_pooling.so ./
 ```
 
-### C. roi\_pooling.so 수정 버젼 다운 로드
+#### C. roi\_pooling.so 수정 버젼 다운 로드
 
 1. [다운로드 roi\_pooling.so](https://github.com/CharlesShang/TFFRCNN/tree/roi_pooling/lib/roi_pooling_layer)
-
 2. chmod +x roi\_pooling.so
 
-## 4. train.py
+### 4. train.py
 
-###### \[에러\] `"tensorflow.python.framework.errors_impl.NotFoundError: YOUR_FOLDER/roi_pooling.so: undefined symbol: ZN10tensorflow7strings6StrCatB5cxx11ERKNS0_8AlphaNumES3"`
+**\[에러\] "tensorflow.python.framework.errors\_impl.NotFoundError: YOUR\_FOLDER/roi\_pooling.so: undefined symbol: ZN10tensorflow7strings6StrCatB5cxx11ERKNS0\_8AlphaNumES3"**
 
 * it is related to compilation of roi\_pooling layer.
 * A simple fix will be changing "GLIBCXX\_USE\_CXX11\_ABI=1" to "GLIBCXX\_USE\_CXX11\_ABI=0" in "src/net/lib/make.sh" \(line 17\)
 
 OR Download and replace the .so with following file :[\[Download\]](https://github.com/smallcorgi/Faster-RCNN_TF/blob/6e2a941ac250da668cf93899dbd870cc4d838773/lib/roi_pooling_layer/roi_pooling.so), CUDA 8.0, Python 3.5
 
-###### \[에러\] NameError: name 'data\_splitter' is not defined
+**\[에러\] NameError: name 'data\_splitter' is not defined**
 
 > user this version of [train.py](https://raw.githubusercontent.com/lihua213/didi-udacity-compatition/development/src/train.py): for python2
 
-###### \[에러\] "module 'tensorflow.python.ops.nn' has no attribute 'convolution'"
+**\[에러\] "module 'tensorflow.python.ops.nn' has no attribute 'convolution'"**
 
 > `conda list | grep tensorflow`후 tensorflow\(cpu & gpu\) 버젼을 1.0 이상으로 변경
 
----
-
 File Structure
 
-```
+```text
 ├── data   <-- all data is stored here. (Introduced in detail below)
 │   ├── predicted  <-- after prediction, results will be saved here.
 │   ├── preprocessed   <-- MV3D net will take inputs from here(after data.py) 
@@ -312,7 +284,7 @@ File Structure
 
 Related data are organized in this way. \(Under /data directory\)
 
-```
+```text
 ├── predicted <-- after prediction, results will be saved here.
 │   ├── didi <-- when didi dataset is used, the results will be put here
 │   └── kitti <-- When kitti dataset used for prediction, put the results here
@@ -363,12 +335,9 @@ Related data are organized in this way. \(Under /data directory\)
             └── calib_velo_to_cam.txt
 ```
 
----
+> [https://github.com/CharlesShang/TFFRCNN](https://github.com/CharlesShang/TFFRCNN)
 
-> https://github.com/CharlesShang/TFFRCNN
-
-
-## 0. setup the python environment.
+### 0. setup the python environment.
 
 ```bash
 #Google cloud GPU Tesla K80
@@ -378,22 +347,24 @@ conda install -y numpy Cython tensorflow-gpu matplotlib scikit-learn PIL
 pip install easydict opencv_python pyyaml mayavi
 conda install -c anaconda cudatoolkit=7.5
 ```
+
 OR
 
-```
+```text
 
 ```
 
-## 1. git clone
-```
+### 1. git clone
+
+```text
 git clone --recursive https://github.com/leeyevi/MV3D_TF.git
 ```
 
-## 2. Downloads KITTI object datasets.
+### 2. Downloads KITTI object datasets.
 
 > [Object Detection Evaluation 2012](http://www.cvlibs.net/datasets/kitti/eval_object.php)
 
-```
+```text
 # cd /workspace/MV3D/data/KITTI/object
 wget http://kitti.is.tue.mpg.de/kitti/data_object_image_2.zip
 wget http://kitti.is.tue.mpg.de/kitti/data_object_image_3.zip
@@ -404,41 +375,32 @@ wget http://kitti.is.tue.mpg.de/kitti/data_object_label_2.zip
 
 `/workspace/MV3D/data/KITTI/object/{testing/training}/lidar_bv` 폴더 생성
 
+### 3. Make Lidar Bird View data
 
-## 3. Make Lidar Bird View data
-
-- change the root_dir in `read_lidar.py` file
-
-
-
-
+* change the root\_dir in `read_lidar.py` file
 
 ![](http://i.imgur.com/sJi1PFV.png)
-## Build the Cython modules
 
-cd $MV3D/lib
-make
+### Build the Cython modules
 
-```
+cd $MV3D/lib make
+
+```text
 # edit the kitti_path in tools/read_lidar.py
 # then start make data
 python tools/read_lidar.py
 ```
 
-
-
-
 `./train_net.py --device gpu --device_id 0 --weights /workspace/MV3D_TF/data/pretrain_model/VGG_imagenet.npy --imdb kitti_train --iters 50001 --cfg /workspace/MV3D_TF/experiments/cfgs/faster_rcnn_end2end.yml --network MV3D_train`
 
+**\[에러\] undefined symbol: ZN10tensorflow7strings6StrCatB5cxx11ERKNS0\_8AlphaNumES3"**
 
-###### [에러] undefined symbol: ZN10tensorflow7strings6StrCatB5cxx11ERKNS0_8AlphaNumES3"
-```
+```text
 #/workspace/MV3D_TF/lib/make.sh
 
 #g++ -std=c++11 -shared -o roi_pooling.so roi_pooling_op.cc \
 g++ -std=c++11 -shared -D_GLIBCXX_USE_CXX11_ABI=0 -o roi_pooling.so roi_pooling_op.cc \
 roi_pooling_op.cu.o -I $TF_INC -D GOOGLE_CUDA=1 -fPIC $CXXFLAGS \
 -lcudart -L $CUDA_PATH/lib64
-
 ```
 
