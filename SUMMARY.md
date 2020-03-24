@@ -25,6 +25,7 @@
 ## eBook
 
 * [2장](ebook/part02/README.md)
+  * [Octree-kdTree](ebook/part02/part02-chapter02.md)
   * [Clustering](ebook/part02/part02-chapter01/README.md)
     * [Region-Growing](ebook/part02/part02-chapter01/part02-chapter01-region-growing.md)
     * [Euclidean clustering](ebook/part02/part02-chapter01/part02-chapter01-euclidean.md)
