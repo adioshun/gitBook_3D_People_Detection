@@ -25,6 +25,10 @@
 ## eBook
 
 * [2장](ebook/part02/README.md)
+  * [Registration](ebook/part02/part02-chapter03/README.md)
+    * [tmp](ebook/part02/part02-chapter03/part02-chapter03-tmp.md)
+    * [Feature Based Registration](ebook/part02/part02-chapter03/part02-chapter03-feature-registration.md)
+    * [ICP](ebook/part02/part02-chapter03/part02-chapter03-icp.md)
   * [Octree-kdTree](ebook/part02/part02-chapter02.md)
   * [Clustering](ebook/part02/part02-chapter01/README.md)
     * [Region-Growing](ebook/part02/part02-chapter01/part02-chapter01-region-growing.md)
