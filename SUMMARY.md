@@ -25,6 +25,8 @@
 ## eBook
 
 * [2장](ebook/part02/README.md)
+  * [Feature](ebook/part02/part02-chapter04/README.md)
+    * [PCA FOR 3-DIMENSIONAL POINT CLOUD](ebook/part02/part02-chapter04/part02-chapter04-pca-for-3-dimensional-point-cloud.md)
   * [Registration](ebook/part02/part02-chapter03/README.md)
     * [tmp](ebook/part02/part02-chapter03/part02-chapter03-tmp.md)
     * [Feature Based Registration](ebook/part02/part02-chapter03/part02-chapter03-feature-registration.md)
