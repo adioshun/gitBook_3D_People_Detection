@@ -136,7 +136,12 @@ main (int argc, char** argv)
 * 색상의 비슷함을 임계치 정보를 이용하여 검사 합니다. 
 * 비슷한 색상의 이웃 점군까리 군집화를 진행 합니다. 
 * 최소 크기 요구치에 부합되지 않으면 이웃 점군과 통합 됩니다. 
-* 
+*  * After the segmentation, an attempt for merging clusters with close colors is made.
+  * Two neighbouring clusters with a small difference between average color are merged together.
+  * Then the second merging step takes place.
+  * During this step every single cluster is verified by the number of points that it contains.
+  * If this number is less than the user-defined value than current cluster is merged with the closest neighbouring cluster.
+
 ```cpp
   reg.setInputCloud (cloud);         // 입력 
   reg.setSearchMethod (tree);        // 탐색 방법 
