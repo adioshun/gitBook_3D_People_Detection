@@ -35,7 +35,8 @@
     * [ICP](ebook/part02/part02-chapter03/part02-chapter03-icp.md)
   * [Octree-kdTree](ebook/part02/part02-chapter02.md)
   * [05-Clustering](ebook/part02/part02-chapter01/README.md)
+    * [2\_MIN-CUT](ebook/part02/part02-chapter01/part02-chapter01-min-cut.md)
     * [1\_RANSAC](ebook/part02/part02-chapter01/part02-chapter01-ransac.md)
     * [Region-Growing](ebook/part02/part02-chapter01/part02-chapter01-region-growing.md)
-    * [Euclidean clustering](ebook/part02/part02-chapter01/part02-chapter01-euclidean.md)
+    * [3\_Euclidean clustering](ebook/part02/part02-chapter01/part02-chapter01-euclidean.md)
 

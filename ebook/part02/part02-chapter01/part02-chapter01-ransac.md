@@ -20,8 +20,6 @@ RANSAC은Random Sample Consensus의  약어로 sample consensus 모듈에서 제
 4. The model is reestimated from all hypothetical inliers, because it has only been estimated from the initial set of hypothetical inliers. 
 5. Finally, the model is evaluated by estimating the error of the inliers relative to the model. 
 
-RANSAC과 평면 모델을 이용하ㅕ 지면과 물체를 세분화 할수 있습니다. 탐지 하려는 대부분의 물체는 지표면에 닿아 있습니다. 물건은 선반/책상위에, 차량은 도로 위에 존재 합니다1. 지면을 제거하게 되면 각각의 오브젝트 들이 서로 연결되지 않고 떨어지기 때문에 구분이 쉬워집니다. 
-
 사용되는 파라미터는 아래와 같습니다.  
 
 | 파라미터  | 설명  |
@@ -125,4 +123,6 @@ $ pcl_viewer SACSegmentation_result_neg.pcd
 | [![](https://camo.githubusercontent.com/d60875d7e7bd5503e4a5e86557f6fe7eba61e3e0/68747470733a2f2f692e696d6775722e636f6d2f7168637a5266572e706e67)](https://camo.githubusercontent.com/d60875d7e7bd5503e4a5e86557f6fe7eba61e3e0/68747470733a2f2f692e696d6775722e636f6d2f7168637a5266572e706e67) | [![](https://camo.githubusercontent.com/6733c3b8ab6504daa00549d9b8f4077c27639527/68747470733a2f2f692e696d6775722e636f6d2f55706f37425a4b2e706e67)](https://camo.githubusercontent.com/6733c3b8ab6504daa00549d9b8f4077c27639527/68747470733a2f2f692e696d6775722e636f6d2f55706f37425a4b2e706e67) | [![](https://camo.githubusercontent.com/1ec4e739b475d193469af8126b8c53915140c76e/68747470733a2f2f692e696d6775722e636f6d2f6a36486f4a42792e706e67)](https://camo.githubusercontent.com/1ec4e739b475d193469af8126b8c53915140c76e/68747470733a2f2f692e696d6775722e636f6d2f6a36486f4a42792e706e67) |
 | :--- | :--- | :--- |
 | 원본`tabletop_passthrough.pcd` | 결과`setNegative (false)` | 결과 `setNegative (true)` |
+
+RANSAC과 평면 모델을 이용하면 지면과 물체를 세분화 할수 있습니다. 탐지 하려는 대부분의 물체는 지표면에 닿아 있습니다. 물건은 선반/책상위에, 차량은 도로 위에 존재 합니다1. 지면을 제거하게 되면 각각의 오브젝트 들이 서로 연결되지 않고 떨어지기 때문에 구분이 쉬워집니다. 
 
