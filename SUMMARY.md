@@ -25,6 +25,7 @@
 ## eBook
 
 * [2장](ebook/part02/README.md)
+  * [02-SAC](ebook/part02/part02-sac.md)
   * [Feature](ebook/part02/part02-chapter04/README.md)
     * [PCA](ebook/part02/part02-chapter04/part02-chapter04-pca.md)
     * [PCA FOR 3-DIMENSIONAL POINT CLOUD](ebook/part02/part02-chapter04/part02-chapter04-pca-for-3-dimensional-point-cloud.md)
@@ -33,7 +34,8 @@
     * [Feature Based Registration](ebook/part02/part02-chapter03/part02-chapter03-feature-registration.md)
     * [ICP](ebook/part02/part02-chapter03/part02-chapter03-icp.md)
   * [Octree-kdTree](ebook/part02/part02-chapter02.md)
-  * [Clustering](ebook/part02/part02-chapter01/README.md)
+  * [05-Clustering](ebook/part02/part02-chapter01/README.md)
+    * [1\_RANSAC](ebook/part02/part02-chapter01/part02-chapter01-ransac.md)
     * [Region-Growing](ebook/part02/part02-chapter01/part02-chapter01-region-growing.md)
     * [Euclidean clustering](ebook/part02/part02-chapter01/part02-chapter01-euclidean.md)
 
