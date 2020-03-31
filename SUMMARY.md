@@ -25,7 +25,8 @@
 ## eBook
 
 * [2장](ebook/part02/README.md)
-  * [Recognition](ebook/part02/part02-chapter07.md)
+  * [Recognition](ebook/part02/part02-chapter07/README.md)
+    * [SVM](ebook/part02/part02-chapter07/part02-chapter07-svm.md)
   * [02-SAC](ebook/part02/part02-sac.md)
   * [Feature](ebook/part02/part02-chapter04/README.md)
     * [5\_Integral Images](ebook/part02/part02-chapter04/part02-chapter04-integral-images.md)
