@@ -47,3 +47,19 @@
 * [Robust pose estimation of rigid objects](http://pointclouds.org/documentation/tutorials/alignment_prerejective.php)
 * [Aligning object templates to a point cloud](http://pointclouds.org/documentation/tutorials/template_alignment.php)
 
+
+
+
+
+---
+
+3D Object Recognition in Clutter with the Point Cloud Library : 
+
+Tutorial: Point Cloud Library: Three-Dimensional Object Recognition and 6 DOF Pose Estimation : [https://ieeexplore.ieee.org/document/6299166?arnumber=6299166](https://ieeexplore.ieee.org/document/6299166?arnumber=6299166) , 2012
+
+
+
+
+
+
+

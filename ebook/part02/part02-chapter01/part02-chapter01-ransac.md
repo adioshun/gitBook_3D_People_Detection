@@ -132,3 +132,11 @@ $ pcl_viewer SACSegmentation_result_neg.pcd
 
 RANSAC과 평면 모델을 이용하면 지면과 물체를 세분화 할수 있습니다. 탐지 하려는 대부분의 물체는 지표면에 닿아 있습니다. 물건은 선반/책상위에, 차량은 도로 위에 존재 합니다1. 지면을 제거하게 되면 각각의 오브젝트 들이 서로 연결되지 않고 떨어지기 때문에 구분이 쉬워집니다. 
 
+
+
+Performance Evaluation of RANSAC Family, [http://www.bmva.org/bmvc/2009/Papers/Paper355/Paper355.pdf](http://www.bmva.org/bmvc/2009/Papers/Paper355/Paper355.pdf)
+
+
+
+Model Fitting and Shape Matching : [http://montefiore.ulg.ac.be/~nvecoven/ir/files/10-fitting.pdf](http://montefiore.ulg.ac.be/~nvecoven/ir/files/10-fitting.pdf)
+

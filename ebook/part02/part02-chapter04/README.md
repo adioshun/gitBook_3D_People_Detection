@@ -1,4 +1,11 @@
+---
+description: >-
+  https://github.com/PointCloudLibrary/pcl/blob/master/test/features/test_base_feature.cpp
+---
+
 # Feature
+
+
 
 특징이란 각 포인트들이 가진 고유 성질로 각 포인트들을 구분 할때 사용 됩니다.
 
@@ -30,4 +37,14 @@
       feature 6: Histogram of Surface Normal [48 dimension]   #normal의 분포 
       feature 7: 3D box size (Along 3 eigenvectors) [3 dimension]
 ```
+
+
+
+{% embed url="http://perception.inrialpes.fr/people/Horaud/Courses/pdf/Horaud\_3DS\_5.pdf" %}
+
+A comprehensive review of 3D point cloud descriptors, 2018 : [https://arxiv.org/pdf/1802.02297.pdf](https://arxiv.org/pdf/1802.02297.pdf)
+
+[https://github.com/PointCloudLibrary/pcl/wiki/Overview-and-Comparison-of-Features](https://github.com/PointCloudLibrary/pcl/wiki/Overview-and-Comparison-of-Features) 
+
+
 
