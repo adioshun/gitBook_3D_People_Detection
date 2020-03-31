@@ -27,6 +27,7 @@
 * [2장](ebook/part02/README.md)
   * [02-SAC](ebook/part02/part02-sac.md)
   * [Feature](ebook/part02/part02-chapter04/README.md)
+    * [5\_Integral Images](ebook/part02/part02-chapter04/part02-chapter04-integral-images.md)
     * [9\_curvatures\_tmp](ebook/part02/part02-chapter04/part02-chapter04-curvatures.md)
     * [tmp](ebook/part02/part02-chapter04/part02-chapter04-tmp.md)
     * [2\_Normal](ebook/part02/part02-chapter04/part02-chapter04-normal.md)
