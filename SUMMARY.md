@@ -35,7 +35,7 @@
     * [1\_RANSAC](ebook/part02/part02-chapter01/part02-chapter01-ransac.md)
     * [2\_MIN-CUT](ebook/part02/part02-chapter01/part02-chapter01-min-cut.md)
     * [3\_Euclidean clustering](ebook/part02/part02-chapter01/part02-chapter01-euclidean.md)
-    * [4\_Region-Growing](ebook/part02/part02-chapter01/part02-chapter01-region-growing.md)  
+    * [4\_Region-Growing](ebook/part02/part02-chapter01/part02-chapter01-region-growing.md)
   * [06-Surface](ebook/part02/part02-chapter05/README.md)
     * [Upsampling](ebook/part02/part02-chapter05/part02-chapter05-upsampling.md)
     * [Triangulation](ebook/part02/part02-chapter05/part02-chapter05-tri.md)
@@ -51,6 +51,4 @@
     * [tmp](ebook/part02/part02-chapter04/part02-chapter04-tmp.md)
   * [08-Recognition](ebook/part02/part02-chapter07/README.md)
     * [SVM](ebook/part02/part02-chapter07/part02-chapter07-svm.md)
-
-
 

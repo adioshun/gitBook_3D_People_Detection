@@ -1,6 +1,6 @@
 # Smoothing
 
-Smoothing은 PCL에서는 Moving Least Squares \(MLS\) 알고리즘을 이용합니다. 아래 그림은 Smoothing전후의 Normal을 시각화 한것입니다. Normal값이 보정되어 정합이나 Normal을 이용한 알고리즘이나 밀집도 기반 알고리즘의 성능 향상도 가능합니다.
+3D 센서는 앞에서 살펴본 조밀하지 못한 단점외에도 센서의 성능으로 인해 측정 에러나, 잡음, 빈공간 등이 발생 할수 있습니다.  아래 그림은 Smoothing전후의 Normal을 시각화 한것입니다. Normal값이 보정되어 정합이나 Normal을 이용한 알고리즘이나 밀집도 기반 알고리즘의 성능 향상도 가능합니다. Smoothing역시 PCL에서는 Moving Least Squares \(MLS\) 알고리즘을 이용합니다
 
 파라미터는 아래와 같습니다.
 
