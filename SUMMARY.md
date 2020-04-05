@@ -25,6 +25,9 @@
 ## eBook
 
 * [2장](ebook/part02/README.md)
+  * [Surface](ebook/part02/part02-chapter05/README.md)
+    * [Triangulation](ebook/part02/part02-chapter05/part02-chapter05-tri.md)
+    * [Smoothing](ebook/part02/part02-chapter05/part02-chapter05-smoothing.md)
   * [Recognition](ebook/part02/part02-chapter07/README.md)
     * [SVM](ebook/part02/part02-chapter07/part02-chapter07-svm.md)
   * [02-SAC](ebook/part02/part02-sac.md)
