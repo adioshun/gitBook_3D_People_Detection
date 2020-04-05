@@ -26,6 +26,7 @@
 
 * [2장](ebook/part02/README.md)
   * [Surface](ebook/part02/part02-chapter05/README.md)
+    * [Upsampling](ebook/part02/part02-chapter05/part02-chapter05-upsampling.md)
     * [Triangulation](ebook/part02/part02-chapter05/part02-chapter05-tri.md)
     * [Smoothing](ebook/part02/part02-chapter05/part02-chapter05-smoothing/README.md)
       * [MLS](ebook/part02/part02-chapter05/part02-chapter05-smoothing/ref_mls.md)
