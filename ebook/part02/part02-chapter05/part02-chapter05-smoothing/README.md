@@ -12,7 +12,6 @@
 | setSearchMethod |  |
 | setSearchRadius |  |
 | setPolynomialFit |  |
-| setUpsamplingMethod | SAMPLE\_LOCAL\_PLANE,  RANDOM\_UNIFORM\_DENSITY |
 | process |  |
 
 
