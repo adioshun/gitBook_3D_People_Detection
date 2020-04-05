@@ -117,16 +117,18 @@ main(int argc, char** argv)
   //pcl::SampleConsensusModelNormalParallelPlane<pcl::PointXYZ, pcl::Normal>::Ptr model (new SampleConsensusModelNormalParallelPlane<pcl::PointXYZ, pcl::Normal> (cloud));;
 
   // model_p
-  //pcl::RandomSampleConsensus<pcl::PointXYZ> sac (model_p);
+  pcl::RandomSampleConsensus<pcl::PointXYZ> sac (model_p);
   //pcl::LeastMedianSquares<pcl::PointXYZ> sac (model_p);
   //pcl::MEstimatorSampleConsensus<pcl::PointXYZ> sac (model_p);
   //pcl::RandomizedRandomSampleConsensus<pcl::PointXYZ> sac (model_p);
   //pcl::MaximumLikelihoodSampleConsensus<pcl::PointXYZ> sac  (model_p);
-  pcl::RandomizedMEstimatorSampleConsensus<pcl::PointXYZ> sac  (model_p);
+  //pcl::RandomizedMEstimatorSampleConsensus<pcl::PointXYZ> sac  (model_p);
+  Eigen::VectorXf coeff;
+  sac.getModelCoefficients (coeff);
   sac.setDistanceThreshold (.01);
   sac.computeModel();
   sac.getInliers(inliers);
-	
+
   
   pcl::copyPointCloud (*cloud, inliers, *final);
   pcl::io::savePCDFile<pcl::PointXYZ>("sample_consenus_final_model_p.pcd", *final);
