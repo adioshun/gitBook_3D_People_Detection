@@ -25,7 +25,7 @@
 ## eBook
 
 * [2장](ebook/part02/README.md)
-  * [02-SAC](ebook/part02/part02-sac.md)
+  * [모델 매칭을 점군내 모형 탐지 : SAC 모듈](ebook/part02/part02-sac.md)
   * [03-Octree-kdTree](ebook/part02/part02-chapter02.md)
   * [04-Registration](ebook/part02/part02-chapter03/README.md)
     * [ICP](ebook/part02/part02-chapter03/part02-chapter03-icp.md)

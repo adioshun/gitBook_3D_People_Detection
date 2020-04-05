@@ -8,3 +8,15 @@
 * Smoothing
 * Triangulation 
 
+
+
+
+
+---
+
+
+
+{% embed url="http://mevislabdownloads.mevis.de/docs/3.0.2/FMEwork/PCL/Documentation/Publish/ModuleReference/PCLMovingLeastSquares.html\#polynomial-order" %}
+
+
+
