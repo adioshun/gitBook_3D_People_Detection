@@ -89,11 +89,16 @@ sample\_consensus는 사전에 정의된 모형\(Shape, model\)이 입력 데이
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
 #include <pcl/sample_consensus/ransac.h>
+#include <pcl/sample_consensus/msac.h>
+#include <pcl/sample_consensus/lmeds.h>
+#include <pcl/sample_consensus/rmsac.h>
+#include <pcl/sample_consensus/rransac.h>
+#include <pcl/sample_consensus/mlesac.h>
 #include <pcl/sample_consensus/sac_model_plane.h>
+#include <pcl/sample_consensus/sac_model_normal_plane.h>
 
 // How to use Random Sample Consensus model
 // http://pointclouds.org/documentation/tutorials/random_sample_consensus.php#random-sample-consensus
-
 
 int
 main(int argc, char** argv)
@@ -102,21 +107,27 @@ main(int argc, char** argv)
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZ>);
   pcl::PointCloud<pcl::PointXYZ>::Ptr final (new pcl::PointCloud<pcl::PointXYZ>);
   pcl::io::loadPCDFile<pcl::PointXYZ>("sample_consenus_input.pcd", *cloud);
-  //https://github.com/adioshun/gitBook_Tutorial_PCL/blob/master/Beginner/sample/sample_consenus_input.pcd
   
   std::vector<int> inliers;
   
+  
   // created RandomSampleConsensus object and compute the appropriated model
   pcl::SampleConsensusModelPlane<pcl::PointXYZ>::Ptr model_p (new pcl::SampleConsensusModelPlane<pcl::PointXYZ> (cloud));  
-  
-  // model_p
-  int debug_verbosity_level = 10;
-  pcl::RandomSampleConsensus<pcl::PointXYZ> ransac (model_p);
+  //pcl::SampleConsensusModelNormalPlane<pcl::PointXYZ, pcl::Normal>::Ptr model (new SampleConsensusModelNormalPlane<pcl::PointXYZ, pcl::Normal> (cloud));
+  //pcl::SampleConsensusModelNormalParallelPlane<pcl::PointXYZ, pcl::Normal>::Ptr model (new SampleConsensusModelNormalParallelPlane<pcl::PointXYZ, pcl::Normal> (cloud));;
 
-  ransac.setDistanceThreshold (.01);
-  ransac.computeModel(debug_verbosity_level);  //Compute the actual model and find the inliers. 
-  ransac.getInliers(inliers);
+  // model_p
+  //pcl::RandomSampleConsensus<pcl::PointXYZ> sac (model_p);
+  //pcl::LeastMedianSquares<pcl::PointXYZ> sac (model_p);
+  //pcl::MEstimatorSampleConsensus<pcl::PointXYZ> sac (model_p);
+  //pcl::RandomizedRandomSampleConsensus<pcl::PointXYZ> sac (model_p);
+  //pcl::MaximumLikelihoodSampleConsensus<pcl::PointXYZ> sac  (model_p);
+  pcl::RandomizedMEstimatorSampleConsensus<pcl::PointXYZ> sac  (model_p);
+  sac.setDistanceThreshold (.01);
+  sac.computeModel();
+  sac.getInliers(inliers);
 	
+  
   pcl::copyPointCloud (*cloud, inliers, *final);
   pcl::io::savePCDFile<pcl::PointXYZ>("sample_consenus_final_model_p.pcd", *final);
 
@@ -124,7 +135,9 @@ main(int argc, char** argv)
   
   // 다른 방법들 
   //https://github.com/PointCloudLibrary/pcl/blob/master/test/sample_consensus/test_sample_consensus_plane_models.cpp
+  
  }
+ 
 ```
 
 
