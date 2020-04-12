@@ -11,7 +11,7 @@
 가장 간단한 방법은 list에 저장된 모든 위치 정보를  거리계산 알고리즘을 이용하여 탐색해서 찾을 수도 있습니다. 하지만 매 순간 매 포인트에 대하여 검색 할경우 시간이 많이 걸립니다. 따라서 공간을 분활하여 구조화하여 탐색을 하면 좋습니다. Spatial partitioning 효율적으로 수행하기 위해 space-partitioning data structure를 생성하면 됩니다. spatial data structure는 위치 정보를 저장하고 있는 데이터 구조체 입니다. 이 형태로 데이터를 저장하게 되면 효율적으로 레인지 서치와 근접 이웃 탐색이 가능 합니다. 주변점은 이전에 살펴 보았던 filters외에도 향후, surface, features, registration등도 탐색 기능에 바탕을 두고 있기에 중요합니다. PCL에서는 다음과 같은 탐색 방법을 제공하고 있습니다.
 
 * BruteForce :simple brute force search algorithm 
-* OrganizedNeighbor : earest neigbhor search in organized point clouds \[[코드](http://docs.ros.org/indigo/api/agile_grasp/html/hands__test_8cpp_source.html),
+* OrganizedNeighbor : earest neigbhor search in organized point clouds \[코드,
 * KdTree
 * Octree
 * FlannSearch
