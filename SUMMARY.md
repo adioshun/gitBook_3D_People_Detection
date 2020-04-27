@@ -30,6 +30,7 @@
   * [04-Registration](ebook/part02/part02-chapter03/README.md)
     * [ICP](ebook/part02/part02-chapter03/part02-chapter03-icp.md)
     * [Feature Based Registration](ebook/part02/part02-chapter03/part02-chapter03-feature-registration.md)
+    * [NDP](ebook/part02/part02-chapter03/part02-chapter03-ndp.md)
     * [tmp](ebook/part02/part02-chapter03/part02-chapter03-tmp.md)
   * [05-Clustering](ebook/part02/part02-chapter01/README.md)
     * [1\_RANSAC](ebook/part02/part02-chapter01/part02-chapter01-ransac.md)

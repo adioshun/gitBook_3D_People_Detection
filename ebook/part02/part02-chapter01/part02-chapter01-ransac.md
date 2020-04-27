@@ -16,7 +16,7 @@ RANSAC은Random Sample Consensus의  약어로 sample consensus 모듈에서 제
 
 
 
-![](../../../.gitbook/assets/image%20%286%29.png)
+![](../../../.gitbook/assets/image%20%287%29.png)
 
 왼쪽 이미지의 회색은 입력 데이터로 사용되는 Point cloud입니다. 오른쪽 이미지에서 파란색 Line은 사용하고자 하는 Model입니다. RANSAC에서는 모델+파라미터에 맞으면 Inlier라 하고 맞지 않으면 outlier라고 합니다. 즉, 빨간색 점은 Outlier이고, 파란색 점은 Inlier입니다. 
 
