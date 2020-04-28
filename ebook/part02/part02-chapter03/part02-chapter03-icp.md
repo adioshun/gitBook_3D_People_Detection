@@ -2,9 +2,7 @@
 
 ### ICP \(Iterative closest points\)
 
-ICP는 이름에서 알수 있듯이 반복적인 수행을 통해서 두 점군의 키포인트의 거리가 가까운 **변환행렬**을 추출 하는것을 목적으로 하고 있습니다. 단점은 모든 포인트에 대하여 brute force방식으로 진행 하기 때문에 시간이 많이 소요 됩니다. 또한 반복 횟수가 적으면 정합에 실패 할수도 있어 일반적으로 다른 알고리즘을 이용하여 초기 정합을 수행 하여 대락적으로 정렬된 상태에서 세밀한 정밀을 수행 할때 많이 사용되어 Local Registration 방법. 
-
-키 아이디어는 두 점군의 대응점을 찾고, 이 대응점의 거리가 최소가 되는 변환행렬을 구하는 것이다. 따라서 두 점군은 겹치는 부분이 있어야 합니다.
+ICP는 이름에서 알수 있듯이 반복적인 수행을 통해서 두 점군의 키포인트의 거리가 가까운 **변환행렬**을 추출 하는것을 목적으로 하고 있습니다. 단점은 모든 포인트에 대하여 brute force방식으로 진행 하기 때문에 시간이 많이 소요 됩니다. 또한 반복 횟수가 적으면 정합에 실패 할수도 있어 일반적으로 다른 알고리즘을 이용하여 초기 정합을 수행 하여 대락적으로 정렬된 상태에서 세밀한 정밀을 수행 할때 많이 사용되어 Local Registration 방법이라고도 불리웁니다. 최종적으로 transformation은 SVD\(Singular Value Decomposition\)이용해 구해 집니다. 
 
 동작 과정은 아래와 같습니다.
 
@@ -24,21 +22,101 @@ ICP는 이름에서 알수 있듯이 반복적인 수행을 통해서 두 점군
 >
 > P. Besl and N. McKay, ”A method for registration of 3-d shapes,” Pattern Analysis and Machine Intelligence, 14 \(2\) pp.239-256, 1992.
 
-* 각 점군에서 키포인트 생성 
+```cpp
+#include <iostream>
+#include <pcl/io/pcd_io.h>
+#include <pcl/point_types.h>
+#include <pcl/registration/icp.h>
+
+// How to use iterative closest point
+// http://pointclouds.org/documentation/tutorials/iterative_closest_point.php#iterative-closest-point
+
+int
+ main (int argc, char** argv)
+{
+  pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_in (new pcl::PointCloud<pcl::PointXYZ>);
+  pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_out (new pcl::PointCloud<pcl::PointXYZ>);
+  pcl::PointCloud<pcl::PointXYZ> Final;   
+
+  pcl::io::loadPCDFile ("bun0.pcd", *cloud_in);
+  pcl::io::loadPCDFile ("bun4.pcd", *cloud_out);
+
+  pcl::IterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ> reg;
+  reg.setInputSource(cloud_in);
+  reg.setInputTarget(cloud_out); 
+  reg.setMaximumIterations (50);              // 최대 수행 횟수 Set the maximum number of iterations (criterion 1)
+  reg.setTransformationEpsilon (1e-8);        // 이전 Transformation과의 최대 변화량 Set the transformation epsilon (criterion 2)
+  reg.setMaxCorrespondenceDistance (0.05);    // Set the max correspondence distance to 5cm 
+                                              // (e.g., correspondences with higher distances will be ignored)
+  //reg.setEuclideanFitnessEpsilon (1);       // Set the euclidean distance difference epsilon (criterion 3)
+  reg.align(Final);
+
+  std::cout << "has converged:" << reg.hasConverged() << " score: " <<   // 정확히 정합되면 1(True)
+  reg.getFitnessScore() << std::endl;
+  
+  Eigen::Matrix4f transformation = reg.getFinalTransformation ();
+  std::cout << transformation << std::endl;                // 변환 행렬 출력 
+
+ return (0);
+}
+```
+
+
+
+알고리즘의 종료 조건은 아래와 같습니다. `The algorithm has several termination criteria:`
+
+1. Number of iterations has reached the maximum user imposed number of iterations \(via [setMaximumIterations](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#a3844d186f7a99d15464368e0f25635ed)\)
+2. The epsilon \(difference\) between the previous transformation and the current estimated transformation is smaller than an user imposed value \(via [setTransformationEpsilon](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#aec74ab878cca8d62fd1be9942685a8c1)\)
+3. The sum of Euclidean squared errors is smaller than a user defined threshold \(via [setEuclideanFitnessEpsilon](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#aeb0bb4577dbe144bd467d4a9632b84d8)\)
+
+
+
+각 점군에서 키포인트 생성 
+
 * 키포인트에서 feature descriptor 계산 
 * 두 점군사이에 유사점을 비교 하여 대응점\(correspondences\) estimate
 * 대응점들간의 거리 계산 반복 
 * 가장 거리가 가까운 때의 변환 행렬 estimation 
 
+
+
+--- 
+
+
+
+
+
 PCL은 다양한 ICP방법을 제공 하고 있다.
 
-* pcl::IterativeClosestPoint 
-* pcl::IterativeClosestPointWithNormals
-* pcl::IterativeClosestPointNonLinear 
-* pcl::JointIterativeClosestPoint
-* pcl::NormalDistributionsTransform
+### IterativeClosestPointWithNormals
 
-여기서는 기본적인 ICP를 살펴 보도록 하겠습니다.
+By default, this implementation uses the traditional point to plane objective and computes point to plane distances using the normals of the target point cloud. It also provides the option \(through setUseSymmetricObjective\) of using the symmetric objective function of \[Rusinkiewicz 2019\]. This objective uses the normals of both the source and target point cloud and has a similar computational cost to the traditional point to plane objective while also offering improved convergence speed and a wider basin of convergence.
+
+Note that this implementation not demean the point clouds which can lead to increased numerical error. If desired, a user can demean the point cloud, run iterative closest point, and composite the resulting ICP transformation with the translations from demeaning to obtain a transformation between the original point clouds.
+
+> Radu B. Rusu, Matthew Cong
+
+### IterativeClosestPointNonLinear 
+
+IterativeClosestPointNonLinear is an ICP variant that uses Levenberg-Marquardt optimization backend.
+
+The resultant transformation is optimized as a quaternion.
+
+The algorithm has several termination criteria:
+
+1. Number of iterations has reached the maximum user imposed number of iterations \(via [setMaximumIterations](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#a3844d186f7a99d15464368e0f25635ed)\)
+2. The epsilon \(difference\) between the previous transformation and the current estimated transformation is smaller than an user imposed value \(via [setTransformationEpsilon](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#aec74ab878cca8d62fd1be9942685a8c1)\)
+3. The sum of Euclidean squared errors is smaller than a user defined threshold \(via [setEuclideanFitnessEpsilon](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#aeb0bb4577dbe144bd467d4a9632b84d8)\)
+
+> Radu B. Rusu, Michael Dixon
+
+#### JointIterativeClosestPoint
+
+JointIterativeClosestPoint extends ICP to multiple frames which share the same transform.
+
+This is particularly useful when solving for camera extrinsics using multiple observations. When given a single pair of clouds, this reduces to vanilla ICP.
+
+
 
 
 
