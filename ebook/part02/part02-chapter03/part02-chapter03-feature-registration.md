@@ -8,7 +8,20 @@
 
 동작 과정은 다음과 같습니다.
 
-* use SIFT Keypoints \(pcl::SIFT…something\)
+![](../../../.gitbook/assets/image%20%288%29.png)
+
+1. 데이터 획득 : 센서 A와 B에서 각각 포인트 클라우드\_A와 포인트 클라우드\_B 를 획득 합니다. 
+2. 키포인트 선택 : 여러개의 포인트 중에서 데이터를 가장 잘 설명하는 키포인트를 선정 합니다. 
+3. Descriptor 계산 : 각 키포인트별 feature descriptor를 계산 합니다. 
+4. correspondences 계산 : x,y,z위치 정보와 Descriptor 정보를 기반하여 유사도를 계산하여 correspondences를 계산 합니다. 
+5. correspondences선정 : 계산  correspondences 중에서 나쁜 것을 버리게 됩니다. 
+6. 변환행렬 계산 : 남은 좋은 correspondences를 이용하여 transformation을 계산 합니다. 
+
+
+
+
+
+* * use SIFT Keypoints \(pcl::SIFT…something\)
 * use FPFH descriptors \(pcl::FPFHEstimation\) at the keypoints
   * see our tutorials for that,  [like](http://www.pointclouds.org/media/rss2011.html)
 * get the FPFH descriptors and estimate correspondences using  `pcl::CorrespondenceEstimation`
