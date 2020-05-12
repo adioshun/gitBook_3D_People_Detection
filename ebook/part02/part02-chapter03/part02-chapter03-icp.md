@@ -4,8 +4,6 @@
 
 대표적인 지역 정합 알고리즘으로는  ICP가 있습니다. ICP는 모든 포인트들을 비교 하면서 대응점간의 거리가 최소화 될때가지 반복적으로 정합을 수행 하는 알골리즘 입니다. 가장 직관적이면서 좋은 성능을 보여 많은 분야에서 사용되고 있습니다. 하지만 모든 포인트에 대하여 brute force방식으로 진행 하기 때문에 시간이 많이 소요 되어 kd-tree를 이용하여 지연을 줄이는 방법도 활용 되고 있습니다. 
 
-
-
 동작 과정은 아래와 같습니다.
 
 ![](../../../.gitbook/assets/image%20%286%29.png)
@@ -62,6 +60,12 @@ int
 
 [https://github.com/PointCloudLibrary/pcl/blob/master/test/registration/test\_registration.cpp](https://github.com/PointCloudLibrary/pcl/blob/master/test/registration/test_registration.cpp)
 
+알고리즘의 종료 조건은 아래와 같습니다. `The algorithm has several termination criteria:`
+
+1. Number of iterations has reached the maximum user imposed number of iterations \(via [setMaximumIterations](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#a3844d186f7a99d15464368e0f25635ed)\)
+2. The epsilon \(difference\) between the previous transformation and the current estimated transformation is smaller than an user imposed value \(via [setTransformationEpsilon](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#aec74ab878cca8d62fd1be9942685a8c1)\)
+3. The sum of Euclidean squared errors is smaller than a user defined threshold \(via [setEuclideanFitnessEpsilon](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#aeb0bb4577dbe144bd467d4a9632b84d8)\)
+
 ```cpp
 #include <iostream>
 #include <pcl/io/pcd_io.h>
@@ -84,10 +88,11 @@ int
   pcl::IterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ> reg;
   reg.setInputSource(cloud_in);
   reg.setInputTarget(cloud_out); 
-  reg.setMaximumIterations (50);              // 최대 수행 횟수 Set the maximum number of iterations (criterion 1)
-  reg.setTransformationEpsilon (1e-8);        // 이전 Transformation과의 최대 변화량 Set the transformation epsilon (criterion 2)
-  reg.setMaxCorrespondenceDistance (0.05);    // Set the max correspondence distance to 5cm 
-                                              // (e.g., correspondences with higher distances will be ignored)
+  //종료 조건 지정 
+  //reg.setMaximumIterations (50);              // 최대 수행 횟수 Set the maximum number of iterations (criterion 1)
+  //reg.setTransformationEpsilon (1e-8);        // 이전 Transformation과의 최대 변화량 Set the transformation epsilon (criterion 2)
+  //reg.setMaxCorrespondenceDistance (0.05);    // Set the max correspondence distance to 5cm 
+                                               // (e.g., correspondences with higher distances will be ignored)
   //reg.setEuclideanFitnessEpsilon (1);       // Set the euclidean distance difference epsilon (criterion 3)
   reg.align(Final);
 
@@ -103,11 +108,7 @@ int
 
 
 
-알고리즘의 종료 조건은 아래와 같습니다. `The algorithm has several termination criteria:`
 
-1. Number of iterations has reached the maximum user imposed number of iterations \(via [setMaximumIterations](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#a3844d186f7a99d15464368e0f25635ed)\)
-2. The epsilon \(difference\) between the previous transformation and the current estimated transformation is smaller than an user imposed value \(via [setTransformationEpsilon](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#aec74ab878cca8d62fd1be9942685a8c1)\)
-3. The sum of Euclidean squared errors is smaller than a user defined threshold \(via [setEuclideanFitnessEpsilon](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#aeb0bb4577dbe144bd467d4a9632b84d8)\)
 
 
 
