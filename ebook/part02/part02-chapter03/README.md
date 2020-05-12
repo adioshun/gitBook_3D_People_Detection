@@ -20,7 +20,7 @@ Improved algorithm for point cloud registration based on fast point feature hist
 
 ![](https://storage.googleapis.com/groundai-web-prod/media/users/user_301676/project_403379/images/registration-intro.png) [https://www.groundai.com/project/target-less-registration-of-point-clouds-a-review/1](https://www.groundai.com/project/target-less-registration-of-point-clouds-a-review/1)
 
-PCL에서는 다음 알고리즘을 제공 합니다.
+정합 알고리즘은 크게 전역적\(Global\)방법과 지역적\(Local\)방법으로 나눌수 있습니다. 전역적 방법은 고유한 기하학적 특징을 기반으로 정밀도는 약하지만 빠른 정합이 가능합니다. 지역적 방법은 목적함수를 최적화 하는 방식으로 반복적으로 수행 되므로 시간은 걸리지만 정확도가 높습니다. 이단계에서 Local Minima에 빠지게 되므로 초기 위치값이 중요 합니다. 초기 위치값은 IMU나 GPS등의 외부 센서를 이용하여 구할수도 있고, 전역적 방법으로 구할수도 있습니다. 일반적으로는 전역적 방법으로 대략적인 정합을 수행하고, 지역적 방법으로 세밀한 조정을 하여 정합 정확도를 높히게 됩니다. 따라서 일부 논문에서는 전자를 rough 정합, 후자를 정밀정합법이라고 부르기도 합니다. PCL에서는 정합을 위한 다양한 API와 ICP, NDT방법을 제공하고 있습니다.
 
 * ICP 기반 
 * Feature based registration

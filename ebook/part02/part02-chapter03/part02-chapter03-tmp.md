@@ -62,8 +62,6 @@ The **pcl\_registration** library implements a plethora of point cloud registrat
 
 ![](https://camo.githubusercontent.com/c2677417e5eb0a40882ab12b7e01dbc89b123477/687474703a2f2f6a6f75726e616c2e63672d6b6f7265612e6f72672f6a6f75726e616c2f6a6b6367732f6a6b6367732d32342d352f6769662f6a6b6367732d32342d352d31312d67322e676966)
 
-![](http://robotica.unileon.es/images/thumb/7/74/Pairwise_registration.jpg/650px-Pairwise_registration.jpg)
-
 ![](https://camo.githubusercontent.com/5424b024ea3290017426cc51bcc2052aabbb784d/687474703a2f2f706f696e74636c6f7564732e6f72672f646f63756d656e746174696f6e2f7475746f7269616c732f5f696d616765732f626c6f636b5f6469616772616d5f73696e676c655f697465726174696f6e2e6a7067)
 
 > [출처](https://github.com/adioshun/gitPaper_SLAM/blob/master/registration/2018-a-modified-method-for-registration-of-3d-point-clouds-with-a-low-overlap-ratio.md)

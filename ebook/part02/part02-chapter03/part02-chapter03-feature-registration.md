@@ -1,10 +1,10 @@
-# Feature Based Registration
+# 전역 정합
 
+전역 정합 또는 대략적 정합은 두개의 포인트 클라우드의 점들에서 특징을 계산하고 이를 기반으로 정합을 수행 하는 방법입니다. 
 
+![](http://robotica.unileon.es/images/thumb/7/74/Pairwise_registration.jpg/650px-Pairwise_registration.jpg)
 
-### Feature based registration
-
-ICP는 단순한 아이디어로 손쉽게 적용하여 좋은 결과를 뽑아 낼수 있습니다. 하지만 상황에 따라서는 각 단계를 목적에 맞게 수정할 필요가있습니다. 본 실습에서는 PCL에서 제공하는 다양한 API를 이용하여 단계별로 살펴 보겠습니다. 수행시 필요한 모듈과 ‌동작 과정은 다음과 같습니다.
+수행 절차는 아래와 같습니다. 
 
 1. 키포인트 선택 : 여러개의 포인트 중에서 데이터를 가장 잘 설명하는 키포인트를 선정 합니다. 
 2. 특징 계산 : 각 키포인트별 feature descriptor를 계산 합니다. 
@@ -12,11 +12,16 @@ ICP는 단순한 아이디어로 손쉽게 적용하여 좋은 결과를 뽑아 
 4. 대응점 선정 : 계산  correspondences 중에서 나쁜 것을 버리게 됩니다. 
 5. 변환행렬 계산 : 남은 좋은 correspondences를 이용하여 transformation을 계산 합니다. 
 
-
+PCL에서 제공하는 다양한 API를 이용하여 단계별로 살펴 보겠습니다. 
 
 1. 키포인트 선택  
 
-연산 부하를 줄이기 위해서 전체 점군에서 일부 점군을 샘플링 하여 선택하는 단계입니다. 무작위로 선택 할수도 있지만 중요한 의미를 지니는 점인 키포인트를 계산하여 선택 할수도 있습니다 . PCL에서는 NARF, SIFT, FAST등의 키포인트 추출 방법을 제공하고 있습니다. 또는 1장에서 살펴본 샘플링 방법중 하나인 그리드 샘플링을 수행 할수도 있습니다. 
+두 점군을 비교 할대 사용할 포인트를 선정 하는 단계 입니다. 키포인트 선정시 주요 고려 요소는 다음과 같습니다. 
+
+* **Repeatability**: there should be a good chance of the same points being chosen over several iterations, even when the scene is captured from a different angle.
+* **Distinctiveness**: the chosen keypoints should be highly characterizing and descriptive. It should be easy to describe and match them.
+
+PCL에서는 NARF, SIFT, FAST등의 키포인트 추출 방법을 제공하고 있습니다. 또는 간단하게 1장에서 살펴본 샘플링 방법중 하나인 그리드 샘플링을 수행 하여 단순히 수를 줄이는 방법도 있습니다. 
 
 
 
