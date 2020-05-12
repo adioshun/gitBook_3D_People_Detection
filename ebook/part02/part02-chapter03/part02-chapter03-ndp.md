@@ -26,8 +26,8 @@ main (int argc, char** argv)
   reg.setResolution (0.025f);
   reg.setInputCloud (cloud_in);
   reg.setInputTarget (cloud_out);
-  reg.setMaximumIterations (50);
-  reg.setTransformationEpsilon (1e-8);
+  //reg.setMaximumIterations (50);
+  //reg.setTransformationEpsilon (1e-8);
   reg.align(Final);
 
   std::cout << "has converged:" << reg.hasConverged() << " score: " <<   // 정확히 정합되면 1(True)
