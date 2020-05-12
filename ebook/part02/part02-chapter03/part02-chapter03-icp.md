@@ -111,21 +111,6 @@ int
 
 
 
-각 점군에서 키포인트 생성 
-
-* 키포인트에서 feature descriptor 계산 
-* 두 점군사이에 유사점을 비교 하여 대응점\(correspondences\) estimate
-* 대응점들간의 거리 계산 반복 
-* 가장 거리가 가까운 때의 변환 행렬 estimation 
-
-
-
---- 
-
-
-
-
-
 PCL은 다양한 ICP방법을 제공 하고 있다.
 
 ### IterativeClosestPointWithNormals
