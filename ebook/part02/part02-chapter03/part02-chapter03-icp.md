@@ -143,6 +143,18 @@ This is particularly useful when solving for camera extrinsics using multiple ob
 
 
 
+---
+
+![](https://i.imgur.com/PfjFNzE.png)
+
+ICP 알고리즘은 서로 다른 두 matrix A와 B 간의 거리를 최소화하는 알고리즘입니다.
+
+transposed A와 B를 곱하고 그것을 Singular Value Decomposition\(SVD\) 해서 U, S, Vt를 구하고 transposed Vt와 transposed U를 곱한 행렬이 회전 행렬\(Transformation matrix\)이 됩니다.
+
+
+
+
+
 
 
 [https://ieeexplore.ieee.org/document/121791](https://ieeexplore.ieee.org/document/121791)
