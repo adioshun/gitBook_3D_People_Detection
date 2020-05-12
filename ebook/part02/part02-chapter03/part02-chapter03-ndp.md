@@ -22,7 +22,7 @@ main (int argc, char** argv)
   pcl::io::loadPCDFile ("bun4.pcd", *cloud_out);
 
   pcl::NormalDistributionsTransform<pcl::PointXYZ, pcl::PointXYZ> reg;
-  reg.setStepSize (0.05);
+  //reg.setStepSize (0.05);
   reg.setResolution (0.025f);
   reg.setInputCloud (cloud_in);
   reg.setInputTarget (cloud_out);
