@@ -28,50 +28,6 @@
 #include <pcl/point_types.h>
 #include <pcl/registration/icp.h>
 
-
-// How to use iterative closest point
-// http://pointclouds.org/documentation/tutorials/iterative_closest_point.php#iterative-closest-point
-
-int
- main (int argc, char** argv)
-{
-  pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_in (new pcl::PointCloud<pcl::PointXYZ>);
-  pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_out (new pcl::PointCloud<pcl::PointXYZ>);
-
-  pcl::io::loadPCDFile ("bun0.pcd", *cloud_in);
-  pcl::io::loadPCDFile ("bun4.pcd", *cloud_out);
-
-  pcl::IterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ> icp;
-  icp.setInputSource(cloud_in);
-  icp.setInputTarget(cloud_out); 
-  pcl::PointCloud<pcl::PointXYZ> Final;   
-  icp.align(Final);
-
-  std::cout << "has converged:" << icp.hasConverged() << " score: " <<   // 정확히 정합되면 1(True)
-  icp.getFitnessScore() << std::endl;
-  std::cout << icp.getFinalTransformation() << std::endl;                // 변환 행렬 출력 
-
- return (0);
-}
-
-```
-
-
-
-[https://github.com/PointCloudLibrary/pcl/blob/master/test/registration/test\_registration.cpp](https://github.com/PointCloudLibrary/pcl/blob/master/test/registration/test_registration.cpp)
-
-알고리즘의 종료 조건은 아래와 같습니다. `The algorithm has several termination criteria:`
-
-1. Number of iterations has reached the maximum user imposed number of iterations \(via [setMaximumIterations](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#a3844d186f7a99d15464368e0f25635ed)\)
-2. The epsilon \(difference\) between the previous transformation and the current estimated transformation is smaller than an user imposed value \(via [setTransformationEpsilon](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#aec74ab878cca8d62fd1be9942685a8c1)\)
-3. The sum of Euclidean squared errors is smaller than a user defined threshold \(via [setEuclideanFitnessEpsilon](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#aeb0bb4577dbe144bd467d4a9632b84d8)\)
-
-```cpp
-#include <iostream>
-#include <pcl/io/pcd_io.h>
-#include <pcl/point_types.h>
-#include <pcl/registration/icp.h>
-
 // How to use iterative closest point
 // http://pointclouds.org/documentation/tutorials/iterative_closest_point.php#iterative-closest-point
 
@@ -107,6 +63,14 @@ int
 ```
 
 
+
+[https://github.com/PointCloudLibrary/pcl/blob/master/test/registration/test\_registration.cpp](https://github.com/PointCloudLibrary/pcl/blob/master/test/registration/test_registration.cpp)
+
+알고리즘의 종료 조건은 아래와 같습니다. `The algorithm has several termination criteria:`
+
+1. Number of iterations has reached the maximum user imposed number of iterations \(via [setMaximumIterations](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#a3844d186f7a99d15464368e0f25635ed)\)
+2. The epsilon \(difference\) between the previous transformation and the current estimated transformation is smaller than an user imposed value \(via [setTransformationEpsilon](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#aec74ab878cca8d62fd1be9942685a8c1)\)
+3. The sum of Euclidean squared errors is smaller than a user defined threshold \(via [setEuclideanFitnessEpsilon](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#aeb0bb4577dbe144bd467d4a9632b84d8)\)
 
 PCL은 다양한 ICP방법을 제공 하고 있다.
 
