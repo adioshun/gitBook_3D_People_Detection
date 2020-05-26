@@ -20,9 +20,8 @@ Improved algorithm for point cloud registration based on fast point feature hist
 
 ![](https://storage.googleapis.com/groundai-web-prod/media/users/user_301676/project_403379/images/registration-intro.png) [https://www.groundai.com/project/target-less-registration-of-point-clouds-a-review/1](https://www.groundai.com/project/target-less-registration-of-point-clouds-a-review/1)
 
-정합 알고리즘은 크게 전역적\(Global\)방법과 지역적\(Local\)방법으로 나눌수 있습니다. 전역적 방법은 고유한 기하학적 특징을 기반으로 정밀도는 약하지만 빠른 정합이 가능합니다. 지역적 방법은 목적함수를 최적화 하는 방식으로 반복적으로 수행 되므로 시간은 걸리지만 정확도가 높습니다. 이단계에서 Local Minima에 빠지게 되므로 초기 위치값이 중요 합니다. 초기 위치값은 IMU나 GPS등의 외부 센서를 이용하여 구할수도 있고, 전역적 방법으로 구할수도 있습니다. 일반적으로는 전역적 방법으로 대략적인 정합을 수행하고, 지역적 방법으로 세밀한 조정을 하여 정합 정확도를 높히게 됩니다. 따라서 일부 논문에서는 전자를 rough 정합, 후자를 정밀정합법이라고 부르기도 합니다. PCL에서는 정합을 위한 다양한 API와 ICP, NDT방법을 제공하고 있습니다.
+본문에서는 정합 기법을  전역적\(Global\)방법과 지역적\(Local\)방법으로 나누었습니다. 구분 기준은 포인트 클라우드의 특징 정보를 기반으로 정밀도는 약하지만 빠른 정합을 수행하는 방법을 전역적 방법으로 하였으며, 지역적 방법은 포인트 클라우드의 각 포인트를 기반으로 목적함수를 최적화 하는 방식으로 정밀도는 높지만 반복적으로 수행 으로 시간이  걸리는 방식을 지역적 방법으로 구분 하였습니다. 지역적 정합은 초기 위치값을 잘못 잡게 되면 Local Minima에 빠지게 되므로 중요 합니다. 이를 해결 하기 위하여 초기 위치값 선정시 IMU나 GPS등의 외부 센서를 이용하여 구할수도 있고, 전역적 방법으로 구할수도 있습니다. 일반적으로는 전역적 방법으로 대략적인 정합을 수행하고, 지역적 방법으로 세밀한 조정을 하여 정합 정확도를 높히게 됩니다. 따라서 일부 논문에서는 전자를 rough 정합, 후자를 정밀정합법이라고 부르기도 합니다. 각 정합 방법을 위해 PCL에서는 제공하는 방법을 나누어 보면 다음과 같습니다. 
 
-* ICP 기반 
-* Feature based registration
-* NDP
+* 전역적 정합 : API\(keypoint, Feature \)기반 정합, SAC-IA 정합 등 
+* 지역적 정합 : ICP  정합, NDP 정합 
 
