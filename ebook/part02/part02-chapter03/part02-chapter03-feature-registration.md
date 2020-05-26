@@ -18,8 +18,8 @@ PCL에서 제공하는 다양한 API를 이용하여 단계별로 살펴 보겠�
 
 두 점군을 비교 할 사용할때 포인트를 선정 하는 단계 입니다. 포인트 클라우드의 모든 포인트를 정합에 사용하는 것는 처리 시간도 오래 걸리고 비 효율적일수 있습니다. 따라서, 사용할 데이터를 수를 줄이면서도 포인트클라우드의 특징을 잘 반영 하는 키포인트 선정이 중요 합니다.  키포인트 선정시 주요 고려 요소는 다음과 같습니다. 
 
-* **반복성\(Repeatability\)**: there should be a good chance of the same points being chosen over several iterations, even when the scene is captured from a different angle.
-* **Distinctiveness**: the chosen keypoints should be highly characterizing and descriptive. It should be easy to describe and match them.
+* **반복성\(Repeatability\)**:장면이 다른 각도에서 캡처 된 경우에도 여러 번 반복하여 동일한 점이 선택 될 가능성이 높아야합니다.
+* **특수성\(Distinctiveness\)**: 선택한 키포인트는 특징성이 높아야 하고 서술적이어야 한다. the chosen keypoints should be highly characterizing and descriptive. It should be easy to describe and match them.
 
 PCL에서는 NARF, SIFT, FAST등의 키포인트 추출 방법을 제공하고 있습니다. 예시에서는 ISS 키포인트를 사용 하였습니다. 
 
