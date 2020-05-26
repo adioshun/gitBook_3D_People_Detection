@@ -7,10 +7,10 @@
 수행 절차는 아래와 같습니다. 
 
 1. 키포인트 선택 : 여러개의 포인트 중에서 데이터를 가장 잘 설명하는 키포인트를 선정 합니다. 
-2. 특징 계산 : 각 키포인트별 feature descriptor를 계산 합니다. 
-3. 대응점 찾기 : x,y,z위치 정보와 Descriptor 정보를 기반하여 유사도를 계산하여 correspondences를 계산 합니다. 
-4. 대응점 선정 : 계산  correspondences 중에서 나쁜 것을 버리게 됩니다. 
-5. 변환행렬 계산 : 남은 좋은 correspondences를 이용하여 transformation을 계산 합니다. 
+2. 특징 계산 : 각 키포인트별 특징값\(feature descriptor\)을 계산 합니다. 
+3. 대응점 찾기 : 위치 정보\(x,y,z\)와 특징값 정보를 기반하여 유사도를 계산하여 correspondences를 계산 합니다. 
+4. 대응점 선정 : 계산된  correspondences 중에서 나쁜 것을 버리게 됩니다. 
+5. 변환행렬 계산 : 남은 좋은 correspondences를 이용하여 변환행렬\(transformation\)을 계산 합니다. 
 
 PCL에서 제공하는 다양한 API를 이용하여 단계별로 살펴 보겠습니다. 
 
