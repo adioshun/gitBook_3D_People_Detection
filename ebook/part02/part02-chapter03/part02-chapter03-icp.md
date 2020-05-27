@@ -4,6 +4,15 @@
 
 대표적인 지역 정합 알고리즘으로는  ICP가 있습니다. ICP는 모든 포인트들을 비교 하면서 대응점간의 거리가 최소화 될때가지 반복적으로 정합을 수행 하는 알골리즘 입니다. 가장 직관적이면서 좋은 성능을 보여 많은 분야에서 사용되고 있습니다. 하지만 모든 포인트에 대하여 brute force방식으로 진행 하기 때문에 시간이 많이 소요 되어 kd-tree를 이용하여 지연을 줄이는 방법도 활용 되고 있습니다. 
 
+![](https://i.imgur.com/PfjFNzE.png)
+
+  
+ICP 알고리즘은 서로 다른 두 matrix A와 B 간의 거리를 최소화하는 알고리즘입니다.‌
+
+transposed A와 B를 곱하고 그것을 Singular Value Decomposition\(SVD\) 해서 U, S, Vt를 구하고 transposed Vt와 transposed U를 곱한 행렬이 회전 행렬\(Transformation matrix\)이 됩니다.
+
+
+
 동작 과정은 아래와 같습니다.
 
 ![](../../../.gitbook/assets/image%20%286%29.png)
@@ -68,9 +77,9 @@ int
 
 알고리즘의 종료 조건은 아래와 같습니다. `The algorithm has several termination criteria:`
 
-1. Number of iterations has reached the maximum user imposed number of iterations \(via [setMaximumIterations](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#a3844d186f7a99d15464368e0f25635ed)\)
-2. The epsilon \(difference\) between the previous transformation and the current estimated transformation is smaller than an user imposed value \(via [setTransformationEpsilon](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#aec74ab878cca8d62fd1be9942685a8c1)\)
-3. The sum of Euclidean squared errors is smaller than a user defined threshold \(via [setEuclideanFitnessEpsilon](http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#aeb0bb4577dbe144bd467d4a9632b84d8)\)
+1. setMaximumIterations : 최대 반복 횟수 
+2. setTransformationEpsilon :  이전 변환과 현재 예상 변환 간의 차이\(엡실론\)
+3. setEuclideanFitnessEpsilon : 유클리드 제곱 오차의 합 
 
 PCL은 다양한 ICP방법을 제공 하고 있다.
 
@@ -101,18 +110,6 @@ The algorithm has several termination criteria:
 JointIterativeClosestPoint extends ICP to multiple frames which share the same transform.
 
 This is particularly useful when solving for camera extrinsics using multiple observations. When given a single pair of clouds, this reduces to vanilla ICP.
-
-
-
----
-
-![](https://i.imgur.com/PfjFNzE.png)
-
-ICP 알고리즘은 서로 다른 두 matrix A와 B 간의 거리를 최소화하는 알고리즘입니다.
-
-transposed A와 B를 곱하고 그것을 Singular Value Decomposition\(SVD\) 해서 U, S, Vt를 구하고 transposed Vt와 transposed U를 곱한 행렬이 회전 행렬\(Transformation matrix\)이 됩니다.
-
-
 
 ### NDP 
 
@@ -155,8 +152,6 @@ main (int argc, char** argv)
  return (0);
 }
 ```
-
-
 
 
 
