@@ -60,5 +60,29 @@ image의 특징을 잘 나타내줄 수 있는 부분 \(eg. 꼭지점, 끝점\)
 
 [http://166.104.231.121/ysmoon/mip2017/lecture\_note/%EC%A0%9C6%EC%9E%A5-%EC%B6%94%EA%B0%80.pdf](http://166.104.231.121/ysmoon/mip2017/lecture_note/%EC%A0%9C6%EC%9E%A5-%EC%B6%94%EA%B0%80.pdf)
 
-[http://www.pointclouds.org/assets/uploads/cglibs13\_features.pdf](http://www.pointclouds.org/assets/uploads/cglibs13_features.pdf)
+{% embed url="http://www.pointclouds.org/assets/uploads/cglibs13\_features.pdf" %}
+
+
+
+
+
+## 합치기 \(x,y,z + normal\)
+
+
+
+```cpp
+//https://pcl-tutorials.readthedocs.io/en/latest/concatenate_clouds.html#concatenate-clouds
+  {
+    pcl::concatenateFields (cloud_a, n_cloud_b, p_n_cloud_c);
+    std::cerr << "Cloud C: " << std::endl;
+    for (std::size_t i = 0; i < p_n_cloud_c.points.size (); ++i)
+      std::cerr << "    " <<
+        p_n_cloud_c.points[i].x << " " << p_n_cloud_c.points[i].y << " " << p_n_cloud_c.points[i].z << " " <<
+        p_n_cloud_c.points[i].normal[0] << " " << p_n_cloud_c.points[i].normal[1] << " " << p_n_cloud_c.points[i].normal[2] << std::endl;
+  }
+```
+
+
+
+
 
