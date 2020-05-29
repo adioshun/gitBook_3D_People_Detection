@@ -31,7 +31,7 @@ int
   icp.setInputTarget(target);
 
   pcl::PointCloud<pcl::PointXYZ> source_transformed;   
-  icp.align(source_transformed);
+  icp.align(source_transformed);   
 
   std::cout << icp.getFinalTransformation() << std::endl;                // 변환 행렬 출력 
   pcl::io::savePCDFile<pcl::PointXYZ>("source_transformed.pcd", source_transformed); // 변환된 점군 저장  
