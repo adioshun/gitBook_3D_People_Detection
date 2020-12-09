@@ -24,60 +24,6 @@ Normal Estimation은 샘플링 된 값들로부터 방향 정보를 복원해 �
 
 목적에 따라 3가지의 코드 [https://github.com/adioshun/gitBook\_PCL/blob/master/Tutorial/Feature/how-3d-features-work-in-pcl.md](https://github.com/adioshun/gitBook_PCL/blob/master/Tutorial/Feature/how-3d-features-work-in-pcl.md)
 
-```text
-  ne.setInputCloud (cloud);
-  ne.setSearchMethod (tree);  
-  //ne.setIndices () //?? 
-  ne.setRadiusSearch (0.03); // Use all neighbors in a sphere of radius 3cm  
-  ne.compute (*cloud_normals); // Compute the features
-```
-
-
-
-```cpp
-#include <pcl/point_types.h>
-#include <pcl/io/pcd_io.h>
-#include <pcl/features/normal_3d.h>
-#include <pcl/visualization/pcl_visualizer.h>
-
-// How 3D Features work in PCL
-// http://pointclouds.org/documentation/tutorials/how_features_work.php
-
-int
-main (int argc, char** argv)
-{
-  pcl::PointCloud<pcl::PointXYZ>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZ>); // 입력 포인트 클라우드 저장할 오브젝트 
-  pcl::PointCloud<pcl::Normal>::Ptr cloud_normals (new pcl::PointCloud<pcl::Normal>); // 계산된 Normal을 저장할 오브젝트 
-
-  // *.PCD 파일 읽기 (https://raw.githubusercontent.com/adioshun/gitBook_Tutorial_PCL/master/Beginner/sample/tabletop.pcd)
-  pcl::io::loadPCDFile<pcl::PointXYZ> ("tabletop.pcd", *cloud);
-  
-  // Create the normal estimation class, and pass the input dataset to it
-  pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> ne;
-  ne.setInputCloud (cloud);
-  pcl::search::KdTree<pcl::PointXYZ>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZ> ());
-  ne.setSearchMethod (tree);  
-  ne.setRadiusSearch (0.03); // Use all neighbors in a sphere of radius 3cm  
-  ne.compute (*cloud_normals); // Compute the features
-
-  // 포인트수 출력  
-  std::cout << "Filtered " << cloud_normals->points.size ()  << std::endl;
-
-  // Visualize them.
-	boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer(new pcl::visualization::PCLVisualizer("Normals"));
-	viewer->addPointCloud<pcl::PointXYZ>(cloud, "cloud");
-	// Display one normal out of 20, as a line of length 3cm.
-	viewer->addPointCloudNormals<pcl::PointXYZ, pcl::Normal>(cloud, cloud_normals, 20, 0.03, "normals");
-	while (!viewer->wasStopped())
-    {
-      viewer->spinOnce(100);
-      boost::this_thread::sleep(boost::posix_time::microseconds(100000));
-    }
-}
-```
-
-
-
 
 
 Normal Estimation Using Integral Images 
