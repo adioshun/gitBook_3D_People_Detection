@@ -42,7 +42,6 @@
     * [Smoothing](ebook/part02/part02-chapter05/part02-chapter05-smoothing/README.md)
       * [MLS](ebook/part02/part02-chapter05/part02-chapter05-smoothing/ref_mls.md)
   * [07-Feature](ebook/part02/part02-chapter04/README.md)
-    * [1\_Histogram](ebook/part02/part02-chapter04/part02-chapter04-histogram.md)
     * [2\_Normal](ebook/part02/part02-chapter04/part02-chapter04-normal.md)
     * [3\_PCA](ebook/part02/part02-chapter04/part02-chapter04-pca.md)
     * [PCA FOR 3-DIMENSIONAL POINT CLOUD](ebook/part02/part02-chapter04/part02-chapter04-pca-for-3-dimensional-point-cloud.md)
